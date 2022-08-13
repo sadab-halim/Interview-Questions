@@ -62,6 +62,7 @@ Attributes are the descriptive properties which are owned by each entity of an E
 
 ## Constraints:
 Relational constraints are the restrictions imposed on the database contents and operations. They ensure the correctness of data in the database.
+
 - **Domain Constraint** - Domain constraint defines the domain or set of values for an attribute. It specifies that the value taken by the attribute must be the atomic value from its domain.
 - **Tuple Uniqueness Constraint** - Tuple Uniqueness constraint specifies that all the tuples must be necessarily unique in any relation.
 - **Key Constraint** - All the values of the primary key must be unique. The value of the primary key must not be null.
@@ -71,17 +72,39 @@ Relational constraints are the restrictions imposed on the database contents and
 ## Closure of an Attribute Set:
 The set of all those attributes which can be functionally determined from an attribute set is called a closure of that attribute set.
 
-## Keys
+## Keys ✅
 A key is a set of attributes that can identify each tuple uniquely in the given relation. 
 
 ## Types of Keys:
-- **Super Key** - A superkey is a set of attributes that can identify each tuple uniquely in the given relation. A super key may consist of any number of attributes.
-- **Candidate Key** - A set of minimal attribute(s) that can identify each tuple uniquely in the given relation is called a candidate key.
-- **Primary Key** - A primary key is a candidate key that the database designer selects while designing the database. Primary Keys are unique and NOT NULL.
-- **Alternate Key** - Candidate keys that are left unimplemented or unused after implementing the primary key are called as alternate keys.
-- **Foreign Key** - An attribute ‘X’ is called as a foreign key to some other attribute ‘Y’ when its values are dependent on the values of attribute ‘Y’. The relation in which attribute ‘Y’ is present is called as the referenced relation. The relation in which attribute ‘X’ is present is called as the referencing relation.
-- **Composite Key** - A primary key composed of multiple attributes and not just a single attribute is called a composite key.
-- **Unique Key** - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. It may have a NULL value.
+- **Super Key**
+   - A super key is a set of single and multiple key attributes which is used to identify records in a table. 
+   - The super key is a superset of the candidate key.
+
+- **Candidate Key**
+   - A set of minimal attribute(s) that can identify each tuple uniquely in the given relation is called a candidate key.
+   - The value of the candidate key field must be unique and always be not NULL for every tuple.
+   - There can be more than one candidate key in a table or a relation.
+   - Removing any field from the candidate key fails in identifying each record uniquely.
+
+- **Primary Key**
+   - A primary key is a set of fields in a database table that uniquely identifies each record in that table. The value of the primary key cannot be NULL.
+   - A table is allowed to have only one primary key
+   - The value of a primary key field should always be unique.
+
+- **Alternate Key** 
+   - Those keys which are not selected as the primary key from the candidate keys are called as the alternate keys. 
+   - These keys are also known as the secondary keys.
+
+- **Foreign Key**
+   - A foreign key is an attribute in one table that acts as a primary key in another table. 
+   - The foreign key is useful for establishing the relationship between two tables in a database.
+
+- **Composite Key**
+   - A composite key is a key which is a combination of two or more fields (attributes) that uniquely identify each record in the table.
+
+- **Unique Key**
+   - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. 
+   - It may have a NULL value.
 
 ## Functional Dependency:
 In any relation, a functional dependency α → β holds if- Two tuples having same value of attribute α also have same value for attribute β.
@@ -99,9 +122,9 @@ In any relation, a functional dependency α → β holds if- Two tuples having s
 The process of breaking up or dividing a single relation into two or more sub relations is called the decomposition of a relation.
 
 ## Properties of Decomposition:
-- **Lossless Decomposition** - Lossless decomposition ensures
+- **Lossless Decomposition** ensures
    - No information is lost from the original relation during decomposition. o When the sub relations are joined back, the same relation is obtained that was decomposed.
-- **Dependency Preservation** - Dependency preservation ensures
+- **Dependency Preservation** ensures
    - None of the functional dependencies that hold on the original relation are lost. o The sub relations still hold or satisfy the functional dependencies of the original relation.
 
 ## Types of Decomposition:
@@ -114,27 +137,48 @@ The process of breaking up or dividing a single relation into two or more sub re
    - This decomposition is called lossy join decomposition when the join of the sub relations does not result in the same relation R that was decomposed.
    - For lossy join decomposition, we always have- R1 ⋈ R2 ⋈ R3 ……. ⋈ Rn ⊃ R where ⋈ is a natural join operator
 
-## ✅ Normalization ✅
+## Normalization ✅
 - Normalization is a technique of organizing the data in the database.
 - It is a systematic approach which is used to remove or reduce data redundancy in the tables and remove the insert, update and delete anomalies.
 - It mainly divides the larger table into smaller tables and links them using a relationship to increase the clarity of data.
 
-## Types of Normal Forms:
-- **First Normal Form (1NF)** - A given relation is called in First Normal Form (1NF) if each cell of the table contains only an atomic value i.e. if the attribute of every tuple is either single valued or a null value.
-- **Second Normal Form (2NF)** - A given relation is called in Second Normal Form (2NF) if and only if
+## Anomalies:
+- **Insertion Anomaly:** 
+   - Suppose a new faculty joins the University, and the Database Administrator inserts the faculty data into the table. 
+   - But he is not able to insert because Sid is a primary key, and can’t be NULL. 
+   - So this type of anomaly is known as an insertion anomaly.
+
+- **Delete Anomaly:**
+   - When the Database Administrator wants to delete the student details of Sid=2 from the table.
+   - Then it will delete the faculty and course information too which cannot be recovered further.
+
+- **Update Anomaly:**
+   - When the Database Administrator wants to change the salary of faculty F1 from 30000 to 40000 in above table University
+   - Then the database will update salary in more than one row due to data redundancy. 
+   - So, this is an update anomaly in a table.
+
+## Types of Normal Forms ✅
+- **First Normal Form (1NF):** A given relation is called in First Normal Form (1NF) if each cell of the table contains only an atomic value i.e. if the attribute of every tuple is either single valued or a null value.
+- **Second Normal Form (2NF):** A given relation is called in Second Normal Form (2NF) if and only if
    - Relation already exists in 1NF.
    - No partial dependency exists in the relation.
-A → B is called a partial dependency if and only if- A is a subset of some candidate key and B is a non-prime attribute.
+A → B is called a partial dependency if and only if A is a subset of some candidate key and B is a non-prime attribute.
 
-- **Third Normal Form (3NF)** - A given relation is called in Third Normal Form (3NF) if and only if
+- **Third Normal Form (3NF):** A given relation is called in Third Normal Form (3NF) if and only if
    - Relation already exists in 2NF.
    - No transitive dependency exists for non-prime attributes.
-A → B is called a transitive dependency if and only if- A is not a super key and B is a non-prime attribute.
+A → B is called a transitive dependency if and only if A is not a super key and B is a non-prime attribute.
 
-- Boyce-Codd Normal Form - A given relation is called in BCNF if and only if
+- **Boyce-Codd Normal Form:** A given relation is called in BCNF if and only if
    - Relation already exists in 3NF.
    - For each non-trivial functional dependency ‘A → B’, A is a super key of the relation.
+- **Fourth Normal Form:** A relation is in 4NF if it satisfies the following conditions:
+   - A relation is in BCNF
+   - and, there is no multivalued dependency exists in the relation.
  
+## Denormalization ✅
+Denormalization is a technique used to merge data from multiple tables into a single table that can be queried quickly.
+
 ## Transaction:
 Transaction is a single logical unit of work formed by a set of operations.
 
@@ -169,29 +213,32 @@ Transaction is a single logical unit of work formed by a set of operations.
    - This is the last state in the life cycle of a transaction.
    - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
 
-## ACID Properties:
+## ACID Properties ✅
 To ensure the consistency of the database, certain properties are followed by all the transactions occurring in the system. These properties are called as ACID Properties of a transaction.
 
-- **Atomicity** –
+- **Atomicity** 
    - This property ensures that either the transaction occurs completely or it does not occur at all.
-   - In other words, it ensures that no transaction occurs partially.
+   - Basically, it ensures that no transaction occurs partially.
+
 - **Consistency** –
    - This property ensures that integrity constraints are maintained.
    - In other words, it ensures that the database remains consistent before and after the transaction.
+
 - **Isolation** –
-   - This property ensures that multiple transactions can occur simultaneously without causing any inconsistency.
-   - The resultant state of the system after executing all the transactions is the same as the state that would be achieved if the transactions were executed serially one after the other.
+   - This property states that a data of transaction T1 which is in execution, then transaction T2 cannot access the result of transaction T1 until the operations of a transaction T1 is completed. 
+   - Or, we can say that a user cannot perform the same operation in multiple transactions at the same time. The execution of all transaction should be isolated from other transaction.
+
 - **Durability** –
    - This property ensures that all the changes made by a transaction after its successful execution are written successfully to the disk.
    - It also ensures that these changes exist permanently and are never lost even if there occurs a failure of any kind.
-
 
 ## Schedules:
 The order in which the operations of multiple transactions appear for execution is called as a schedule.
 - **Serial Schedules** –
    - All the transactions execute serially one after the other.
    - When one transaction executes, no other transaction is allowed to execute.
-   - Serial schedules are always- Consistent, Recoverable, Cascadeless and Strict. ●
+   - Serial schedules are always- Consistent, Recoverable, Cascadeless and Strict.
+
 - **Non-Serial Schedules** –
    - Multiple transactions execute concurrently.
    - Operations of all the transactions are inter leaved or mixed with each other.
@@ -230,7 +277,16 @@ then such a schedule is known as a Recoverable Schedule.
 - **Cascadeless Schedule** - If in a schedule, a transaction is not allowed to read a data item until the last transaction that has written it is committed or aborted, then such a schedule is called as a Cascadeless Schedule.
 - **Strict Schedule** - If in a schedule, a transaction is neither allowed to read nor write a data item until the last transaction that has written it is committed or aborted, then such a schedule is called as a Strict Schedule.
  
-## Joins
+## Joins ✅
+Joins are the combination of related tuples from the two different relations or tables into a single type. 
+
+## Types of Joins ✅
+- **Inner Join:** returns rows when there is a match in both the tables
+- **Left Join:** returns all rows from the left table, even if there are no matches in the right table.
+- **Right Join:** returns all rows from the right table, even if there are no matches in the left table.
+- **Full Join:** returns rows where there is a match in one of the tables
+- **Self Join:** is used to join a table to itself as if the table were two tables, temporarily remaining at least one table in the SQL statement.
+- **Cross Join:** returns the cartesian product of the sets of records from the two or more joined tables.
 
 ## File Structures:
 - **Primary Index:** A primary index is an ordered file, records of fixed length with two fields. First field is the same as the primary key as a data file and the second field is a pointer to the data block, where the key is available. The average number of block accesses using index = log2 Bi + 1, where Bi = number of index blocks.
