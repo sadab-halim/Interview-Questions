@@ -114,7 +114,7 @@ The process of breaking up or dividing a single relation into two or more sub re
    - This decomposition is called lossy join decomposition when the join of the sub relations does not result in the same relation R that was decomposed.
    - For lossy join decomposition, we always have- R1 ⋈ R2 ⋈ R3 ……. ⋈ Rn ⊃ R where ⋈ is a natural join operator
 
-## Normalization ✅
+## ✅ Normalization ✅
 - Normalization is a technique of organizing the data in the database.
 - It is a systematic approach which is used to remove or reduce data redundancy in the tables and remove the insert, update and delete anomalies.
 - It mainly divides the larger table into smaller tables and links them using a relationship to increase the clarity of data.
