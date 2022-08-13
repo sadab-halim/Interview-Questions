@@ -1,0 +1,21 @@
+## Linux Commands
+- ls: it lists files and directories
+- grep: this finds text in a file. The grep command searches through many files at a time to find a piece of text you are looking for.
+- sudo:
+- pwd: print working directory
+- mv: move
+- cp: command copies a file. The cp command issues a copy of the file 
+- rm: remove files in a directory or the directory itself.
+- mkdir: command makes a directory.
+- chmod: command changes the mode of a file system object. Files can have read, write, and execute permissions.
+- chown: command is used to change the ownership of a file/folder or even multiple files/folders for a specified user/group.
+- cat: catcommand allows you to create single or multiple files, view contents of files, concatenate files (combining files), and redirect output in terminal or files.
+- echo: command is used to display a text or a string to the standard output or a file.
+- wc: command is used to find out the number of new lines, word count, byte, and characters count in a file specified by the file arguments.
+- man: command is used to view the online reference manual pages for commands/programs.
+- history: command is used to show previously used commands or obtain information about the commands executed by a user.
+- locate: command is used to find a file and runs in the background, unlike the find command.
+- diff: command compares two files line by line to find differences. The output will be the lines that are different.
+- useradd: command creates a new user. The username is added after the useradd command
+- exit: command exits the current shell.
+- kill: command is used to end a process, usually an unresponsive one. The kill command also includes the process ID or the program name
