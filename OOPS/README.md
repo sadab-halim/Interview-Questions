@@ -1,10 +1,105 @@
-## Overview
-### What is Object Oriented Programming?
-### How Object Oriented Programming is related to the real world?
-### Why to study OOPS?
-### Limitations of OOPS
+
+## What is Object Oriented Programming?
+Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
+
+## How Object Oriented Programming is related to the real world?
+- There are mainly four pillars (features) of OOP. If all of these four features are presented in programming, the programming is called  perfect Object Oriented Programming.
+  - Abstraction
+  - Encapsulation
+  - Inheritance
+  - Polymorphism
+
+### Object
+- Any real world entity which can have some characteristics or which can perform some tasks is called as Object. 
+- This object is also called an instance i.e. a copy of entity in programming language. 
+- If we consider the example, a mobile manufacturing company can be an object. 
+- Each object can be different based on their characteristics. 
+- For example, here are two objects.
+```
+Mobile mob1 = new Mobile();
+Mobile mob2 = new Mobile()
+```
+
+### Class
+- A class in OOP is a plan which describes the object. We call it a blueprint of how the object should be represented. 
+- Mainly a class would consist of a name, attributes, and operations. 
+- Considering the example, the Mobile can be a class, which has some attributes like Profile Type, IMEI Number, Processor, and some more. It can have operations like Dial, Receive and SendMessage.
+
+There are some OOPS principle that need to be satisfied while creating a class. This principle is called as **SOLID** where each letter has some specification.
+- **SRP** (Single Responsibility Principle): A class should have one, and only one responsibility
+- **OCP** (Open Closed Principle): We should be able to extend a classes behavior, without modifying it. (Inheritance)
+- **LSP** (Liskov Substitution Principle): Derived classes must be substitutable for their base classes. (Polymorphism)
+- **ISP** (Interface Segregation Principle): Make fine chopped interface instead of huge interface as client cannot be forced to implement an interface which they don't use.
+- **DIP** (Dependency Inversion Principle): Depend on abstractions, not on concretions. (Abstraction)
+
+### Abstraction
+- Abstraction allows us to expose limited data and functionality of objects publicly and hide the actual implementation. 
+- It is the most important pillar in OOPS. In our example of Mobile class and objects like Nokia, Samsung, IPhone.
+ 
+- Some features of mobiles, Dialing a number call some method internally which concatenate the numbers and displays it on screen but what is it doing we don’t know.
+- Clicking on green button actual send signals to calling person's mobile but we are unaware of how it is doing.
+This is called abstraction. 
+- In classes, we can create methods that can be called and used by the users of the class but users will have no idea what these methods do internally. 
+
+### Encapsulation
+- Encapsulation is defined as the process of enclosing one or more details from outside world through access right. 
+- It says how much access should be given to particular details. 
+- Both Abstraction & Encapsulation works hand in hand because Abstraction says what details to be made visible and Encapsulation provides the level of access right to that visible details.
+
+- Talking about Bluetooth which we usually have it in our mobile. When we switch on a Bluetooth.
+- I am able to connect to another mobile or bluetooth enabled devices but I'm not able to access the other mobile features like dialing a number, accessing inbox etc. 
+- This is because, Bluetooth feature is given some level of abstraction.
+
+- Another point is when mobile A is connected with mobile B via Bluetooth whereas mobile B is already connected to mobile C then A is not allowed to connect C via B. 
+- This is because of accessibility restriction.
+
+### Polymorphism
+- Polymorphism can be defined as the ability of using the same name for doing different things. 
+- More precisely we say it as 'many forms of single entity'. 
+- This play a vital role in the concept of OOPS.
+
+- Let's say in our phone we have a 12MP camera available i.e. – it is having a functionality of CameraClick(). 
+- Now same mobile is having Wide mode available in camera, so functionality would be same but with mode. 
+- This type is said to be Static polymorphism or Compile time polymorphism. 
+
+### Inheritance
+- Inheritance is the ability to extend the functionality from base entity in new entity belonging to same group. 
+- This will help us to reuse the functionality which is already defined before and extend into a new entity. 
+
+- Basic Mobile functionality is to send a message, dial and receive a call. 
+- So the brands of mobile is using this basic functionality by extending the mobile class functionality and adding their own new features to their respective brand.
+
+There are mainly 4 types of Inheritance:
+- Single Level Inheritance
+- Multilevel Inheritance
+- Hierarchical Inheritance
+- Hybrid Inheritance
+- Multiple Inheritance
+
+#### Single Level Inheritance
+In Single level inheritance, there is single base class & a single derived class i.e. - A base mobile features is extended by Samsung brand.
+
+#### Multilevel Inheritance
+In Multilevel inheritance, there is more than one single level of derivation. i.e. - After base features are extended by Samsung brand. Now Samsung brand has manufactured its new model with new added features or advanced OS like Android OS, v13.
+
+#### Hierachical Inheritance
+In this type of inheritance, multiple derived class would be extended from base class, it's similar to single level inheritance but this time along with Samsung, iPhone is also taking part in inheritance.
+
+#### Hybrid Inheritance
+Single, Multilevel, & hierarchal inheritance all together construct a hybrid inheritance.
+
+### Interface
+Multiple inheritance where derived class will extend from multiple base classes.
+
+## Limitations of OOPS
+- The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
+- We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
 
 ## Pillar of OOPS
+- Polymorphism
+- Encapsulation
+- Inheritance
+- Abstraction
 ## What is Class? <br/>
 Collection of objects is called Class. It is a logical entity.
 
@@ -19,8 +114,6 @@ Collection of objects is called Class. It is a logical entity.
 | It can have NULL values | It cannot have NULL values |
 | It may have all the types of constructors and destructors | It may have only parameterized constructor |
 
-
-### Similarities between Structure and Class
 ### Access Modifiers
 Access Modifiers or Access Specifiers in a class are used to assign the accessibility to the class members, i.e., they set some restrictions on the class members so that they can’t be directly accessed by the outside functions. <br/>
 
@@ -939,9 +1032,18 @@ An array in Java is an object. In Java, we can create arrays by using new operat
 Early (or static) binding refers to compile time binding and Late (or dynamic) binding refers to runtime binding (for example when you use reflection).
 
 ### What is the default access modifier in a class?
-### How many instances can be created for an abstract class?
+## How many instances can be created for an abstract class?
+- Abstract Class is Half Define Class. 
+- Abstract class not allowed to create an Instance (Object). 
+- So, we can not create any instance then answer is 0. There are no objects for abstract class.
+## Define Garbage Collection. How does it work?
+- Garbage collection in Java is the process by which Java programs perform automatic memory management. 
+- Java programs compile to bytecode that can be run on a Java Virtual Machine, or JVM for short. 
+- When Java programs run on the JVM, objects are created on the heap, which is a portion of memory dedicated to the program. 
+- Eventually, some objects will no longer be needed. The garbage collector finds these unused objects and deletes them to free up memory.
 
-### Define Garbage Collection. How does it work?
+- Java garbage collection is an automatic process. Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects. 
+
 ### Define Manipulators
 ### What do you mean by finally block?
 ### What is a final variable?

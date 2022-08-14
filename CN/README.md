@@ -1,33 +1,8 @@
-## Data Flow
-### Simplex Mode 
-- The communication is unidirectional, as on a one-way street. 
-- Only one of the two devices on a link can transmit; the other can only receive.
-- Keyboards and traditional monitors are examples of simplex devices.
+## Network
+- Computer Network is a group of computers connected with each other through wires, optical fibres or optical links so that various devices can interact with each other through a network.
+- The aim of the computer network is the sharing of resources among various devices.
 
-### Half-Duplex Mode
-- Each station can both transmit and receive, but not at the same time. 
-- When one device is sending, the other can only receive, and vice versa.
-- The half-duplex mode is like a one-lane road with traffic allowed in both directions. 
-- Walkie-talkies is an example of half-duplex systems
-
-### Full-Duplex Mode 
-- Both stations can transmit and receive simultaneously.
-- The full-duplex mode is like a two-way street with traffic flowing in both directions at the same time. 
-- In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
-- This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
-
-## Peer-to-Peer Network
-- This type of network model forms a small environment of up to 10 computers by linking them together with equal privilege and responsibilities for data processing without any dedicated server.
-
-## Client Server Network
-- This is a client-server based network model that enables clients to access the resources like audios, videos from the Server. 
-- Clients are all the computers or end users that communicate with each other through a server. 
-- The Server is the central computer or central controller that makes a response to the clients ‘request and secures, manages the computer network.
-
-## Hybrid Network
-This network model is the combined architecture of the network models defined above.
-
-## Components of Computer Network
+## Components of Computer Networks
 - **NIC**: Netowrk Interface Card (NIC) is a physical network interface defined as the hardware component that enables a computer to connect to a network. It is used in both wired and wireless connections.
 
 - **Hub**: A computer hub is a basic type of wired network device by which multiple connected computers can communicate via broadcast communication.
@@ -40,10 +15,54 @@ This network model is the combined architecture of the network models defined ab
 
 - **Cables and Connectors**: Cable is a transmission media used for transmitting digital singals. Optical-Fibre Cable, Co-axial cable, and Twisted Pair Cable are the three types of cable used for transmission of digital signals.
 
+## Types of Computer Network
+- Peer-to-Peer Architecture
+- Client/Server Network
+
+## Peer-to-Peer Network
+- This type of network model forms a small environment of up to 10 computers by linking them together with equal privilege and responsibilities for data processing without any dedicated server.
+
+## Client Server Network
+- This is a client-server based network model that enables clients to access the resources like audios, videos from the Server. 
+- Clients are all the computers or end users that communicate with each other through a server. 
+- The Server is the central computer or central controller that makes a response to the clients ‘request and secures, manages the computer network.
+
+## Types of Computer Networks ✅
+- PAN (Personal Area Network)
+- LAN (Local Area Network)
+- MAN (Metropolitan Area Network)
+- WAN (Wide Area Network)
+
+## PAN (Personal Area Network)
+This network is spanned for personal use of computing devices (mobile phones, laptops, media player, and play stations), arranged within a person, typically within a range of 10 meters such as Bluetooth, Wi-Fi, USB, etc., and covers an area of 30 feet.
+
+## LAN (Local Area Network)
+This network is a connection of two or more personal computers spanned in a small area such as building, office through a communication medium such as twisted pair cable, coaxial cable, etc.
+
+### MAN (Metropolitan Area Network)
+This network is inter-connection of different LANs, covers a larger geographic area, uses between banks, and colleges in a city and airline reservation through a telephone exchange line.
+
+### WAN (Wide Area Network)
+This network spans over a large geographical area through a telephonic line, fiber optic cable or satellite links used in the sectors of Business, Government, and Education. The Internet is a broad network in the world.
+
+## Internetworking
+An interconnection between public, private, commercial, industrial, or government computer networks can be defined as internetworking.
+
+## Types of Internetwork
+- **Extranet:** 
+   - An extranet is a communication network based on the internet protocol such as Transmission Control protocol and internet protocol. 
+   - It is used for information sharing. The access to the extranet is restricted to only those users who have login credentials. 
+   - An extranet is the lowest level of internetworking. 
+   - It can be categorized as MAN, WAN or other computer networks. An extranet cannot have a single LAN, atleast it must have one connection to the external network.
+
+- **Intranet:**
+   - An intranet is a private network based on the internet protocol such as Transmission Control protocol and internet protocol. 
+   - An intranet belongs to an organization which is only accessible by the organization's employee or members
+
 ## Topologies
 A Network Topology is the arrangement with which computer systems or network devices are connected to each other. 
 
-## Types of Topologies
+## Types of Topologies ✅
 ### Bus Topology
 - The bus topology is designed in such a way that all the stations are connected through a single cable known as a backbone cable.
 - Each node is connected to the backbone cable by drop cable or directly connected to the backbone cable.
@@ -53,7 +72,7 @@ A Network Topology is the arrangement with which computer systems or network dev
 
 ### Star Topology
 - Star Topology is an arrangement of the network in which every node is connected to the central hub, switch or a central computer.
-- The central computer is known as a server, and the peripherical devices attached to the server are known as clients.
+- The central computer is known as a server, and the peripherial devices attached to the server are known as clients.
 - Coaxial cable or RJ-45 cables are used to connect the computers.
 - Hub or Switches are mainly used as connection devices in a physical star topology.
 
@@ -65,13 +84,13 @@ A Network Topology is the arrangement with which computer systems or network dev
 - It has no terminated ends.
 - The data in a ring topology flow in a clockwise direction
 - The most common access method of the ring topology is token passing
-   - Token passing: is a network access method in which token is passed from one node to another node
-   - Token: is a frame that circulates around the network.
+   - **Token passing:** is a network access method in which token is passed from one node to another node
+   - **Token:** is a frame that circulates around the network.
 
 ### Mesh Topology
 - Mesh technology is an arrangement of the network in which computers are interconnected with each other through various redundant connection
 - There are multiple paths from one computer to another computer
-- It does not contain the switch, hub or any central computer which acts as a central part of communication
+- It does not contain the switch, hub or any central computer which acts as a central part of communication.
 - The internet is an example of the mesh technology
 - Mesh topology is mainly used for WAN implementations where communication failures are a critical concern.
 - Mesh topology is mainly used for wireless networks.
@@ -81,34 +100,53 @@ Mesh Topology is divided into two categories:
 - **Partial Mesh Topology:** Not all but certain computers are connected to those computers with which they can communicate frequently.
 
 ### Tree Topology
-
-
-
+- Tree topology combines the characteristics of bus topology and star topology.
+- A tree topology is a type of structure in which all the computers are connected with each other in hierarchical fashion.
+- The top-most node in tree topology is known as a root node, and all other nodes are the descendants of the root node.
+- There is only one path exists between two nodes for the data transmission. Thus, it forms a parent-child hierarchy.
 
 ### Hybrid Topology
+- The combination of various different topologies is known as Hybrid topology.
+- A Hybrid topology is a connection between different links and nodes to transfer the data.
+- When two or more different topologies are combined together is termed as Hybrid topology and if similar topologies are connected with each other will not result in Hybrid topology. 
+- For example, if there exist a ring topology in one branch of SBI bank and bus topology in another branch of SBI bank, connecting these two topologies will result in Hybrid topology.
 
+## Transmission Modes
+The way in which data is transmitted from one device to another device is known as transmission mode.
 
-## Types of Networks
-### LAN (Local Area Network)
-This network is a connection of two or more personal computers spanned in a small area such as building, office through a communication medium such as twisted pair cable, coaxial cable, etc.
+- Simplex Mode
+- Half-Duplex Mode
+- Full-Duplex Mode
+## Simplex Mode 
+- The communication is unidirectional, as on a one-way street. 
+- Only one of the two devices on a link can transmit; the other can only receive.
+- Keyboards and traditional monitors are examples of simplex devices.
 
-### PAN (Personal Area Network)
-This network is spanned for personal use of computing devices (mobile phones, laptops, media player, and play stations), arranged within a person, typically within a range of 10 meters such as Bluetooth, Wi-Fi, USB, etc., and covers an area of 30 feet.
+## Half-Duplex Mode
+- Each station can both transmit and receive, but not at the same time. 
+- When one device is sending, the other can only receive, and vice versa.
+- The half-duplex mode is like a one-lane road with traffic allowed in both directions. 
+- Walkie-talkies is an example of half-duplex systems
 
-### MAN (Metropolitan Area Network)
-This network is inter-connection of different LANs, covers a larger geographic area, uses between banks, and colleges in a city and airline reservation through a telephone exchange line.
+## Full-Duplex Mode 
+- Both stations can transmit and receive simultaneously.
+- The full-duplex mode is like a two-way street with traffic flowing in both directions at the same time. 
+- In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
+- This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
 
-### WAN (Wide Area Network)
-This network spans over a large geographical area through a telephonic line, fiber optic cable or satellite links used in the sectors of Business, Government, and Education. The Internet is a broad network in the world.
-
+## OSI Model
+- OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer.
+- It consists of seven layers, and each layer performs a particular network function.
+- OSI model divides the whole task into seven smaller and manageable tasks. Each layer is assigned a particular task.
+- Each layer is self-contained, so that task assigned to each layer can be performed independently.
 ## OSI Layers
-- Physical Layer
-- Data Link Layer
-- Network Layer
-- Transport Layer
-- Session Layer
-- Presentation Layer
-- Application Layer
+- Physical Layer {Responsibility of the Network}
+- Data Link Layer {Responsibility of the Network}
+- Network Layer {Responsibility of the Network}
+- Transport Layer {Responsibility of the Host}
+- Session Layer {Responsibility of the Host}
+- Presentation Layer {Responsibility of the Host}
+- Application Layer {Responsibility of the Host}
 
 ## Summary of Layers
 - **Physical Layer:** It provides a physical medium through which bits are transmitted
@@ -126,6 +164,10 @@ This network spans over a large geographical area through a telephonic line, fib
 - **Transport Layer:**
 - **Application Layer:**
 
+**Network Layer** contains ICMP, IGMP, IP, ARP, RARP <br/>
+**Transport Layer** contains TCP and UDP <br/>
+**Application Layer** SMTP, FTP, TELNET, DNS, SNMP etc.
+
 ## Difference between OSI and TCP/IP
 |OSI | TCP/IP |
 | -- |-------|
@@ -133,13 +175,30 @@ This network spans over a large geographical area through a telephonic line, fib
 | Fixed boundaries and functionality for each layer | Flexible architecture with no strict boundaries between layers |
 | Low Reliability	| High Reliability |
 
+## Transmission Impairment
+- When the received signal is not identical to the transmitted one due to the transmission impairment. 
+- The quality of the signals will get destroyed due to transmission impairment.
+## Causes of Transmission Impairment
+- **Attenuation:** Attenuation means the loss of energy, i.e., the strength of the signal decreases with increasing the distance which causes the loss of energy.
+- **Distortion:** Distortion occurs when there is a change in the shape of the signal. 
+- **Noise:** When data is travelled over a transmission medium, some unwanted signal is added to it which creates the noise.
+
 ## IPv4 Address
 - An IP address is a 32-bit dynamic address of a node in the network. 
 - An IPv4 address has 4 octets of 8-bit each with each number with a value up to 255.
 - IPv4 classes are differentiated based on the number of hosts it supports on the network. 
 - There are five types of IPv4 classes and are based on the first octet of IP addresses which are classified as Class A, B, C, D, or E
 
-## HTTP and HTTPS protocol
+## IPv4 vs IPv6 ✅
+| IPv4 | IPv6 |
+| ---- | ---- |
+| IPv4 has an address length of 32-bit represented in decimal format. | IPv6 has a 128-bit address length represented in hexadecimal format. |
+| It supports Manual and DHCP configuration. | It supports auto-configuration and renumbering configuration. |
+| IPv4 is being used as less secure protocol, as its security section is dependent on the application | IPv6 has its inbuilt security feature named as IPSEC (Internet Protocol Security) which provide additional security feature along with the security provided or implemented at application level. |
+| IPv4 does not provide Encryption and Authentication facilities. | IPv6 provides both Encryption and Authentication facilities. |
+| 	In IPv4, the Request header is not fixed and it may be between of 20-60 bytes in size. | In IPv6, the Request header is of fixed size, i.e., 40 bytes. |
+
+## HTTP and HTTPS protocol ✅
 - HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information can be transmitted on the World Wide Web (WWW).  
 - It helps the web browsers and web servers for communication. 
 - It is a ‘stateless protocol’ where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
@@ -147,26 +206,41 @@ This network spans over a large geographical area through a telephonic line, fib
 - HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. 
 - It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default
 
+## "This Site Can't Be Reached" ✅
+- Restart Internet Connection
+- Disable your firewall and antivirus
+- Clear your browser cache
+- Flush your DNS cache
+- Change your DNS servers
 ## SMTP Protocol
 - SMTP is the Simple Mail Transfer Protocol. 
 - SMTP sets the rule for communication between servers. 
 - This set of rules helps the software to transmit emails over the internet. - It supports both End-to-End and Store-and-Forward methods. 
 - It is in always-listening mode on port 25
 
-## DNS
+## DNS ✅
 - DNS is the Domain Name System. 
 - It is considered as the devices/services directory of the Internet. 
 - It is a decentralized and hierarchical naming system for devices/services connected to the Internet. 
 - It translates the domain names to their corresponding IPs.
 
-## Router vs Gateway
+## Router vs Gateway ✅
 - Router is a networking device used for connecting two or more network segments. 
 - It directs the traffic in the network. 
 - It transfers information and data like web pages, emails, images, videos, etc. from source to destination in the form of packets. 
 - It operates at the network layer. 
 - The gateways are also used to route and regulate the network traffic but, they can also send data between two dissimilar networks while a router can only send data to similar networks
 
-## Difference between TCP and UDP
+## Router vs Bridge ✅
+| Router | Bridge |
+| ------ | ------ |
+| Operates in network layer | Operates in data link layer |
+| Data is stored and sent in the form of packets | Data is not stored and sent in the form of packets |
+| Router is mainly used by LAN as well as MAN for connection | Bridge connects two different LANs |
+| Routers works on more than single broadcast domain | Bridge works on single broadcast domain |
+| Routers focuses on protocol address | Bridge focuses on MAC address |
+
+## Difference between TCP and UDP ✅
 | TCP | UDP |
 |-----|-----|
 | TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data. | UDP is the Datagram-oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast types of network transmission. |
@@ -209,36 +283,38 @@ The client requests the server for a file. When the server receives a request fo
 - It is also called the physical address embedded with Network Interface Card (NIC) used at the Data Link Layer. 
 - NIC is a hardware component in the networking device using which a device can connect to the network
 
-## Subnet
+## Subnet ✅
 - A subnet is a network inside a network achieved by the process called subnetting which helps divide a network into subnets. 
 - It is used for getting a higher routing efficiency and enhances the security of the network. 
 - It reduces the time to extract the host address from the routing table.
 
-## Hub vs Switch
-| Operates at Physical Layer | Operates at Data Link Layer |
-| -------------------------- | --------------------------- |
-| Hald Duplex Transmission Mode | Full Duplex Transmission Mode |
-| Less efficient as there is no way to avoid collisions when more than one nodes sends the packets at the same time | More efficient as the collisions can be avoided or reduced as compared to Hub |
+## MAC Address vs IP Address
+| MAC Address | IP Address |
+| ----------- | ---------- |
+| MAC Address stands for Media Access Control Address. | IP Address stands for Internet Protocol Address. |
+| A device attached with MAC Address can retrieve by ARP protocol. | A device attached with IP Address can retrieve by RARP protocol. |
+| MAC Address is used to ensure the physical address of a computer. | IP Address is the logical address of the computer. |
+| MAC Address operates in the data link layer. | IP Address operates in the network layer. |
+| No classes are used for MAC addressing. | IPv4 uses A, B, C, D, and E classes for IP addressing. |
+| MAC addresses can be used for broadcasting. | The IP address can be used for broadcasting or multicasting. |
+| MAC address is hardware oriented. | IP address is software oriented. |
 
-## Firewall
-- A firewall is a network security device; it is a protective layer for the server that monitors and filters all the incoming and outgoing network traffic. It uses a set of rules to determine whether to allow or block a specific network traffic. 
-- Firewalls can prevent unauthorized use before reaching the servers. Firewalls can be hardware or software-based.
-
-## Types of Firewalls:
-- **Packet Filters (Stateless Firewall)** − In the packet filters, if a packet matches then the packet filters set of rules and filters will drop or accept it.
-
-- **Stateful firewall filters** − It is also known as a network firewall; this filter maintains a record of all the connections passing through. It can determine if a packet is either the start of a new connection or a part of an existing connection or is an invalid packet.
-
-- **Application firewall** − A web application firewall is used for HTTP applications. There are sets of rules that are applied to monitor or block data packets from HTTP network traffic. 
-
-## Unicasting vs Multicasting vs Broadcasting
+## Hub vs Switch ✅
+| Hub | Switch |
+| --- | ------ |
+| Operates on Physical Layer of OSI Model | Operates on Data Link Layer of OSI Model |
+| Hub is a broadcast type transmission. | While switch is a Unicast, multicast and broadcast type transmission. |
+| Hub is a half duplex transmission mode. | While switch is a full duplex transmission mode. |
+| Hub cannot be used as a repeater. | While switch can be used as a repeater. |
+| Hacking of systems attached to hub is complex. | Hacking of systems attached to switch is little easy. |
+## Unicasting vs Multicasting vs Broadcasting ✅
 - **Unicasting:** If the message is sent to a single node from the source then it is known as unicasting. This is commonly used in networks to establish a new connection
 
 - **Multicasting:** If the message is sent to a subset of nodes from the source then it is known as multicasting. Used to send the same data to multiple receivers
 
 **Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
 
-## google.com
+## google.com ✅
 - The browser checks the cache first if the content is fresh and present in cache display the same.
 - If not, the browser checks if the IP of the URL is present in the cache (browser and OS) if not then request the OS to do a DNS lookup using UDP to get the corresponding IP address of the URL from the DNS server to establish a new TCP connection.
 - A new TCP connection is set between the browser and the server using three-way handshaking.
@@ -248,7 +324,7 @@ The client requests the server for a file. When the server receives a request fo
 - If the response data is cacheable then browsers cache the same.
 Browser decodes the response and renders the content
 
-## Domain Name System (DNS)
+## Domain Name System (DNS) ✅
 Domain Name System (DNS)
 The Domain Name System (DNS) works on Client-Server Model. It used UDP protocol for transport layer communication. DNS uses hierarchical domain-based naming scheme.
 

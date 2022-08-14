@@ -92,7 +92,7 @@ Process Table is a table that contains *Process ID* and the reference to the cor
 
     A stack pointer register keeps the tracks of the top of the stack i.e., how much of the stack area using by the current process, and it is modified each time a value is “pushed” onto the stack. If the stack pointer meets the heap pointer the available free memory is depleted.    
 
-## Process vs Thread
+## Process vs Thread ✅
 | Process | Thread |
 | ------- | ------ |
 | Process means any program is in execution | Thread means a segment of a process |
@@ -116,7 +116,7 @@ The process scheduling is the activity of the process manager that handles the r
 3. **Device Queue** <br/>
     The processes which are blocked due to unavailability of an I/O device constitute this queue.
     
-## Scheduler
+## Scheduler ✅
 - Schedulers are special system software which handle process scheduling in various ways. 
 - Their main task is to select the jobs to be submitted into the system and to decide which process to run.
 
@@ -128,12 +128,12 @@ The process scheduling is the activity of the process manager that handles the r
 | It is almost absent or minimal in time sharing system | It is also minimal in time sharing system | It is a part of Time sharing systems. |
 | It selects processes from pool and loads them into memory for execution | It selects those processes which are ready to execute | It can re-introduce the process into memory and execution can be continued. |
 
-## Dispatcher
+## Dispatcher ✅
 - A dispatcher is a special program which comes into play after the scheduler. 
 - When the scheduler completes its job of selecting a process, it is the dispatcher which takes that process to the desired state/queue. 
 - The dispatcher is the module that gives a process control over the CPU after it has been selected by the short-term scheduler. 
 
-## Scheduler and Dispatcher
+## Scheduler and Dispatcher ✅
 | Scheduler | Dispatcher |
 | --------- | ---------- |
 | Scheduler is something which selects a process among various processes | Dispatcher is a module that gives control of CPU to the process selected by short term scheduler |
@@ -151,7 +151,7 @@ The process scheduling is the activity of the process manager that handles the r
 - Minimum response time
 - Minimum waiting time
 
-## Preemtive Scheduling vs Non-Preemptive Scheduling
+## Preemtive Scheduling vs Non-Preemptive Scheduling ✅
 | Preemptive Scheduling | Non-Preemptive Scheduling |
 | --------------------- | ------------------------- |
 | In this resources(CPU Cycle) are allocated to a process for a limited time. | Once resources(CPU Cycle) are allocated to a process, the process holds it till it completes its burst time or switches to waiting state. |
@@ -163,7 +163,7 @@ The process scheduling is the activity of the process manager that handles the r
 | Preemptive scheduling response time is less. | Non-preemptive scheduling response time is high. |
 | Examples of preemptive scheduling are Round Robin and Shortest Remaining Time First. | Examples of non-preemptive scheduling are First Come First Serve and Shortest Job First. |
 
-## Types of Scheduling Algorithms
+## Types of Scheduling Algorithms ✅
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF)
 - Shortest Remaining Time First (SRTF)
@@ -184,7 +184,7 @@ The process scheduling is the activity of the process manager that handles the r
 - Best approach to minimize waiting time.
 - Easy to implement in Batch systems where required CPU time is known in advance.
 - Impossible to implement in interactive systems where required CPU time is not known.
-- The processer should know in advance how much time process will take.
+- The processor should know in advance how much time process will take.
 
 ## Shortest Remaining Time First (SRTF)
 - The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
@@ -214,8 +214,7 @@ But on the other hand disadvantage of being inflexible.
 - Processes with same priority are executed on first come first served basis.
 - Priority can be decided based on memory requirements, time requirements or any other resource requirement.
 
-
-## Context Switching
+## Context Switching ✅
 - Context Switching is basically a process of saving the context of one process and loading the context of another process.
 - It is one of the cost-effective and time-saving measures executed by CPU because it allows multiple processes to share a single CPU.
 - Therefore, it is considered an important part of a modern OS. 
@@ -258,25 +257,25 @@ But on the other hand disadvantage of being inflexible.
     
 ## Process Synchronization
 
-## Deadlock
-Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
+## Deadlock ✅
+- Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
 
-Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. 
+- Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. 
 
-A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). 
+- A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). 
 
-For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. 
+- For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. 
 
-## Necessary Conditions of Deadlock
+## Necessary Conditions of Deadlock ✅
 - **Mutual Exclusion:** Two or more resources are non-shareable (Only one process can use at a time) 
 - **Hold and Wait:** A process is holding at least one resource and waiting for resources. 
 - **No Preemption:** A resource cannot be taken from a process unless the process releases the resource. 
 - **Circular Wait:** A set of processes are waiting for each other in circular form. 
 
-## Effects of Deadlock
-If the operating system has a deadlock prevention or detection system in place, this will have a negative impact on performance (slow the system down) because whenever a process or thread requests a resource, the system will have to check whether granting this request could cause a potential deadlock situation.
+## Effects of Deadlock ✅
+- If the operating system has a deadlock prevention or detection system in place, this will have a negative impact on performance (slow the system down) because whenever a process or thread requests a resource, the system will have to check whether granting this request could cause a potential deadlock situation.
 
-## Methods for Handling Deadlock
+## Methods for Handling Deadlock ✅
 1. **Prevention or Avoidance:** Make sure atleast one condition should not meet
     - Mutual Exclusion
     - Hold & Wait
@@ -290,7 +289,7 @@ If the operating system has a deadlock prevention or detection system in place, 
 
 3. **Ignorance**
 
-## Logical vs Physical Address Space
+## Logical vs Physical Address Space ✅ 
 | Logical Address | Physical Address |
 | --------------- | ---------------- |
 | Logical Address Space is set of all logical addresses generated by CPU in reference to a program | Physical Address is set of all physical addresses mapped to the corresponding logical addresses. |
@@ -320,9 +319,6 @@ Swapping is also known as a technique for memory compaction.
 ## Paging vs Segmentation
 
 
-
-## Thrasing
-
 ## Starvation
 - It is generally a problem that usually occurs when a process has not been able to get the required resources it needs for progress with its execution for a long period of time. 
 - In this condition, low priority processes get blocked and only high priority processes proceed towards completion because of which low priority processes suffer from lack of resources. 
@@ -337,14 +333,14 @@ Swapping is also known as a technique for memory compaction.
 
 
 
-## Semaphore
+## Semaphore ✅
 Semaphore is defined as an integer variable which is used to solve the problem of the critical section in process synchronization. In semaphore, we use two types of atomic operations, and that operations are wait and signal.
 
 The definitions of wait and signal are as follows:
 - **Wait:** - In wait operation, the argument ‘S’ value is decrement by 1 if the value of the ‘S’ variable is positive. If the value of the argument variable ‘S’ is zero or negative, no operation is performed.
 - **Signal:** - In Signal atomic operation, the value of the argument variable ‘S’ is incremented.
 
-## Types of Semaphores
+## Types of Semaphores ✅
 - **Counting Semaphores:** is defined as a semaphore that contains integer values, and these values have an unrestricted value domain. A counting semaphore is helpful to coordinate the resource access, which includes multiple instances.
 - **Binary Semaphores:** are also called Mutex lock. There are two values of binary semaphores, which are 0 and 1. The value of binary semaphore is initialized to 1. We use binary semaphore to remove the problem of the critical section with numerous processes.
 
@@ -355,7 +351,7 @@ The definitions of wait and signal are as follows:
 | In counting semaphore, there are more than one slots.	 | In the binary semaphore, there is only one slot. |
 | The counting process offers a set of processes. | Binary semaphore contains mutual exclusion mechanism. |
 
-### Difference between Semaphore and Mutex
+### Difference between Semaphore and Mutex ✅
 | Semaphore | Mutex |
 | --------- | ----- |
 | It is an integer variable. | It is an object. |
@@ -398,7 +394,7 @@ Fragmentation is an unwanted problem in the operating system in which the proces
 
 ## Segmentation
 
-## Paging vs Segmentation
+## Paging vs Segmentation ✅
 | Paging | Segmentation |
 | ------ | ------------ |
 | In paging, the program is divided into fixed or mounted size pages. | In segmentation, the program is divided into variable size sections. |
@@ -420,7 +416,7 @@ Goal of Memory Management
 To keep multiple processes in memory to allow multiprogramming.
 
 
-## Virtual Memory
+## Virtual Memory ✅
 - It is a memory management technique feature of OS that creates the illusion to users of a very large (main) memory. 
 - It is simply space where a greater number of programs can be stored by themselves in the form of pages. 
 - It enables us to increase the use of physical memory by using a disk and also allows us to have memory protection. 
@@ -430,7 +426,7 @@ To keep multiple processes in memory to allow multiprogramming.
 - It frees up RAM by swapping data that has not been used recently over to a storage device, such as a hard drive or solid-state drive (SSD). 
 - It is important for improving system performance, multitasking and using large programs.
 
-## Working of Virtual Memory
+## Working of Virtual Memory ✅
 - Virtual memory uses both hardware and software to operate. 
 - When an application is in use, data from that program is stored in a physical address using RAM. 
 - A memory management unit (MMU) maps the address to RAM and automatically translates addresses. 
@@ -458,12 +454,12 @@ To keep multiple processes in memory to allow multiprogramming.
 - Lesser Hard Disk Space
 - Reduces System Stability
 
-## Demand Paging
+## Demand Paging ✅
 - Demand paging is a process that keeps pages of a process that are infrequently used in secondary memory, and pulls them only when required to satisfy the demand. <br/>
 - It is also called lazy swapper because the swapping of pages is done only when the CPU requires it. 
 - Example: Imagine that you are scrolling through an e-commerce platform and like some clothes. However, since you don't have space in your wardrobe, you save it in your wishlist and decide to buy them only when needed.
 
-## Pure Demand Paging
+## Pure Demand Paging ✅
 - There are cases when no pages are loaded into the memory initially, pages are only loaded when demanded by the process by generating page faults. 
 - This is called Pure Demand Paging. In pure demand paging, even a single page is not loaded into memory initially. 
 - Hence pure demand paging causes a page fault.
@@ -475,7 +471,7 @@ To keep multiple processes in memory to allow multiprogramming.
 ## Page Fault
 A Page Fault occurs when a program running in CPU tries to access a page that is in the address space of that program, but the requested page is currently not loaded into the main physical memory, the RAM of the system.
 
-## Swap Space
+## Swap Space ✅
 Section of hard disk used for implementing virtual memory is called swap space.
 
 ## Page Replacement Algorithm
@@ -523,18 +519,19 @@ Belady's Anomaly refers to the phenomena where increasing the number of frames i
 ## Is performance of virtual memory and physical memory same?
 The key difference between virtual memory and physical memory is that RAM is very much faster than virtual memory. So a system with 2 GB of physical RAM and 2 GB of virtual memory will not offer the same performance as a similar system with 4 GB of physical RAM.
 
-## Thrasing
-- In multiprogramming, there can be a scenario when the system spends most of its time shuttling pages between the main memory and the secondary memory due to frequent page faults. 
-- This behavior is known as thrashing.
-- A process is said to be thrashing if the CPU spends more time serving page faults than executing the pages. 
-- This leads to low CPU utilization and the Operating System in return tries to increase the degree of multiprogramming.
+## Thrasing ✅
+- It is generally a situation where the CPU performs less productive work and more swapping or paging work. 
+- It spends more time swapping or paging activities rather than its execution. 
+- By evaluating the level of CPU utilization, a system can detect thrashing. 
+- It occurs when the process does not have enough pages due to which the page-fault rate is increased. 
+- It inhibits much application-level processing that causes computer performance to degrade or collapse
 
-## Causes of Thrasing
+## Causes of Thrasing ✅
 - High degree of multiprogramming
 - Less number of frames compared to the processes required.
 - The process scheduling scheme which swaps in more processes when CPU utilization is low.
 
-## How to Overcome Thrasing?
+## How to Overcome Thrasing? ✅
 - The thrashing effect can be prevented by allocating each process as many frames as it requires during run. 
 - To find out the number of frames required by a process, we can use the locality model. A locality is a set of pages that are actively used together. 
 - The locality model says that during execution, a process shifts from one locality to another, and these localities may overlap. We have to provide enough frames to a process to stop page faulting in the current locality.
@@ -544,7 +541,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Frame rate is the frequency in which a consecutive series of frames or images can appear on a display panel
 - It is also known as *burst rate* or *update rate*
 
-## What is RAID structure in OS? What are the different levels of RAID configuration?
+## What is RAID structure in OS? What are the different levels of RAID configuration? ✅
 - RAID (Redundant Arrays of Independent Disks) is a method used to store data on Multiple hard disks therefore it is considered as data storage virtualization technology that combines multiple hard disks. 
 - It simply balances data protection, system performance, storage space, etc. 
 - It is used to improve the overall performance and reliability of data storage. 
@@ -565,19 +562,13 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - It also takes care of execution, monitoring, and all-controlling processes. 
 - It also occupies less memory and consumes fewer resources
 
-## Thrasing
-- It is generally a situation where the CPU performs less productive work and more swapping or paging work. 
-- It spends more time swapping or paging activities rather than its execution. 
-- By evaluating the level of CPU utilization, a system can detect thrashing. 
-- It occurs when the process does not have enough pages due to which the page-fault rate is increased. 
-- It inhibits much application-level processing that causes computer performance to degrade or collapse
 
 ## Multiprogramming
 - It it is the coordination of execution of various programs simultaneously on a single processor (CPU). 
 - The main objective of multiprogramming is to have at least some processes running at all times. 
 - It simply improves the utilization of the CPU as it organizes many jobs where the CPU always has one to execute. 
 
-## Multitasking and Multiprocessing
+## Multitasking and Multiprocessing ✅
 | Multitasking | Multiprocessing |
 | -------------- | ----------------- |
 | It is a system that allows more efficient use of computer hardware. This system works on more than one task at one time by rapidly switching between various tasks. These systems are also known as time-sharing systems.  |  It is a system that allows multiple or various processors in a computer to process two or more different portions of the same program simultaneously. It is used to complete more work in a shorter period of time. |
@@ -592,11 +583,11 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - It also allows communication or exchange of information between two different processes on the same or different machines. 
 - It is mostly used in client-server-based systems. 
 
-## Zombie Process
+## Zombie Process ✅
 - Zombie process  referred to as a defunct process, is basically a process that is terminated or completed but the whole process control block is not cleaned up from the main memory because it still has an entry in the process table to report to its parent process. 
 - It does not consume any of the resources and is dead, but it still exists. It also shows that resources are held by process and are not free
 
-## Kernel
+## Kernel ✅
 - The kernel is basically a computer program usually considered as a central component or module of OS. 
 - It is responsible for handling, managing, and controlling all operations of computer systems and hardware. 
 - Whenever the system starts, the kernel is loaded first and remains in the main memory. 
@@ -621,7 +612,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Belady’s Anomaly is a phenomenon in which if we increase the number of frames in memory, then the number of page faults also increases. 
 - It is generally experienced when we use FIFO (First in First out) page replacement algorithm. 
 
-## Spooling
+## Spooling ✅
 - Spooling is referred to as putting data of various I/O jobs in a buffer. 
 - It is used for mediation between a computer application and a slow peripheral. 
 - It is very useful and important because devices access or acquire data at different rates. 
