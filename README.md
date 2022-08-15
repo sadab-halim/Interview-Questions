@@ -186,7 +186,7 @@ Single, Multilevel, & hierarchal inheritance all together construct a hybrid inh
 Multiple inheritance where derived class will extend from multiple base classes.
 
 ## Limitations of OOPS
-- The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
+- The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slowe execution of the programme.
 - We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
 
 ## What is Class? <br/>
@@ -439,7 +439,7 @@ int main(){
 ```
 - **Parameterized Constructor:** It is possible to pass arguments to constructors. Typically, these arguments help initialize an object when it is created. 
 
-To create a parameterized constructor, simply add parameters to it the way you would to any other function. 
+To create a parameterized constructor, simply add parameters to it the way we would to any other function. 
 
 When we define the constructor’s body, we the parameters to initialize the object. 
 
@@ -541,7 +541,7 @@ int main(){
 | Shallow Copy stores the references of objects to the original memory address | Deep copy stores copies of the object’s value |
 | Shallow Copy reflects changes made to the new/copied object in the original object | Deep copy doesn’t reflect changes made to the new/copied object in the original object |
 | Shallow Copy stores the copy of the original object and points the references to the objects | Deep copy stores the copy of the original object and recursively copies the objects as well |
-| Shallow copy is faster | Deep copy is comparatively slower |
+| Shallow copy is faster | Deep copy is comparatively slowe |
 
 ### Copy Constructor vs Assignment Operator
 | Copy Constructor | Assignment Operator |
@@ -638,7 +638,7 @@ A destructor function is called automatically when the object goes out of scope:
 Destructors with the access modifier as private are known as Private Destructors. Whenever we want to prevent the destruction of an object, we can make the destructor private.
 
 ### What is the use of Private Destructor?
-Whenever we want to control the destruction of objects of a class, we make the destructor private. For dynamically created objects, it may happen that you pass a pointer to the object to a function and the function deletes the object. 
+Whenever we want to control the destruction of objects of a class, we make the destructor private. For dynamically created objects, it may happen that we pass a pointer to the object to a function and the function deletes the object. 
 
 If the object is referred after the function call, the reference will become dangling.
 
@@ -681,7 +681,7 @@ Student s1=new Student(); |
 | Class doesn't allocated memory when it is created | Object allocates memory when it is created |
 | There is only one way to define class in java using class keyword | There are many ways to create object in java such as new keyword, newInstance() method, clone() method, factory method and deserialization |
 
-### Important Keywords
+### Important Keywords ✅
 - **static keyword:** is mainly used for memory management. It can be used with variables, methods, blocks and nested classes. It is used to share the same variable or method of a given class. Basically, static is used for a constant variable or a method that is same for every instance of a class
 
 - **Virtual keyword:** is used to modify a method, property, or event declaration and allow for it to be overridden in a derived class.For example, this method can be overridden by any class that inherits it.
@@ -692,8 +692,8 @@ Student s1=new Student(); |
   - Abstract classes may or may not contain abstract methods, i.e., methods without a body ( public void get(); )
   - But, if a class has at least one abstract method, then the class must be declared abstract.
   - If a class is declared abstract, it cannot be instantiated.
-  - To use an abstract class, you have to inherit it from another class, provide implementations for the abstract methods in it.
-  - If we want to inherit an abstract class, you have to provide implementations to all the abstract methods in it.
+  - To use an abstract class, we have to inherit it from another class, provide implementations for the abstract methods in it.
+  - If we want to inherit an abstract class, we have to provide implementations to all the abstract methods in it.
 
   **Abstract Methods:** If we want a class to contain a particular method but we want the actual implementation of that method to be determined by child classes, we can declare the method in the parent class as an abstract.
   - The abstract keyword is used to declare the method as abstract.
@@ -725,6 +725,19 @@ Student s1=new Student(); |
 - **new keyword:**
 - **const keyword:**
 - **super keyword:**
+
+## Dangling Pointer ✅
+- The pointers pointing to a deallocated memory block are known as Dangling Pointers. 
+- This condition generates an error known as Dangling Pointer Problem. Dangling Pointer occurs when a pointer pointing to a variable goes out of scope or when an object/variable's memory gets deallocated.
+
+## Diamond Problem ✅
+- The diamond problem is a typical problem that is faced in multiple inheritance in Java. 
+- It is essentially an ambiguity that is arisen when there are two classes say B and C that inherit / are derived from a single class A, and there is another class D, that is a class derived from multiple inheritance and inherits from B as well as C.
+
+## Why Java is platform independent and JVM is platform dependent? ✅
+- JVM is platform dependent because it takes java byte code and generates byte code for the current operating system. 
+- So Java software is platform dependent but Java language is platform independent because different operating system have different JVMs.
+
 ## Features of OOPS
 - Polymorphism
 - Inheritance
@@ -785,12 +798,10 @@ It is also known as *Dynamic Method Dispatch* in Java.
 ### Why Do We Need Polymorphism?
 Polymorphism allows us to reuse code by creating one function that's usable for multiple uses. We can also make operators polymorphic and use them to add not only numbers but also combine strings. This saves time and allows for a more streamlined program.
 
-### Virtual Function
-- A virtual function is a member function in the base class that you redefine in a derived class. It is declared using the virtual keyword.
+### Virtual Function ✅
+- A virtual function is a member function in the base class that we redefine in a derived class. It is declared using the virtual keyword.
 
 - It is used to tell the compiler to perform dynamic linkage or late binding on the function.
-
-- There is a necessity to use the single pointer to refer to all the objects of the different classes. So, we create the pointer to the base class that refers to all the derived objects. But, when base class pointer contains the address of the derived class object, always executes the base class function. This issue can only be resolved by using the 'virtual' function.
 
 - When the function is made virtual, C++ determines which function is to be invoked at the runtime based on the type of the object pointed by the base class pointer.
 
@@ -842,6 +853,22 @@ Whenever a virtual function is called using a base class reference or pointer it
 
 - The main objective of the base class is to provide the traits to the derived classes and to create the base pointer used for achieving the runtime polymorphism.
 
+## Virtual Table ✅
+Vtable : It is a table that contains the memory addresses of all virtual functions of a class in the order in which they are declared in a class. This table is used to resolve function calls in dynamic/late binding manner. Every class that has virtual function will get its own Vtable.
+
+## Virtual Pointer ✅
+VPTR : After creating Vtable address of that table gets stored inside a pointer i.e. VPTR (Virtual Pointer). When you create an object of a class which contains virtual function then a hidden pointer gets created automatically in that object by the compiler. That pointer points to a virtual table of that particular class.
+
+**NOTE:** Vtable and VPTR gets created automatically by compiler to track the virtual function calls.
+
+## Friend Function ✅
+- A friend function in C++ is a function that is declared outside a class but is capable of accessing the private and protected members of the class. 
+
+- There could be situations in programming wherein we want two classes to share their members. 
+
+- These members may be data members, class functions or function templates. 
+
+- In such cases, we make the desired function, a friend to both these classes which will allow accessing private and protected data of members of the class.
 ## Inheritance
 The capability of a class to derive properties and characteristics from another class is called Inheritance.
 
@@ -990,7 +1017,7 @@ Role of Access Specifiers in Encapsulation:
 2. The member function which manipulates the data members should be labeled as public using the public access specifier
 
 Advantages:
-- It provides you the control over the data.
+- It provides we the control over the data.
 - It is a way to achieve data hiding
 - The encapsulate class is easy to test. So, it is better for unit testing.
 
@@ -1051,7 +1078,7 @@ When type of the object is determined at the compiled time, it is known as dynam
 ### Design an Online Chat
 
 ## Miscellaneous
-### C vs C++ vs Java
+### C vs C++ vs Java ✅
 | Metrics | C | C++ | Java |
 | ------- | - | --- | ---- |
 | Programming Paradigm | Procedural Language | Object Oriented Programming (OOP) | Pure Object Oriented |
@@ -1088,6 +1115,14 @@ When type of the object is determined at the compiled time, it is known as dynam
 |  Examples: C, FORTRAN, Pascal, Basic, etc. | Examples: C++, Java, Python, C#, etc.
  |
 
+## malloc and new ✅
+| malloc | new |
+| ------ | --- |
+| is a function | is an operator |
+| does not calls constructors | calls constructor |
+| Returns void * | Returns exact data type |
+| On failure, returns NULL | on failure, Throws bad_alloc exception |
+| size is calculated manually | size is calculated by compiler |
 ### Why Java is not a purely Object Oriented Language?
 Pure Object Oriented Language or Complete Object Oriented Language are Fully Object Oriented Language which supports or have features which treats everything inside program as objects. 
 
@@ -1115,13 +1150,13 @@ An array in Java is an object. In Java, we can create arrays by using new operat
 
 
 ### What is early and late binding?
-Early (or static) binding refers to compile time binding and Late (or dynamic) binding refers to runtime binding (for example when you use reflection).
+Early (or static) binding refers to compile time binding and Late (or dynamic) binding refers to runtime binding (for example when we use reflection).
 
 ### What is the default access modifier in a class?
 ## How many instances can be created for an abstract class?
 - Abstract Class is Half Define Class. 
 - Abstract class not allowed to create an Instance (Object). 
-- So, we can not create any instance then answer is 0. There are no objects for abstract class.
+- So, we can not create any instance then answe is 0. There are no objects for abstract class.
 ## Define Garbage Collection. How does it work?
 - Garbage collection in Java is the process by which Java programs perform automatic memory management. 
 - Java programs compile to bytecode that can be run on a Java Virtual Machine, or JVM for short. 
@@ -1131,7 +1166,7 @@ Early (or static) binding refers to compile time binding and Late (or dynamic) b
 - Java garbage collection is an automatic process. Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects. 
 
 ### Define Manipulators
-### What do you mean by finally block?
+### What do we mean by finally block?
 ### What is a final variable?
 ### What is meany by an exception?
 ### Is an error basically the same as an exception?
@@ -1336,7 +1371,7 @@ The process scheduling is the activity of the process manager that handles the r
 - The processor should know in advance how much time process will take.
 
 ## Shortest Remaining Time First (SRTF)
-- The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
+- The processor is allocated to the job closest to completion but it can be preempted by a newe ready job with shorter time to completion.
 - Impossible to implement in interactive systems where required CPU time is not known.
 - It is often used in batch environments where short jobs need to give preference.
 
@@ -1378,7 +1413,7 @@ But on the other hand disadvantage of being inflexible.
 - It is very helpful and important beacuse devices access or acquire data at different rates.
 - This operation also uses disk as a very large buffer and is capable of overlapping I/O operations for one task with processor operations for another task.
 
-## Thread
+## Thread ✅
 - Thread is an execution unit that consists of its own program counter, a stack, and a set of registers where the program counter mainly keeps track of which instruction to execute next, a set of registers mainly hold its current working variables, and a stack mainly contains the history of execution
 - Threads are also known as Lightweight processes. 
 - Threads are a popular way to improve the performance of an application through parallelism. 
@@ -1449,30 +1484,27 @@ But on the other hand disadvantage of being inflexible.
 | Logical address can be change | Physical address will not change |
 | Also called ad Virtual Address | Also called as Real Address |
 
-## What is Swapping ?
+## What is Swapping ? ✅
 Swapping is a mechanism in which a process can be swapped temporarily out of main memory (or move) to secondary storage (disk) and make that memory available to other processes. At some later time, the system swaps back the process from the secondary storage to main memory.
 
 Swapping is also known as a technique for memory compaction.
 
-## Paging
+## Paging ✅
 - Paging is a storage mechanism that allows OS to retrieve processes from the secondary storage into the main memory in the form of pages. 
 - In the Paging method, the main memory is divided into small fixed-size blocks of physical memory, which is called frames. 
 - The size of a frame should be kept the same as that of a page to have maximum utilization of the main memory and to avoid external fragmentation. - - Paging is used for faster access to data, and it is a logical concept.
 
-## Segmentation
+## Segmentation ✅
 - Segmentation is a technique of memory management. 
 - It is just like the Paging technique except the fact that in segmentation, the segments are of variable length but, in Paging, the pages are of fixed size. 
 - In segmentation, the memory is split into variable-length parts. Each part is known as segments. 
 - The information which is related to the segment is stored in a table which is called a segment table.
 
-## Paging vs Segmentation
-
-
-## Starvation
+## Starvation ✅
 - It is generally a problem that usually occurs when a process has not been able to get the required resources it needs for progress with its execution for a long period of time. 
 - In this condition, low priority processes get blocked and only high priority processes proceed towards completion because of which low priority processes suffer from lack of resources. 
 
-## Aging
+## Aging ✅`
 - It is a technique that is used to overcome the situation or problem of starvation. 
 - It simply increases the priority of processes that wait in the system for resources for a long period of time. 
 - It is considered the best technique to resolve the problem of starvation as it adds an aging factor to the priority of each and every request by various processes for resources. 
@@ -1599,14 +1631,14 @@ To keep multiple processes in memory to allow multiprogramming.
 - Increases effective use of CPU
 
 ## Disadvantages of Virtual Memory
-- Makes the system slower
+- Makes the system slowe
 - Lesser Hard Disk Space
 - Reduces System Stability
 
 ## Demand Paging ✅
 - Demand paging is a process that keeps pages of a process that are infrequently used in secondary memory, and pulls them only when required to satisfy the demand. <br/>
 - It is also called lazy swapper because the swapping of pages is done only when the CPU requires it. 
-- Example: Imagine that you are scrolling through an e-commerce platform and like some clothes. However, since you don't have space in your wardrobe, you save it in your wishlist and decide to buy them only when needed.
+- Example: Imagine that we are scrolling through an e-commerce platform and like some clothes. However, since we don't have space in we wardrobe, we save it in we wishlist and decide to buy them only when needed.
 
 ## Pure Demand Paging ✅
 - There are cases when no pages are loaded into the memory initially, pages are only loaded when demanded by the process by generating page faults. 
@@ -1709,7 +1741,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Real Time Operating System (RTOS) is an operating system that is used for real-time applications i.e., for those applications where data processing should be done in a fixed and small measure of time. 
 - It performs much better on tasks that are needed to be executed within a short time. 
 - It also takes care of execution, monitoring, and all-controlling processes. 
-- It also occupies less memory and consumes fewer resources
+- It also occupies less memory and consumes fewe resources
 
 
 ## Multiprogramming
@@ -1779,7 +1811,7 @@ A database is a collection of related data which represents some aspect of the r
 - It consists of a group of programs which manipulate the database. 
 - The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
 - In large systems, a DBMS helps users and other third-party software to store and retrieve data.
-- Database management systems were developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
+- Database management systems wee developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
 1.	Data redundancy and inconsistency
 2.	Difficulty in accessing data
 3.	Data isolation – multiple files and formats
@@ -1986,6 +2018,9 @@ Transaction is a single logical unit of work formed by a set of operations.
    - This is the last state in the life cycle of a transaction.
    - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
 
+## Transactions
+- A transaction is a collection of logically related operations which reads and possibly updates the various data items in the database. 
+- Usually, a transaction is initiated by a user program written in SQL
 ## ACID Properties ✅
 To ensure the consistency of the database, certain properties are followed by all the transactions occurring in the system. These properties are called as ACID Properties of a transaction.
 
@@ -2054,12 +2089,25 @@ then such a schedule is known as a Recoverable Schedule.
 Joins are the combination of related tuples from the two different relations or tables into a single type. 
 
 ## Types of Joins ✅
-- **Inner Join:** returns rows when there is a match in both the tables
-- **Left Join:** returns all rows from the left table, even if there are no matches in the right table.
-- **Right Join:** returns all rows from the right table, even if there are no matches in the left table.
-- **Full Join:** returns rows where there is a match in one of the tables
-- **Self Join:** is used to join a table to itself as if the table were two tables, temporarily remaining at least one table in the SQL statement.
-- **Cross Join:** returns the cartesian product of the sets of records from the two or more joined tables.
+- **Inner Join:**
+    - It takes all the records from both tables until and unless the conditions match. 
+    - It means this join will return only those common rows in both tables.
+
+- **Left Join:**
+    - The left join returns all the records from (left table) table one, whether the record in table 2 matches or not, according to the join condition. 
+    - The record, which matches their result set is the same as the inner join result, and all uncommon records from another table will result in null.
+
+- **Right Join:**
+    - In Right Outer, join for both tables will return all the records from table 2, whether the record in table 1 matches or not to the join condition. - The record which matches their result set is the same as the inner join result, and all nonmatching records from another table will result in null.
+
+- **Full Join:**
+    - Full Join returns the output, which matches rows and unmatched rows between the two tables. Full Join is the same as Cross Join.
+
+- **Self Join:** 
+    - is used to join a table to itself as if the table wee two tables, temporarily remaining at least one table in the SQL statement.
+
+- **Cross Join:** 
+    - returns the cartesian product of the sets of records from the two or more joined tables.
 
 ## File Structures:
 - **Primary Index:** A primary index is an ordered file, records of fixed length with two fields. First field is the same as the primary key as a data file and the second field is a pointer to the data block, where the key is available. The average number of block accesses using index = log2 Bi + 1, where Bi = number of index blocks.
@@ -2142,7 +2190,7 @@ An interconnection between public, private, commercial, industrial, or governmen
    - An intranet is a private network based on the internet protocol such as Transmission Control protocol and internet protocol. 
    - An intranet belongs to an organization which is only accessible by the organization's employee or members
 
-## Topologies
+## Topologies ✅
 A Network Topology is the arrangement with which computer systems or network devices are connected to each other. 
 
 ## Types of Topologies ✅
@@ -2157,7 +2205,7 @@ A Network Topology is the arrangement with which computer systems or network dev
 - Star Topology is an arrangement of the network in which every node is connected to the central hub, switch or a central computer.
 - The central computer is known as a server, and the peripherial devices attached to the server are known as clients.
 - Coaxial cable or RJ-45 cables are used to connect the computers.
-- Hub or Switches are mainly used as connection devices in a physical star topology.
+- Hub or Switches are mainly used as connection devices in a star topology.
 
 ### Ring Topology
 - Ring topology is like a bus topology but with connected ends
@@ -2200,6 +2248,7 @@ The way in which data is transmitted from one device to another device is known 
 - Simplex Mode
 - Half-Duplex Mode
 - Full-Duplex Mode
+
 ## Simplex Mode 
 - The communication is unidirectional, as on a one-way street. 
 - Only one of the two devices on a link can transmit; the other can only receive.
@@ -2217,12 +2266,12 @@ The way in which data is transmitted from one device to another device is known 
 - In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
 - This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
 
-## OSI Model
+## OSI Model ✅
 - OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer.
 - It consists of seven layers, and each layer performs a particular network function.
 - OSI model divides the whole task into seven smaller and manageable tasks. Each layer is assigned a particular task.
 - Each layer is self-contained, so that task assigned to each layer can be performed independently.
-## OSI Layers
+## OSI Layers ✅
 - Physical Layer {Responsibility of the Network}
 - Data Link Layer {Responsibility of the Network}
 - Network Layer {Responsibility of the Network}
@@ -2231,7 +2280,7 @@ The way in which data is transmitted from one device to another device is known 
 - Presentation Layer {Responsibility of the Host}
 - Application Layer {Responsibility of the Host}
 
-## Summary of Layers
+## Summary of Layers ✅
 - **Physical Layer:** It provides a physical medium through which bits are transmitted
 - **Data Link Layer:** It is used for error free transfer of data frames
 - **Network Layer:** It is responsible for moving the packets from source to destination
@@ -2266,6 +2315,9 @@ The way in which data is transmitted from one device to another device is known 
 - **Distortion:** Distortion occurs when there is a change in the shape of the signal. 
 - **Noise:** When data is travelled over a transmission medium, some unwanted signal is added to it which creates the noise.
 
+## IP Address
+- An IP address is a unique address that identifies a device on the internet or a local network. 
+- IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network.
 ## IPv4 Address
 - An IP address is a 32-bit dynamic address of a node in the network. 
 - An IPv4 address has 4 octets of 8-bit each with each number with a value up to 255.
@@ -2289,12 +2341,12 @@ The way in which data is transmitted from one device to another device is known 
 - HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. 
 - It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default
 
-## "This Site Can't Be Reached" ✅
+## xyz ✅
 - Restart Internet Connection
-- Disable your firewall and antivirus
-- Clear your browser cache
-- Flush your DNS cache
-- Change your DNS servers
+- Disable our firewall and antivirus
+- Clear our browser cache
+- Flush our DNS cache
+- Change the DNS servers
 ## SMTP Protocol
 - SMTP is the Simple Mail Transfer Protocol. 
 - SMTP sets the rule for communication between servers. 
@@ -2329,7 +2381,7 @@ The way in which data is transmitted from one device to another device is known 
 | TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data. | UDP is the Datagram-oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast types of network transmission. |
 | TCP is reliable as it guarantees the delivery of data to the destination router. | The delivery of data to the destination cannot be guaranteed in UDP. |
 | TCP provides extensive error-checking mechanisms. It is because it provides flow control and acknowledgment of data. | UDP has only the basic error checking mechanism using checksums. |
-| TCP is comparatively slower than UDP. | UDP is faster, simpler, and more efficient than TCP. |
+| TCP is comparatively slowe than UDP. | UDP is faster, simpler, and more efficient than TCP. |
 | TCP has a (20-60) bytes variable length header. | UDP has an 8 bytes fixed-length header. |
 | TCP doesn’t support Broadcasting. | UDP supports Broadcasting.|
 | TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet. | UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP. |
@@ -2390,6 +2442,18 @@ The client requests the server for a file. When the server receives a request fo
 | Hub is a half duplex transmission mode. | While switch is a full duplex transmission mode. |
 | Hub cannot be used as a repeater. | While switch can be used as a repeater. |
 | Hacking of systems attached to hub is complex. | Hacking of systems attached to switch is little easy. |
+
+## Switch vs Router ✅
+| Switch | Router |
+| ------ | ------ |
+| The main objective of switch is to connect various devices simultaneously. | The main objective of router is to connect various networks simultaneously. |
+| It works in data link layer. | It works in Network Layer |
+| Switch is used by only LAN | Router is used by LAN as well as MAN. |
+| Sswitch data is sent in the form of frame. | Through the router, data is sent in the form of packets. |
+| Switch is not compatible with NAT. Router is compatible with NAT |
+
+
+
 ## Unicasting vs Multicasting vs Broadcasting ✅
 - **Unicasting:** If the message is sent to a single node from the source then it is known as unicasting. This is commonly used in networks to establish a new connection
 
@@ -2547,7 +2611,7 @@ In public-key encryption/decryption, the public key that is used for encryption 
 
 ## Linux Commands
 - ls: it lists files and directories
-- grep: this finds text in a file. The grep command searches through many files at a time to find a piece of text you are looking for.
+- grep: this finds text in a file. The grep command searches through many files at a time to find a piece of text we are looking for.
 - sudo:
 - pwd: print working directory
 - mv: move
@@ -2556,7 +2620,7 @@ In public-key encryption/decryption, the public key that is used for encryption 
 - mkdir: command makes a directory.
 - chmod: command changes the mode of a file system object. Files can have read, write, and execute permissions.
 - chown: command is used to change the ownership of a file/folder or even multiple files/folders for a specified user/group.
-- cat: catcommand allows you to create single or multiple files, view contents of files, concatenate files (combining files), and redirect output in terminal or files.
+- cat: catcommand allows we to create single or multiple files, view contents of files, concatenate files (combining files), and redirect output in terminal or files.
 - echo: command is used to display a text or a string to the standard output or a file.
 - wc: command is used to find out the number of new lines, word count, byte, and characters count in a file specified by the file arguments.
 - man: command is used to view the online reference manual pages for commands/programs.
