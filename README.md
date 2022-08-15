@@ -1,19 +1,194 @@
-# [OOPS Notes](#oops-notes)
-# [Operating System Notes](#operating-system-notes)
-# [Database Management System Notes](#database-management-system-notes)
-# [Computer Networks Notes](#computer-networks-notes)
-# [Linux Notes](#linux-notes)
 
-## OOPS Notes
-# Object Oriented Programming System Notes
-
-## Overview
-### What is Object Oriented Programming?
-### How Object Oriented Programming is related to the real world?
-### Why to study OOPS?
-### Limitations of OOPS
+## What is Object Oriented Programming?
+Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
 
 ## Pillar of OOPS
+- Polymorphism
+- Encapsulation
+- Inheritance
+- Abstraction
+
+## How Object Oriented Programming is related to the real world?
+- There are mainly four pillars (features) of OOP. If all of these four features are presented in programming, the programming is called  perfect Object Oriented Programming.
+  - Abstraction
+  - Encapsulation
+  - Inheritance
+  - Polymorphism
+
+### Object
+- Any real world entity which can have some characteristics or which can perform some tasks is called as Object. 
+- This object is also called an instance i.e. a copy of entity in programming language. 
+- If we consider the example, a mobile manufacturing company can be an object. 
+- Each object can be different based on their characteristics. 
+- For example, here are two objects.
+```
+Mobile mob1 = new Mobile();
+Mobile mob2 = new Mobile()
+```
+
+### Class
+- A class in OOP is a plan which describes the object. We call it a blueprint of how the object should be represented. 
+- Mainly a class would consist of a name, attributes, and operations. 
+- Considering the example, the Mobile can be a class, which has some attributes like Profile Type, IMEI Number, Processor, and some more. It can have operations like Dial, Receive and SendMessage.
+
+There are some OOPS principle that need to be satisfied while creating a class. This principle is called as **SOLID** where each letter has some specification.
+- **SRP** (Single Responsibility Principle): A class should have one, and only one responsibility
+- **OCP** (Open Closed Principle): We should be able to extend a classes behavior, without modifying it. (Inheritance)
+- **LSP** (Liskov Substitution Principle): Derived classes must be substitutable for their base classes. (Polymorphism)
+- **ISP** (Interface Segregation Principle): Make fine chopped interface instead of huge interface as client cannot be forced to implement an interface which they don't use.
+- **DIP** (Dependency Inversion Principle): Depend on abstractions, not on concretions. (Abstraction)
+
+### Abstraction ✅
+- Abstraction allows us to expose limited data and functionality of objects publicly and hide the actual implementation. 
+- It is the most important pillar in OOPS. In our example of Mobile class and objects like Nokia, Samsung, IPhone.
+ 
+- Some features of mobiles, Dialing a number call some method internally which concatenate the numbers and displays it on screen but what is it doing we don’t know.
+- Clicking on green button actual send signals to calling person's mobile but we are unaware of how it is doing.
+This is called abstraction. 
+- In classes, we can create methods that can be called and used by the users of the class but users will have no idea what these methods do internally. 
+
+### Encapsulation ✅
+- Encapsulation is defined as the process of enclosing one or more details from outside world through access right. 
+- It says how much access should be given to particular details. 
+- Both Abstraction & Encapsulation works hand in hand because Abstraction says what details to be made visible and Encapsulation provides the level of access right to that visible details.
+
+- Talking about Bluetooth which we usually have it in our mobile. When we switch on a Bluetooth.
+- I am able to connect to another mobile or bluetooth enabled devices but I'm not able to access the other mobile features like dialing a number, accessing inbox etc. 
+- This is because, Bluetooth feature is given some level of abstraction.
+
+- Another point is when mobile A is connected with mobile B via Bluetooth whereas mobile B is already connected to mobile C then A is not allowed to connect C via B. 
+- This is because of accessibility restriction.
+
+### Polymorphism ✅
+- Polymorphism can be defined as the ability of using the same name for doing different things. 
+- More precisely we say it as 'many forms of single entity'. 
+- This play a vital role in the concept of OOPS.
+
+- Let's say in our phone we have a 12MP camera available i.e. – it is having a functionality of CameraClick(). 
+- Now same mobile is having Wide mode available in camera, so functionality would be same but with mode. 
+- This type is said to be Static polymorphism or Compile time polymorphism. 
+
+### Inheritance ✅
+- Inheritance is the ability to extend the functionality from base entity in new entity belonging to same group. 
+- This will help us to reuse the functionality which is already defined before and extend into a new entity. 
+
+- Basic Mobile functionality is to send a message, dial and receive a call. 
+- So the brands of mobile is using this basic functionality by extending the mobile class functionality and adding their own new features to their respective brand.
+
+### Modes of Inheritance
+There are 3 modes of inheritance:
+
+- **Public Mode:** If we derive a subclass from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in the derived class.
+
+- **Protected Mode:** If we derive a subclass from a Protected base class. Then both public members and protected members of the base class will become protected in the derived class.
+
+- **Private Mode:** If we derive a subclass from a Private base class. Then both public members and protected members of the base class will become Private in the derived class.
+
+| Base Class Member Access Specifier | Public | Protected | Private |
+| ---------------------------------- | ------ | --------- | ------- |
+| Public | Public | Protected | Private |
+| Protected | Protected | Protected | Private |
+| Private | Not Accessible (Hidden) | Not Accessible (Hidden) | Not Accessible (Hidden) |
+
+There are mainly 4 types of Inheritance:
+- Single Level Inheritance
+- Multiple Inheritance
+- Multilevel Inheritance
+- Hierarchical Inheritance
+- Hybrid Inheritance
+
+#### Single Level Inheritance
+In Single level inheritance, there is single base class & a single derived class i.e. - A base mobile features is extended by Samsung brand.
+
+*Syntax*
+```c++:
+class subclass_name : access_mode base_class {
+    //body of subclass
+};
+
+OR 
+
+class A{
+    .......
+};
+
+class B: public A{
+    .......
+};
+```
+
+### Multiple Inheritance
+In multiple inhertitance a class can inherit from more than one class. i.e one subclass is inherited from more than one base class.
+
+*Syntax:*
+```java:
+class subclass_name : access_mode base_class1, access_mode base_class2, ....
+{
+  // body of subclass
+};
+
+OR
+
+class B{ 
+... .. ... 
+};
+
+class C{
+... .. ...
+};
+
+class A: public B, public C{
+... ... ...
+};
+```
+
+#### Multilevel Inheritance
+In Multilevel inheritance, there is more than one single level of derivation. i.e. - After base features are extended by Samsung brand. Now Samsung brand has manufactured its new model with new added features or advanced OS like Android OS, v13.
+
+*Syntax:*
+```java:
+class C{ 
+... .. ... 
+};
+
+class B:public C{
+... .. ...
+};
+
+class A: public B{
+... ... ...
+};
+```
+
+#### Hierachical Inheritance
+In this type of inheritance, multiple derived class would be extended from base class, it's similar to single level inheritance but this time along with Samsung, iPhone is also taking part in inheritance.
+
+*Syntax:*
+```c++:
+class A  {  
+    // body of the class A.  
+}    
+class B : public A   {  
+    // body of class B.  
+}  
+class C : public A  {  
+    // body of class C.  
+}   
+class D : public A  {  
+    // body of class D.  
+}   
+```
+
+#### Hybrid Inheritance
+Single, Multilevel, & hierarchal inheritance all together construct a hybrid inheritance.
+
+### Interface
+Multiple inheritance where derived class will extend from multiple base classes.
+
+## Limitations of OOPS
+- The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
+- We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
+
 ## What is Class? <br/>
 Collection of objects is called Class. It is a logical entity.
 
@@ -28,12 +203,11 @@ Collection of objects is called Class. It is a logical entity.
 | It can have NULL values | It cannot have NULL values |
 | It may have all the types of constructors and destructors | It may have only parameterized constructor |
 
-
-### Similarities between Structure and Class
 ### Access Modifiers
 Access Modifiers or Access Specifiers in a class are used to assign the accessibility to the class members, i.e., they set some restrictions on the class members so that they can’t be directly accessed by the outside functions. <br/>
 
-There are 3 types of access modifiers available in C++: 
+There are 3 types of access modifiers available in C++:
+
 - **Public:** All the class members declared under the public specifier will be available to everyone. 
 
 The data members and member functions declared as public can be accessed by other classes and functions too. 
@@ -132,13 +306,12 @@ int main(){
 - Outside Class Function --> Scope Resolution Operator (::)
 
 ### What is Constructor?
-Constructor is a special method that is invoked automatically at the time of object creation. It is used to initialize the data members of new objects generally. 
-
-The constructor in C++ has the same name as the class or structure. Constructor is invoked at the time of object creation. 
-
-It constructs the values i.e. provides data for the object which is why it is known as constructors.
-
-Constructor does not have a return value, hence they do not have a return type.
+- Constructor is a special method that is invoked automatically at the time of object creation. 
+- It is used to initialize the data members of new objects generally. 
+- The constructor in C++ has the same name as the class or structure. 
+- Constructor is invoked at the time of object creation. 
+- It constructs the values i.e. provides data for the object which is why it is known as constructors.
+- Constructor does not have a return value, hence they do not have a return type.
 
 Constructors can be defined inside or outside the class declaration:-
 
@@ -378,9 +551,7 @@ int main(){
 | It is an overloaded constructor | It is a bitwise operator |
 | C++ compiler implicitly provides a copy constructor, if no copy constructor is defined in the class | A bitwise copy gets created, if the Assignment operator is not overloaded |
 
-## Virtual Constructor in C++
-
-### How constructor is different from a normal function?
+## How constructor is different from a normal function?
 - Constructor has same name as the class itself
 - Default Constructors don’t have input argument however, Copy and Parameterized Constructors have input arguments
 - Constructors don’t have return type
@@ -389,7 +560,7 @@ int main(){
 - If we do not specify a constructor, C++ compiler generates a default constructor for object (expects no parameters and has an empty body).
 
 ## Constructor Overloading
-We can have more than one constructor in a class with same name, as long as each has a different list of arguments.This concept is known as Constructor Overloading.
+- We can have more than one constructor in a class with same name, as long as each has a different list of arguments.This concept is known as Constructor Overloading.
 
 - Overloaded constructors essentially have the same name (exact name of the class) and differ by number and type of arguments.
 - A constructor is called depending upon the number and type of arguments passed.
@@ -431,7 +602,7 @@ int main(){
 ```
 
 ### Destructors 
-Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
+- Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
 
 - Destructor is also a special member function like constructor. Destructor destroys the class objects created by constructor.
 - Destructor has the same name as their class name preceded by a tiled (~) symbol.
@@ -496,7 +667,6 @@ When a class contains a pointer to memory allocated in class, we should write a 
 ### Can a destructor be virtual?
 Yes, In fact, it is always a good idea to make destructors virtual in base class when we have a virtual function
 
-## What is an Object?
 
 ### Class vs Object
 | Class | Object |
@@ -514,7 +684,7 @@ Student s1=new Student(); |
 ### Important Keywords
 - **static keyword:** is mainly used for memory management. It can be used with variables, methods, blocks and nested classes. It is used to share the same variable or method of a given class. Basically, static is used for a constant variable or a method that is same for every instance of a class
 
-- **Virtual keyword:** is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class.For example, this method can be overridden by any class that inherits it.
+- **Virtual keyword:** is used to modify a method, property, or event declaration and allow for it to be overridden in a derived class.For example, this method can be overridden by any class that inherits it.
 
 - **Abstract keyword:** is used to declare the method or a class as abstract.
 
@@ -948,9 +1118,18 @@ An array in Java is an object. In Java, we can create arrays by using new operat
 Early (or static) binding refers to compile time binding and Late (or dynamic) binding refers to runtime binding (for example when you use reflection).
 
 ### What is the default access modifier in a class?
-### How many instances can be created for an abstract class?
+## How many instances can be created for an abstract class?
+- Abstract Class is Half Define Class. 
+- Abstract class not allowed to create an Instance (Object). 
+- So, we can not create any instance then answer is 0. There are no objects for abstract class.
+## Define Garbage Collection. How does it work?
+- Garbage collection in Java is the process by which Java programs perform automatic memory management. 
+- Java programs compile to bytecode that can be run on a Java Virtual Machine, or JVM for short. 
+- When Java programs run on the JVM, objects are created on the heap, which is a portion of memory dedicated to the program. 
+- Eventually, some objects will no longer be needed. The garbage collector finds these unused objects and deletes them to free up memory.
 
-### Define Garbage Collection. How does it work?
+- Java garbage collection is an automatic process. Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects. 
+
 ### Define Manipulators
 ### What do you mean by finally block?
 ### What is a final variable?
@@ -964,7 +1143,11 @@ Early (or static) binding refers to compile time binding and Late (or dynamic) b
 ### Is it possible for a class to inherit the constructor of its base class?
 ### When should I use a struct instead of a class?
 ### Cohesion vs Coupling
-## Operating System Notes
+
+
+
+
+## Operating System
 An **Operating System** is a piece of software that manages all the resources of a computer system, both hardware and software, and provides an environment in which the user can execute their programs in a convenient and efficient manner.
 
 An Operating System: <br/>
@@ -1058,7 +1241,7 @@ Process Table is a table that contains *Process ID* and the reference to the cor
 
     A stack pointer register keeps the tracks of the top of the stack i.e., how much of the stack area using by the current process, and it is modified each time a value is “pushed” onto the stack. If the stack pointer meets the heap pointer the available free memory is depleted.    
 
-## Process vs Thread
+## Process vs Thread ✅
 | Process | Thread |
 | ------- | ------ |
 | Process means any program is in execution | Thread means a segment of a process |
@@ -1082,7 +1265,7 @@ The process scheduling is the activity of the process manager that handles the r
 3. **Device Queue** <br/>
     The processes which are blocked due to unavailability of an I/O device constitute this queue.
     
-## Scheduler
+## Scheduler ✅
 - Schedulers are special system software which handle process scheduling in various ways. 
 - Their main task is to select the jobs to be submitted into the system and to decide which process to run.
 
@@ -1094,12 +1277,12 @@ The process scheduling is the activity of the process manager that handles the r
 | It is almost absent or minimal in time sharing system | It is also minimal in time sharing system | It is a part of Time sharing systems. |
 | It selects processes from pool and loads them into memory for execution | It selects those processes which are ready to execute | It can re-introduce the process into memory and execution can be continued. |
 
-## Dispatcher
+## Dispatcher ✅
 - A dispatcher is a special program which comes into play after the scheduler. 
 - When the scheduler completes its job of selecting a process, it is the dispatcher which takes that process to the desired state/queue. 
 - The dispatcher is the module that gives a process control over the CPU after it has been selected by the short-term scheduler. 
 
-## Scheduler and Dispatcher
+## Scheduler and Dispatcher ✅
 | Scheduler | Dispatcher |
 | --------- | ---------- |
 | Scheduler is something which selects a process among various processes | Dispatcher is a module that gives control of CPU to the process selected by short term scheduler |
@@ -1117,7 +1300,7 @@ The process scheduling is the activity of the process manager that handles the r
 - Minimum response time
 - Minimum waiting time
 
-## Preemtive Scheduling vs Non-Preemptive Scheduling
+## Preemtive Scheduling vs Non-Preemptive Scheduling ✅
 | Preemptive Scheduling | Non-Preemptive Scheduling |
 | --------------------- | ------------------------- |
 | In this resources(CPU Cycle) are allocated to a process for a limited time. | Once resources(CPU Cycle) are allocated to a process, the process holds it till it completes its burst time or switches to waiting state. |
@@ -1129,7 +1312,7 @@ The process scheduling is the activity of the process manager that handles the r
 | Preemptive scheduling response time is less. | Non-preemptive scheduling response time is high. |
 | Examples of preemptive scheduling are Round Robin and Shortest Remaining Time First. | Examples of non-preemptive scheduling are First Come First Serve and Shortest Job First. |
 
-## Types of Scheduling Algorithms
+## Types of Scheduling Algorithms ✅
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF)
 - Shortest Remaining Time First (SRTF)
@@ -1150,7 +1333,7 @@ The process scheduling is the activity of the process manager that handles the r
 - Best approach to minimize waiting time.
 - Easy to implement in Batch systems where required CPU time is known in advance.
 - Impossible to implement in interactive systems where required CPU time is not known.
-- The processer should know in advance how much time process will take.
+- The processor should know in advance how much time process will take.
 
 ## Shortest Remaining Time First (SRTF)
 - The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
@@ -1180,8 +1363,7 @@ But on the other hand disadvantage of being inflexible.
 - Processes with same priority are executed on first come first served basis.
 - Priority can be decided based on memory requirements, time requirements or any other resource requirement.
 
-
-## Context Switching
+## Context Switching ✅
 - Context Switching is basically a process of saving the context of one process and loading the context of another process.
 - It is one of the cost-effective and time-saving measures executed by CPU because it allows multiple processes to share a single CPU.
 - Therefore, it is considered an important part of a modern OS. 
@@ -1224,25 +1406,25 @@ But on the other hand disadvantage of being inflexible.
     
 ## Process Synchronization
 
-## Deadlock
-Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
+## Deadlock ✅
+- Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
 
-Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. 
+- Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other. 
 
-A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). 
+- A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). 
 
-For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. 
+- For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is acquired by process 2, and process 2 is waiting for resource 1. 
 
-## Necessary Conditions of Deadlock
+## Necessary Conditions of Deadlock ✅
 - **Mutual Exclusion:** Two or more resources are non-shareable (Only one process can use at a time) 
 - **Hold and Wait:** A process is holding at least one resource and waiting for resources. 
 - **No Preemption:** A resource cannot be taken from a process unless the process releases the resource. 
 - **Circular Wait:** A set of processes are waiting for each other in circular form. 
 
-## Effects of Deadlock
-If the operating system has a deadlock prevention or detection system in place, this will have a negative impact on performance (slow the system down) because whenever a process or thread requests a resource, the system will have to check whether granting this request could cause a potential deadlock situation.
+## Effects of Deadlock ✅
+- If the operating system has a deadlock prevention or detection system in place, this will have a negative impact on performance (slow the system down) because whenever a process or thread requests a resource, the system will have to check whether granting this request could cause a potential deadlock situation.
 
-## Methods for Handling Deadlock
+## Methods for Handling Deadlock ✅
 1. **Prevention or Avoidance:** Make sure atleast one condition should not meet
     - Mutual Exclusion
     - Hold & Wait
@@ -1256,7 +1438,7 @@ If the operating system has a deadlock prevention or detection system in place, 
 
 3. **Ignorance**
 
-## Logical vs Physical Address Space
+## Logical vs Physical Address Space ✅ 
 | Logical Address | Physical Address |
 | --------------- | ---------------- |
 | Logical Address Space is set of all logical addresses generated by CPU in reference to a program | Physical Address is set of all physical addresses mapped to the corresponding logical addresses. |
@@ -1286,9 +1468,6 @@ Swapping is also known as a technique for memory compaction.
 ## Paging vs Segmentation
 
 
-
-## Thrasing
-
 ## Starvation
 - It is generally a problem that usually occurs when a process has not been able to get the required resources it needs for progress with its execution for a long period of time. 
 - In this condition, low priority processes get blocked and only high priority processes proceed towards completion because of which low priority processes suffer from lack of resources. 
@@ -1303,14 +1482,14 @@ Swapping is also known as a technique for memory compaction.
 
 
 
-## Semaphore
+## Semaphore ✅
 Semaphore is defined as an integer variable which is used to solve the problem of the critical section in process synchronization. In semaphore, we use two types of atomic operations, and that operations are wait and signal.
 
 The definitions of wait and signal are as follows:
 - **Wait:** - In wait operation, the argument ‘S’ value is decrement by 1 if the value of the ‘S’ variable is positive. If the value of the argument variable ‘S’ is zero or negative, no operation is performed.
 - **Signal:** - In Signal atomic operation, the value of the argument variable ‘S’ is incremented.
 
-## Types of Semaphores
+## Types of Semaphores ✅
 - **Counting Semaphores:** is defined as a semaphore that contains integer values, and these values have an unrestricted value domain. A counting semaphore is helpful to coordinate the resource access, which includes multiple instances.
 - **Binary Semaphores:** are also called Mutex lock. There are two values of binary semaphores, which are 0 and 1. The value of binary semaphore is initialized to 1. We use binary semaphore to remove the problem of the critical section with numerous processes.
 
@@ -1321,7 +1500,7 @@ The definitions of wait and signal are as follows:
 | In counting semaphore, there are more than one slots.	 | In the binary semaphore, there is only one slot. |
 | The counting process offers a set of processes. | Binary semaphore contains mutual exclusion mechanism. |
 
-### Difference between Semaphore and Mutex
+### Difference between Semaphore and Mutex ✅
 | Semaphore | Mutex |
 | --------- | ----- |
 | It is an integer variable. | It is an object. |
@@ -1364,7 +1543,7 @@ Fragmentation is an unwanted problem in the operating system in which the proces
 
 ## Segmentation
 
-## Paging vs Segmentation
+## Paging vs Segmentation ✅
 | Paging | Segmentation |
 | ------ | ------------ |
 | In paging, the program is divided into fixed or mounted size pages. | In segmentation, the program is divided into variable size sections. |
@@ -1386,7 +1565,7 @@ Goal of Memory Management
 To keep multiple processes in memory to allow multiprogramming.
 
 
-## Virtual Memory
+## Virtual Memory ✅
 - It is a memory management technique feature of OS that creates the illusion to users of a very large (main) memory. 
 - It is simply space where a greater number of programs can be stored by themselves in the form of pages. 
 - It enables us to increase the use of physical memory by using a disk and also allows us to have memory protection. 
@@ -1396,7 +1575,7 @@ To keep multiple processes in memory to allow multiprogramming.
 - It frees up RAM by swapping data that has not been used recently over to a storage device, such as a hard drive or solid-state drive (SSD). 
 - It is important for improving system performance, multitasking and using large programs.
 
-## Working of Virtual Memory
+## Working of Virtual Memory ✅
 - Virtual memory uses both hardware and software to operate. 
 - When an application is in use, data from that program is stored in a physical address using RAM. 
 - A memory management unit (MMU) maps the address to RAM and automatically translates addresses. 
@@ -1424,12 +1603,12 @@ To keep multiple processes in memory to allow multiprogramming.
 - Lesser Hard Disk Space
 - Reduces System Stability
 
-## Demand Paging
+## Demand Paging ✅
 - Demand paging is a process that keeps pages of a process that are infrequently used in secondary memory, and pulls them only when required to satisfy the demand. <br/>
 - It is also called lazy swapper because the swapping of pages is done only when the CPU requires it. 
 - Example: Imagine that you are scrolling through an e-commerce platform and like some clothes. However, since you don't have space in your wardrobe, you save it in your wishlist and decide to buy them only when needed.
 
-## Pure Demand Paging
+## Pure Demand Paging ✅
 - There are cases when no pages are loaded into the memory initially, pages are only loaded when demanded by the process by generating page faults. 
 - This is called Pure Demand Paging. In pure demand paging, even a single page is not loaded into memory initially. 
 - Hence pure demand paging causes a page fault.
@@ -1441,7 +1620,7 @@ To keep multiple processes in memory to allow multiprogramming.
 ## Page Fault
 A Page Fault occurs when a program running in CPU tries to access a page that is in the address space of that program, but the requested page is currently not loaded into the main physical memory, the RAM of the system.
 
-## Swap Space
+## Swap Space ✅
 Section of hard disk used for implementing virtual memory is called swap space.
 
 ## Page Replacement Algorithm
@@ -1489,18 +1668,19 @@ Belady's Anomaly refers to the phenomena where increasing the number of frames i
 ## Is performance of virtual memory and physical memory same?
 The key difference between virtual memory and physical memory is that RAM is very much faster than virtual memory. So a system with 2 GB of physical RAM and 2 GB of virtual memory will not offer the same performance as a similar system with 4 GB of physical RAM.
 
-## Thrasing
-- In multiprogramming, there can be a scenario when the system spends most of its time shuttling pages between the main memory and the secondary memory due to frequent page faults. 
-- This behavior is known as thrashing.
-- A process is said to be thrashing if the CPU spends more time serving page faults than executing the pages. 
-- This leads to low CPU utilization and the Operating System in return tries to increase the degree of multiprogramming.
+## Thrasing ✅
+- It is generally a situation where the CPU performs less productive work and more swapping or paging work. 
+- It spends more time swapping or paging activities rather than its execution. 
+- By evaluating the level of CPU utilization, a system can detect thrashing. 
+- It occurs when the process does not have enough pages due to which the page-fault rate is increased. 
+- It inhibits much application-level processing that causes computer performance to degrade or collapse
 
-## Causes of Thrasing
+## Causes of Thrasing ✅
 - High degree of multiprogramming
 - Less number of frames compared to the processes required.
 - The process scheduling scheme which swaps in more processes when CPU utilization is low.
 
-## How to Overcome Thrasing?
+## How to Overcome Thrasing? ✅
 - The thrashing effect can be prevented by allocating each process as many frames as it requires during run. 
 - To find out the number of frames required by a process, we can use the locality model. A locality is a set of pages that are actively used together. 
 - The locality model says that during execution, a process shifts from one locality to another, and these localities may overlap. We have to provide enough frames to a process to stop page faulting in the current locality.
@@ -1510,7 +1690,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Frame rate is the frequency in which a consecutive series of frames or images can appear on a display panel
 - It is also known as *burst rate* or *update rate*
 
-## What is RAID structure in OS? What are the different levels of RAID configuration?
+## What is RAID structure in OS? What are the different levels of RAID configuration? ✅
 - RAID (Redundant Arrays of Independent Disks) is a method used to store data on Multiple hard disks therefore it is considered as data storage virtualization technology that combines multiple hard disks. 
 - It simply balances data protection, system performance, storage space, etc. 
 - It is used to improve the overall performance and reliability of data storage. 
@@ -1531,19 +1711,13 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - It also takes care of execution, monitoring, and all-controlling processes. 
 - It also occupies less memory and consumes fewer resources
 
-## Thrasing
-- It is generally a situation where the CPU performs less productive work and more swapping or paging work. 
-- It spends more time swapping or paging activities rather than its execution. 
-- By evaluating the level of CPU utilization, a system can detect thrashing. 
-- It occurs when the process does not have enough pages due to which the page-fault rate is increased. 
-- It inhibits much application-level processing that causes computer performance to degrade or collapse
 
 ## Multiprogramming
 - It it is the coordination of execution of various programs simultaneously on a single processor (CPU). 
 - The main objective of multiprogramming is to have at least some processes running at all times. 
 - It simply improves the utilization of the CPU as it organizes many jobs where the CPU always has one to execute. 
 
-## Multitasking and Multiprocessing
+## Multitasking and Multiprocessing ✅
 | Multitasking | Multiprocessing |
 | -------------- | ----------------- |
 | It is a system that allows more efficient use of computer hardware. This system works on more than one task at one time by rapidly switching between various tasks. These systems are also known as time-sharing systems.  |  It is a system that allows multiple or various processors in a computer to process two or more different portions of the same program simultaneously. It is used to complete more work in a shorter period of time. |
@@ -1558,11 +1732,11 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - It also allows communication or exchange of information between two different processes on the same or different machines. 
 - It is mostly used in client-server-based systems. 
 
-## Zombie Process
+## Zombie Process ✅
 - Zombie process  referred to as a defunct process, is basically a process that is terminated or completed but the whole process control block is not cleaned up from the main memory because it still has an entry in the process table to report to its parent process. 
 - It does not consume any of the resources and is dead, but it still exists. It also shows that resources are held by process and are not free
 
-## Kernel
+## Kernel ✅
 - The kernel is basically a computer program usually considered as a central component or module of OS. 
 - It is responsible for handling, managing, and controlling all operations of computer systems and hardware. 
 - Whenever the system starts, the kernel is loaded first and remains in the main memory. 
@@ -1587,14 +1761,16 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Belady’s Anomaly is a phenomenon in which if we increase the number of frames in memory, then the number of page faults also increases. 
 - It is generally experienced when we use FIFO (First in First out) page replacement algorithm. 
 
-## Spooling
+## Spooling ✅
 - Spooling is referred to as putting data of various I/O jobs in a buffer. 
 - It is used for mediation between a computer application and a slow peripheral. 
 - It is very useful and important because devices access or acquire data at different rates. 
 - This operation also uses disk as a very large buffer and is capable of overlapping I/O operations for one task with processor operations for another task
 
 
-## Database Management System Notes
+
+
+
 ## Database
 A database is a collection of related data which represents some aspect of the real world. A database system is designed to be built and populated with data for a certain task.
 
@@ -1659,6 +1835,7 @@ Attributes are the descriptive properties which are owned by each entity of an E
 
 ## Constraints:
 Relational constraints are the restrictions imposed on the database contents and operations. They ensure the correctness of data in the database.
+
 - **Domain Constraint** - Domain constraint defines the domain or set of values for an attribute. It specifies that the value taken by the attribute must be the atomic value from its domain.
 - **Tuple Uniqueness Constraint** - Tuple Uniqueness constraint specifies that all the tuples must be necessarily unique in any relation.
 - **Key Constraint** - All the values of the primary key must be unique. The value of the primary key must not be null.
@@ -1668,17 +1845,39 @@ Relational constraints are the restrictions imposed on the database contents and
 ## Closure of an Attribute Set:
 The set of all those attributes which can be functionally determined from an attribute set is called a closure of that attribute set.
 
-## Keys
+## Keys ✅
 A key is a set of attributes that can identify each tuple uniquely in the given relation. 
 
 ## Types of Keys:
-- **Super Key** - A superkey is a set of attributes that can identify each tuple uniquely in the given relation. A super key may consist of any number of attributes.
-- **Candidate Key** - A set of minimal attribute(s) that can identify each tuple uniquely in the given relation is called a candidate key.
-- **Primary Key** - A primary key is a candidate key that the database designer selects while designing the database. Primary Keys are unique and NOT NULL.
-- **Alternate Key** - Candidate keys that are left unimplemented or unused after implementing the primary key are called as alternate keys.
-- **Foreign Key** - An attribute ‘X’ is called as a foreign key to some other attribute ‘Y’ when its values are dependent on the values of attribute ‘Y’. The relation in which attribute ‘Y’ is present is called as the referenced relation. The relation in which attribute ‘X’ is present is called as the referencing relation.
-- **Composite Key** - A primary key composed of multiple attributes and not just a single attribute is called a composite key.
-- **Unique Key** - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. It may have a NULL value.
+- **Super Key**
+   - A super key is a set of single and multiple key attributes which is used to identify records in a table. 
+   - The super key is a superset of the candidate key.
+
+- **Candidate Key**
+   - A set of minimal attribute(s) that can identify each tuple uniquely in the given relation is called a candidate key.
+   - The value of the candidate key field must be unique and always be not NULL for every tuple.
+   - There can be more than one candidate key in a table or a relation.
+   - Removing any field from the candidate key fails in identifying each record uniquely.
+
+- **Primary Key**
+   - A primary key is a set of fields in a database table that uniquely identifies each record in that table. The value of the primary key cannot be NULL.
+   - A table is allowed to have only one primary key
+   - The value of a primary key field should always be unique.
+
+- **Alternate Key** 
+   - Those keys which are not selected as the primary key from the candidate keys are called as the alternate keys. 
+   - These keys are also known as the secondary keys.
+
+- **Foreign Key**
+   - A foreign key is an attribute in one table that acts as a primary key in another table. 
+   - The foreign key is useful for establishing the relationship between two tables in a database.
+
+- **Composite Key**
+   - A composite key is a key which is a combination of two or more fields (attributes) that uniquely identify each record in the table.
+
+- **Unique Key**
+   - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. 
+   - It may have a NULL value.
 
 ## Functional Dependency:
 In any relation, a functional dependency α → β holds if- Two tuples having same value of attribute α also have same value for attribute β.
@@ -1696,9 +1895,9 @@ In any relation, a functional dependency α → β holds if- Two tuples having s
 The process of breaking up or dividing a single relation into two or more sub relations is called the decomposition of a relation.
 
 ## Properties of Decomposition:
-- **Lossless Decomposition** - Lossless decomposition ensures
+- **Lossless Decomposition** ensures
    - No information is lost from the original relation during decomposition. o When the sub relations are joined back, the same relation is obtained that was decomposed.
-- **Dependency Preservation** - Dependency preservation ensures
+- **Dependency Preservation** ensures
    - None of the functional dependencies that hold on the original relation are lost. o The sub relations still hold or satisfy the functional dependencies of the original relation.
 
 ## Types of Decomposition:
@@ -1711,27 +1910,48 @@ The process of breaking up or dividing a single relation into two or more sub re
    - This decomposition is called lossy join decomposition when the join of the sub relations does not result in the same relation R that was decomposed.
    - For lossy join decomposition, we always have- R1 ⋈ R2 ⋈ R3 ……. ⋈ Rn ⊃ R where ⋈ is a natural join operator
 
-## Normalization:
-In DBMS, database normalization is a process of making the database consistent by-
-- Reducing the redundancies
-- Ensuring the integrity of data through lossless decomposition
+## Normalization ✅
+- Normalization is a technique of organizing the data in the database.
+- It is a systematic approach which is used to remove or reduce data redundancy in the tables and remove the insert, update and delete anomalies.
+- It mainly divides the larger table into smaller tables and links them using a relationship to increase the clarity of data.
 
-## Types of Normal Forms:
-- **First Normal Form (1NF)** - A given relation is called in First Normal Form (1NF) if each cell of the table contains only an atomic value i.e. if the attribute of every tuple is either single valued or a null value.
-- **Second Normal Form (2NF)** - A given relation is called in Second Normal Form (2NF) if and only if
+## Anomalies:
+- **Insertion Anomaly:** 
+   - Suppose a new faculty joins the University, and the Database Administrator inserts the faculty data into the table. 
+   - But he is not able to insert because Sid is a primary key, and can’t be NULL. 
+   - So this type of anomaly is known as an insertion anomaly.
+
+- **Delete Anomaly:**
+   - When the Database Administrator wants to delete the student details of Sid=2 from the table.
+   - Then it will delete the faculty and course information too which cannot be recovered further.
+
+- **Update Anomaly:**
+   - When the Database Administrator wants to change the salary of faculty F1 from 30000 to 40000 in above table University
+   - Then the database will update salary in more than one row due to data redundancy. 
+   - So, this is an update anomaly in a table.
+
+## Types of Normal Forms ✅
+- **First Normal Form (1NF):** A given relation is called in First Normal Form (1NF) if each cell of the table contains only an atomic value i.e. if the attribute of every tuple is either single valued or a null value.
+- **Second Normal Form (2NF):** A given relation is called in Second Normal Form (2NF) if and only if
    - Relation already exists in 1NF.
    - No partial dependency exists in the relation.
-A → B is called a partial dependency if and only if- A is a subset of some candidate key and B is a non-prime attribute.
+A → B is called a partial dependency if and only if A is a subset of some candidate key and B is a non-prime attribute.
 
-- **Third Normal Form (3NF)** - A given relation is called in Third Normal Form (3NF) if and only if
+- **Third Normal Form (3NF):** A given relation is called in Third Normal Form (3NF) if and only if
    - Relation already exists in 2NF.
    - No transitive dependency exists for non-prime attributes.
-A → B is called a transitive dependency if and only if- A is not a super key and B is a non-prime attribute.
+A → B is called a transitive dependency if and only if A is not a super key and B is a non-prime attribute.
 
-- Boyce-Codd Normal Form - A given relation is called in BCNF if and only if
+- **Boyce-Codd Normal Form:** A given relation is called in BCNF if and only if
    - Relation already exists in 3NF.
    - For each non-trivial functional dependency ‘A → B’, A is a super key of the relation.
+- **Fourth Normal Form:** A relation is in 4NF if it satisfies the following conditions:
+   - A relation is in BCNF
+   - and, there is no multivalued dependency exists in the relation.
  
+## Denormalization ✅
+Denormalization is a technique used to merge data from multiple tables into a single table that can be queried quickly.
+
 ## Transaction:
 Transaction is a single logical unit of work formed by a set of operations.
 
@@ -1766,29 +1986,32 @@ Transaction is a single logical unit of work formed by a set of operations.
    - This is the last state in the life cycle of a transaction.
    - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
 
-## ACID Properties:
+## ACID Properties ✅
 To ensure the consistency of the database, certain properties are followed by all the transactions occurring in the system. These properties are called as ACID Properties of a transaction.
 
-- **Atomicity** –
+- **Atomicity** 
    - This property ensures that either the transaction occurs completely or it does not occur at all.
-   - In other words, it ensures that no transaction occurs partially.
+   - Basically, it ensures that no transaction occurs partially.
+
 - **Consistency** –
    - This property ensures that integrity constraints are maintained.
    - In other words, it ensures that the database remains consistent before and after the transaction.
+
 - **Isolation** –
-   - This property ensures that multiple transactions can occur simultaneously without causing any inconsistency.
-   - The resultant state of the system after executing all the transactions is the same as the state that would be achieved if the transactions were executed serially one after the other.
+   - This property states that a data of transaction T1 which is in execution, then transaction T2 cannot access the result of transaction T1 until the operations of a transaction T1 is completed. 
+   - Or, we can say that a user cannot perform the same operation in multiple transactions at the same time. The execution of all transaction should be isolated from other transaction.
+
 - **Durability** –
    - This property ensures that all the changes made by a transaction after its successful execution are written successfully to the disk.
    - It also ensures that these changes exist permanently and are never lost even if there occurs a failure of any kind.
-
 
 ## Schedules:
 The order in which the operations of multiple transactions appear for execution is called as a schedule.
 - **Serial Schedules** –
    - All the transactions execute serially one after the other.
    - When one transaction executes, no other transaction is allowed to execute.
-   - Serial schedules are always- Consistent, Recoverable, Cascadeless and Strict. ●
+   - Serial schedules are always- Consistent, Recoverable, Cascadeless and Strict.
+
 - **Non-Serial Schedules** –
    - Multiple transactions execute concurrently.
    - Operations of all the transactions are inter leaved or mixed with each other.
@@ -1827,7 +2050,16 @@ then such a schedule is known as a Recoverable Schedule.
 - **Cascadeless Schedule** - If in a schedule, a transaction is not allowed to read a data item until the last transaction that has written it is committed or aborted, then such a schedule is called as a Cascadeless Schedule.
 - **Strict Schedule** - If in a schedule, a transaction is neither allowed to read nor write a data item until the last transaction that has written it is committed or aborted, then such a schedule is called as a Strict Schedule.
  
-## Joins
+## Joins ✅
+Joins are the combination of related tuples from the two different relations or tables into a single type. 
+
+## Types of Joins ✅
+- **Inner Join:** returns rows when there is a match in both the tables
+- **Left Join:** returns all rows from the left table, even if there are no matches in the right table.
+- **Right Join:** returns all rows from the right table, even if there are no matches in the left table.
+- **Full Join:** returns rows where there is a match in one of the tables
+- **Self Join:** is used to join a table to itself as if the table were two tables, temporarily remaining at least one table in the SQL statement.
+- **Cross Join:** returns the cartesian product of the sets of records from the two or more joined tables.
 
 ## File Structures:
 - **Primary Index:** A primary index is an ordered file, records of fixed length with two fields. First field is the same as the primary key as a data file and the second field is a pointer to the data block, where the key is available. The average number of block accesses using index = log2 Bi + 1, where Bi = number of index blocks.
@@ -1845,37 +2077,15 @@ At every level , we have Key and Data Pointer and data pointer points to either 
 
 In B+ trees, the structure of leaf and non-leaf are different, so their order is. Order of non-leaf will be higher as compared to leaf nodes. Searching time will be less in B+ trees, since it doesn’t have record pointers in non-leaf because of which depth will decrease.
 
-## Computer Networks Notes
-## Data Flow
-### Simplex Mode 
-- The communication is unidirectional, as on a one-way street. 
-- Only one of the two devices on a link can transmit; the other can only receive.
-- Keyboards and traditional monitors are examples of simplex devices.
 
-### Half-Duplex Mode
-- Each station can both transmit and receive, but not at the same time. 
-- When one device is sending, the other can only receive, and vice versa.
-- The half-duplex mode is like a one-lane road with traffic allowed in both directions. 
-- Walkie-talkies is an example of half-duplex systems
 
-### Full-Duplex Mode 
-- Both stations can transmit and receive simultaneously.
-- The full-duplex mode is like a two-way street with traffic flowing in both directions at the same time. 
-- In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
-- This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
 
-## Peer-to-Peer Network
-- This type of network model forms a small environment of up to 10 computers by linking them together with equal privilege and responsibilities for data processing without any dedicated server.
 
-## Client Server Network
-- This is a client-server based network model that enables clients to access the resources like audios, videos from the Server. 
-- Clients are all the computers or end users that communicate with each other through a server. 
-- The Server is the central computer or central controller that makes a response to the clients ‘request and secures, manages the computer network.
+## Network
+- Computer Network is a group of computers connected with each other through wires, optical fibres or optical links so that various devices can interact with each other through a network.
+- The aim of the computer network is the sharing of resources among various devices.
 
-## Hybrid Network
-This network model is the combined architecture of the network models defined above.
-
-## Components of Computer Network
+## Components of Computer Networks
 - **NIC**: Netowrk Interface Card (NIC) is a physical network interface defined as the hardware component that enables a computer to connect to a network. It is used in both wired and wireless connections.
 
 - **Hub**: A computer hub is a basic type of wired network device by which multiple connected computers can communicate via broadcast communication.
@@ -1888,10 +2098,54 @@ This network model is the combined architecture of the network models defined ab
 
 - **Cables and Connectors**: Cable is a transmission media used for transmitting digital singals. Optical-Fibre Cable, Co-axial cable, and Twisted Pair Cable are the three types of cable used for transmission of digital signals.
 
+## Types of Computer Network
+- Peer-to-Peer Architecture
+- Client/Server Network
+
+## Peer-to-Peer Network
+- This type of network model forms a small environment of up to 10 computers by linking them together with equal privilege and responsibilities for data processing without any dedicated server.
+
+## Client Server Network
+- This is a client-server based network model that enables clients to access the resources like audios, videos from the Server. 
+- Clients are all the computers or end users that communicate with each other through a server. 
+- The Server is the central computer or central controller that makes a response to the clients ‘request and secures, manages the computer network.
+
+## Types of Computer Networks ✅
+- PAN (Personal Area Network)
+- LAN (Local Area Network)
+- MAN (Metropolitan Area Network)
+- WAN (Wide Area Network)
+
+## PAN (Personal Area Network)
+This network is spanned for personal use of computing devices (mobile phones, laptops, media player, and play stations), arranged within a person, typically within a range of 10 meters such as Bluetooth, Wi-Fi, USB, etc., and covers an area of 30 feet.
+
+## LAN (Local Area Network)
+This network is a connection of two or more personal computers spanned in a small area such as building, office through a communication medium such as twisted pair cable, coaxial cable, etc.
+
+### MAN (Metropolitan Area Network)
+This network is inter-connection of different LANs, covers a larger geographic area, uses between banks, and colleges in a city and airline reservation through a telephone exchange line.
+
+### WAN (Wide Area Network)
+This network spans over a large geographical area through a telephonic line, fiber optic cable or satellite links used in the sectors of Business, Government, and Education. The Internet is a broad network in the world.
+
+## Internetworking
+An interconnection between public, private, commercial, industrial, or government computer networks can be defined as internetworking.
+
+## Types of Internetwork
+- **Extranet:** 
+   - An extranet is a communication network based on the internet protocol such as Transmission Control protocol and internet protocol. 
+   - It is used for information sharing. The access to the extranet is restricted to only those users who have login credentials. 
+   - An extranet is the lowest level of internetworking. 
+   - It can be categorized as MAN, WAN or other computer networks. An extranet cannot have a single LAN, atleast it must have one connection to the external network.
+
+- **Intranet:**
+   - An intranet is a private network based on the internet protocol such as Transmission Control protocol and internet protocol. 
+   - An intranet belongs to an organization which is only accessible by the organization's employee or members
+
 ## Topologies
 A Network Topology is the arrangement with which computer systems or network devices are connected to each other. 
 
-## Types of Topologies
+## Types of Topologies ✅
 ### Bus Topology
 - The bus topology is designed in such a way that all the stations are connected through a single cable known as a backbone cable.
 - Each node is connected to the backbone cable by drop cable or directly connected to the backbone cable.
@@ -1901,7 +2155,7 @@ A Network Topology is the arrangement with which computer systems or network dev
 
 ### Star Topology
 - Star Topology is an arrangement of the network in which every node is connected to the central hub, switch or a central computer.
-- The central computer is known as a server, and the peripherical devices attached to the server are known as clients.
+- The central computer is known as a server, and the peripherial devices attached to the server are known as clients.
 - Coaxial cable or RJ-45 cables are used to connect the computers.
 - Hub or Switches are mainly used as connection devices in a physical star topology.
 
@@ -1913,13 +2167,13 @@ A Network Topology is the arrangement with which computer systems or network dev
 - It has no terminated ends.
 - The data in a ring topology flow in a clockwise direction
 - The most common access method of the ring topology is token passing
-   - Token passing: is a network access method in which token is passed from one node to another node
-   - Token: is a frame that circulates around the network.
+   - **Token passing:** is a network access method in which token is passed from one node to another node
+   - **Token:** is a frame that circulates around the network.
 
 ### Mesh Topology
 - Mesh technology is an arrangement of the network in which computers are interconnected with each other through various redundant connection
 - There are multiple paths from one computer to another computer
-- It does not contain the switch, hub or any central computer which acts as a central part of communication
+- It does not contain the switch, hub or any central computer which acts as a central part of communication.
 - The internet is an example of the mesh technology
 - Mesh topology is mainly used for WAN implementations where communication failures are a critical concern.
 - Mesh topology is mainly used for wireless networks.
@@ -1929,34 +2183,53 @@ Mesh Topology is divided into two categories:
 - **Partial Mesh Topology:** Not all but certain computers are connected to those computers with which they can communicate frequently.
 
 ### Tree Topology
-
-
-
+- Tree topology combines the characteristics of bus topology and star topology.
+- A tree topology is a type of structure in which all the computers are connected with each other in hierarchical fashion.
+- The top-most node in tree topology is known as a root node, and all other nodes are the descendants of the root node.
+- There is only one path exists between two nodes for the data transmission. Thus, it forms a parent-child hierarchy.
 
 ### Hybrid Topology
+- The combination of various different topologies is known as Hybrid topology.
+- A Hybrid topology is a connection between different links and nodes to transfer the data.
+- When two or more different topologies are combined together is termed as Hybrid topology and if similar topologies are connected with each other will not result in Hybrid topology. 
+- For example, if there exist a ring topology in one branch of SBI bank and bus topology in another branch of SBI bank, connecting these two topologies will result in Hybrid topology.
 
+## Transmission Modes
+The way in which data is transmitted from one device to another device is known as transmission mode.
 
-## Types of Networks
-### LAN (Local Area Network)
-This network is a connection of two or more personal computers spanned in a small area such as building, office through a communication medium such as twisted pair cable, coaxial cable, etc.
+- Simplex Mode
+- Half-Duplex Mode
+- Full-Duplex Mode
+## Simplex Mode 
+- The communication is unidirectional, as on a one-way street. 
+- Only one of the two devices on a link can transmit; the other can only receive.
+- Keyboards and traditional monitors are examples of simplex devices.
 
-### PAN (Personal Area Network)
-This network is spanned for personal use of computing devices (mobile phones, laptops, media player, and play stations), arranged within a person, typically within a range of 10 meters such as Bluetooth, Wi-Fi, USB, etc., and covers an area of 30 feet.
+## Half-Duplex Mode
+- Each station can both transmit and receive, but not at the same time. 
+- When one device is sending, the other can only receive, and vice versa.
+- The half-duplex mode is like a one-lane road with traffic allowed in both directions. 
+- Walkie-talkies is an example of half-duplex systems
 
-### MAN (Metropolitan Area Network)
-This network is inter-connection of different LANs, covers a larger geographic area, uses between banks, and colleges in a city and airline reservation through a telephone exchange line.
+## Full-Duplex Mode 
+- Both stations can transmit and receive simultaneously.
+- The full-duplex mode is like a two-way street with traffic flowing in both directions at the same time. 
+- In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
+- This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
 
-### WAN (Wide Area Network)
-This network spans over a large geographical area through a telephonic line, fiber optic cable or satellite links used in the sectors of Business, Government, and Education. The Internet is a broad network in the world.
-
+## OSI Model
+- OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer.
+- It consists of seven layers, and each layer performs a particular network function.
+- OSI model divides the whole task into seven smaller and manageable tasks. Each layer is assigned a particular task.
+- Each layer is self-contained, so that task assigned to each layer can be performed independently.
 ## OSI Layers
-- Physical Layer
-- Data Link Layer
-- Network Layer
-- Transport Layer
-- Session Layer
-- Presentation Layer
-- Application Layer
+- Physical Layer {Responsibility of the Network}
+- Data Link Layer {Responsibility of the Network}
+- Network Layer {Responsibility of the Network}
+- Transport Layer {Responsibility of the Host}
+- Session Layer {Responsibility of the Host}
+- Presentation Layer {Responsibility of the Host}
+- Application Layer {Responsibility of the Host}
 
 ## Summary of Layers
 - **Physical Layer:** It provides a physical medium through which bits are transmitted
@@ -1974,6 +2247,10 @@ This network spans over a large geographical area through a telephonic line, fib
 - **Transport Layer:**
 - **Application Layer:**
 
+**Network Layer** contains ICMP, IGMP, IP, ARP, RARP <br/>
+**Transport Layer** contains TCP and UDP <br/>
+**Application Layer** SMTP, FTP, TELNET, DNS, SNMP etc.
+
 ## Difference between OSI and TCP/IP
 |OSI | TCP/IP |
 | -- |-------|
@@ -1981,13 +2258,30 @@ This network spans over a large geographical area through a telephonic line, fib
 | Fixed boundaries and functionality for each layer | Flexible architecture with no strict boundaries between layers |
 | Low Reliability	| High Reliability |
 
+## Transmission Impairment
+- When the received signal is not identical to the transmitted one due to the transmission impairment. 
+- The quality of the signals will get destroyed due to transmission impairment.
+## Causes of Transmission Impairment
+- **Attenuation:** Attenuation means the loss of energy, i.e., the strength of the signal decreases with increasing the distance which causes the loss of energy.
+- **Distortion:** Distortion occurs when there is a change in the shape of the signal. 
+- **Noise:** When data is travelled over a transmission medium, some unwanted signal is added to it which creates the noise.
+
 ## IPv4 Address
 - An IP address is a 32-bit dynamic address of a node in the network. 
 - An IPv4 address has 4 octets of 8-bit each with each number with a value up to 255.
 - IPv4 classes are differentiated based on the number of hosts it supports on the network. 
 - There are five types of IPv4 classes and are based on the first octet of IP addresses which are classified as Class A, B, C, D, or E
 
-## HTTP and HTTPS protocol
+## IPv4 vs IPv6 ✅
+| IPv4 | IPv6 |
+| ---- | ---- |
+| IPv4 has an address length of 32-bit represented in decimal format. | IPv6 has a 128-bit address length represented in hexadecimal format. |
+| It supports Manual and DHCP configuration. | It supports auto-configuration and renumbering configuration. |
+| IPv4 is being used as less secure protocol, as its security section is dependent on the application | IPv6 has its inbuilt security feature named as IPSEC (Internet Protocol Security) which provide additional security feature along with the security provided or implemented at application level. |
+| IPv4 does not provide Encryption and Authentication facilities. | IPv6 provides both Encryption and Authentication facilities. |
+| 	In IPv4, the Request header is not fixed and it may be between of 20-60 bytes in size. | In IPv6, the Request header is of fixed size, i.e., 40 bytes. |
+
+## HTTP and HTTPS protocol ✅
 - HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information can be transmitted on the World Wide Web (WWW).  
 - It helps the web browsers and web servers for communication. 
 - It is a ‘stateless protocol’ where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
@@ -1995,26 +2289,41 @@ This network spans over a large geographical area through a telephonic line, fib
 - HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. 
 - It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default
 
+## "This Site Can't Be Reached" ✅
+- Restart Internet Connection
+- Disable your firewall and antivirus
+- Clear your browser cache
+- Flush your DNS cache
+- Change your DNS servers
 ## SMTP Protocol
 - SMTP is the Simple Mail Transfer Protocol. 
 - SMTP sets the rule for communication between servers. 
 - This set of rules helps the software to transmit emails over the internet. - It supports both End-to-End and Store-and-Forward methods. 
 - It is in always-listening mode on port 25
 
-## DNS
+## DNS ✅
 - DNS is the Domain Name System. 
 - It is considered as the devices/services directory of the Internet. 
 - It is a decentralized and hierarchical naming system for devices/services connected to the Internet. 
 - It translates the domain names to their corresponding IPs.
 
-## Router vs Gateway
+## Router vs Gateway ✅
 - Router is a networking device used for connecting two or more network segments. 
 - It directs the traffic in the network. 
 - It transfers information and data like web pages, emails, images, videos, etc. from source to destination in the form of packets. 
 - It operates at the network layer. 
 - The gateways are also used to route and regulate the network traffic but, they can also send data between two dissimilar networks while a router can only send data to similar networks
 
-## Difference between TCP and UDP
+## Router vs Bridge ✅
+| Router | Bridge |
+| ------ | ------ |
+| Operates in network layer | Operates in data link layer |
+| Data is stored and sent in the form of packets | Data is not stored and sent in the form of packets |
+| Router is mainly used by LAN as well as MAN for connection | Bridge connects two different LANs |
+| Routers works on more than single broadcast domain | Bridge works on single broadcast domain |
+| Routers focuses on protocol address | Bridge focuses on MAC address |
+
+## Difference between TCP and UDP ✅
 | TCP | UDP |
 |-----|-----|
 | TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data. | UDP is the Datagram-oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast types of network transmission. |
@@ -2057,36 +2366,38 @@ The client requests the server for a file. When the server receives a request fo
 - It is also called the physical address embedded with Network Interface Card (NIC) used at the Data Link Layer. 
 - NIC is a hardware component in the networking device using which a device can connect to the network
 
-## Subnet
+## Subnet ✅
 - A subnet is a network inside a network achieved by the process called subnetting which helps divide a network into subnets. 
 - It is used for getting a higher routing efficiency and enhances the security of the network. 
 - It reduces the time to extract the host address from the routing table.
 
-## Hub vs Switch
-| Operates at Physical Layer | Operates at Data Link Layer |
-| -------------------------- | --------------------------- |
-| Hald Duplex Transmission Mode | Full Duplex Transmission Mode |
-| Less efficient as there is no way to avoid collisions when more than one nodes sends the packets at the same time | More efficient as the collisions can be avoided or reduced as compared to Hub |
+## MAC Address vs IP Address
+| MAC Address | IP Address |
+| ----------- | ---------- |
+| MAC Address stands for Media Access Control Address. | IP Address stands for Internet Protocol Address. |
+| A device attached with MAC Address can retrieve by ARP protocol. | A device attached with IP Address can retrieve by RARP protocol. |
+| MAC Address is used to ensure the physical address of a computer. | IP Address is the logical address of the computer. |
+| MAC Address operates in the data link layer. | IP Address operates in the network layer. |
+| No classes are used for MAC addressing. | IPv4 uses A, B, C, D, and E classes for IP addressing. |
+| MAC addresses can be used for broadcasting. | The IP address can be used for broadcasting or multicasting. |
+| MAC address is hardware oriented. | IP address is software oriented. |
 
-## Firewall
-- A firewall is a network security device; it is a protective layer for the server that monitors and filters all the incoming and outgoing network traffic. It uses a set of rules to determine whether to allow or block a specific network traffic. 
-- Firewalls can prevent unauthorized use before reaching the servers. Firewalls can be hardware or software-based.
-
-## Types of Firewalls:
-- **Packet Filters (Stateless Firewall)** − In the packet filters, if a packet matches then the packet filters set of rules and filters will drop or accept it.
-
-- **Stateful firewall filters** − It is also known as a network firewall; this filter maintains a record of all the connections passing through. It can determine if a packet is either the start of a new connection or a part of an existing connection or is an invalid packet.
-
-- **Application firewall** − A web application firewall is used for HTTP applications. There are sets of rules that are applied to monitor or block data packets from HTTP network traffic. 
-
-## Unicasting vs Multicasting vs Broadcasting
+## Hub vs Switch ✅
+| Hub | Switch |
+| --- | ------ |
+| Operates on Physical Layer of OSI Model | Operates on Data Link Layer of OSI Model |
+| Hub is a broadcast type transmission. | While switch is a Unicast, multicast and broadcast type transmission. |
+| Hub is a half duplex transmission mode. | While switch is a full duplex transmission mode. |
+| Hub cannot be used as a repeater. | While switch can be used as a repeater. |
+| Hacking of systems attached to hub is complex. | Hacking of systems attached to switch is little easy. |
+## Unicasting vs Multicasting vs Broadcasting ✅
 - **Unicasting:** If the message is sent to a single node from the source then it is known as unicasting. This is commonly used in networks to establish a new connection
 
 - **Multicasting:** If the message is sent to a subset of nodes from the source then it is known as multicasting. Used to send the same data to multiple receivers
 
 **Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
 
-## google.com
+## google.com ✅
 - The browser checks the cache first if the content is fresh and present in cache display the same.
 - If not, the browser checks if the IP of the URL is present in the cache (browser and OS) if not then request the OS to do a DNS lookup using UDP to get the corresponding IP address of the URL from the DNS server to establish a new TCP connection.
 - A new TCP connection is set between the browser and the server using three-way handshaking.
@@ -2096,7 +2407,7 @@ The client requests the server for a file. When the server receives a request fo
 - If the response data is cacheable then browsers cache the same.
 Browser decodes the response and renders the content
 
-## Domain Name System (DNS)
+## Domain Name System (DNS) ✅
 Domain Name System (DNS)
 The Domain Name System (DNS) works on Client-Server Model. It used UDP protocol for transport layer communication. DNS uses hierarchical domain-based naming scheme.
 
@@ -2228,7 +2539,12 @@ In public-key encryption/decryption, the public key that is used for encryption 
 - **Application firewall** − A web application firewall is used for HTTP applications. There are sets of rules that are applied to monitor or block data packets from HTTP network traffic. 
 
 
-## Linux Notes
+
+
+
+
+
+
 ## Linux Commands
 - ls: it lists files and directories
 - grep: this finds text in a file. The grep command searches through many files at a time to find a piece of text you are looking for.
@@ -2250,4 +2566,7 @@ In public-key encryption/decryption, the public key that is used for encryption 
 - useradd: command creates a new user. The username is added after the useradd command
 - exit: command exits the current shell.
 - kill: command is used to end a process, usually an unresponsive one. The kill command also includes the process ID or the program name
+
+
+
 

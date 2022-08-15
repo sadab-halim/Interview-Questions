@@ -2,6 +2,12 @@
 ## What is Object Oriented Programming?
 Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
 
+## Pillar of OOPS
+- Polymorphism
+- Encapsulation
+- Inheritance
+- Abstraction
+
 ## How Object Oriented Programming is related to the real world?
 - There are mainly four pillars (features) of OOP. If all of these four features are presented in programming, the programming is called  perfect Object Oriented Programming.
   - Abstraction
@@ -32,7 +38,7 @@ There are some OOPS principle that need to be satisfied while creating a class. 
 - **ISP** (Interface Segregation Principle): Make fine chopped interface instead of huge interface as client cannot be forced to implement an interface which they don't use.
 - **DIP** (Dependency Inversion Principle): Depend on abstractions, not on concretions. (Abstraction)
 
-### Abstraction
+### Abstraction ✅
 - Abstraction allows us to expose limited data and functionality of objects publicly and hide the actual implementation. 
 - It is the most important pillar in OOPS. In our example of Mobile class and objects like Nokia, Samsung, IPhone.
  
@@ -41,7 +47,7 @@ There are some OOPS principle that need to be satisfied while creating a class. 
 This is called abstraction. 
 - In classes, we can create methods that can be called and used by the users of the class but users will have no idea what these methods do internally. 
 
-### Encapsulation
+### Encapsulation ✅
 - Encapsulation is defined as the process of enclosing one or more details from outside world through access right. 
 - It says how much access should be given to particular details. 
 - Both Abstraction & Encapsulation works hand in hand because Abstraction says what details to be made visible and Encapsulation provides the level of access right to that visible details.
@@ -53,7 +59,7 @@ This is called abstraction.
 - Another point is when mobile A is connected with mobile B via Bluetooth whereas mobile B is already connected to mobile C then A is not allowed to connect C via B. 
 - This is because of accessibility restriction.
 
-### Polymorphism
+### Polymorphism ✅
 - Polymorphism can be defined as the ability of using the same name for doing different things. 
 - More precisely we say it as 'many forms of single entity'. 
 - This play a vital role in the concept of OOPS.
@@ -62,28 +68,116 @@ This is called abstraction.
 - Now same mobile is having Wide mode available in camera, so functionality would be same but with mode. 
 - This type is said to be Static polymorphism or Compile time polymorphism. 
 
-### Inheritance
+### Inheritance ✅
 - Inheritance is the ability to extend the functionality from base entity in new entity belonging to same group. 
 - This will help us to reuse the functionality which is already defined before and extend into a new entity. 
 
 - Basic Mobile functionality is to send a message, dial and receive a call. 
 - So the brands of mobile is using this basic functionality by extending the mobile class functionality and adding their own new features to their respective brand.
 
+### Modes of Inheritance
+There are 3 modes of inheritance:
+
+- **Public Mode:** If we derive a subclass from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in the derived class.
+
+- **Protected Mode:** If we derive a subclass from a Protected base class. Then both public members and protected members of the base class will become protected in the derived class.
+
+- **Private Mode:** If we derive a subclass from a Private base class. Then both public members and protected members of the base class will become Private in the derived class.
+
+| Base Class Member Access Specifier | Public | Protected | Private |
+| ---------------------------------- | ------ | --------- | ------- |
+| Public | Public | Protected | Private |
+| Protected | Protected | Protected | Private |
+| Private | Not Accessible (Hidden) | Not Accessible (Hidden) | Not Accessible (Hidden) |
+
 There are mainly 4 types of Inheritance:
 - Single Level Inheritance
+- Multiple Inheritance
 - Multilevel Inheritance
 - Hierarchical Inheritance
 - Hybrid Inheritance
-- Multiple Inheritance
 
 #### Single Level Inheritance
 In Single level inheritance, there is single base class & a single derived class i.e. - A base mobile features is extended by Samsung brand.
 
+*Syntax*
+```c++:
+class subclass_name : access_mode base_class {
+    //body of subclass
+};
+
+OR 
+
+class A{
+    .......
+};
+
+class B: public A{
+    .......
+};
+```
+
+### Multiple Inheritance
+In multiple inhertitance a class can inherit from more than one class. i.e one subclass is inherited from more than one base class.
+
+*Syntax:*
+```java:
+class subclass_name : access_mode base_class1, access_mode base_class2, ....
+{
+  // body of subclass
+};
+
+OR
+
+class B{ 
+... .. ... 
+};
+
+class C{
+... .. ...
+};
+
+class A: public B, public C{
+... ... ...
+};
+```
+
 #### Multilevel Inheritance
 In Multilevel inheritance, there is more than one single level of derivation. i.e. - After base features are extended by Samsung brand. Now Samsung brand has manufactured its new model with new added features or advanced OS like Android OS, v13.
 
+*Syntax:*
+```java:
+class C{ 
+... .. ... 
+};
+
+class B:public C{
+... .. ...
+};
+
+class A: public B{
+... ... ...
+};
+```
+
 #### Hierachical Inheritance
 In this type of inheritance, multiple derived class would be extended from base class, it's similar to single level inheritance but this time along with Samsung, iPhone is also taking part in inheritance.
+
+*Syntax:*
+```c++:
+class A  {  
+    // body of the class A.  
+}    
+class B : public A   {  
+    // body of class B.  
+}  
+class C : public A  {  
+    // body of class C.  
+}   
+class D : public A  {  
+    // body of class D.  
+}   
+```
 
 #### Hybrid Inheritance
 Single, Multilevel, & hierarchal inheritance all together construct a hybrid inheritance.
@@ -95,11 +189,6 @@ Multiple inheritance where derived class will extend from multiple base classes.
 - The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
 - We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
 
-## Pillar of OOPS
-- Polymorphism
-- Encapsulation
-- Inheritance
-- Abstraction
 ## What is Class? <br/>
 Collection of objects is called Class. It is a logical entity.
 
@@ -117,7 +206,8 @@ Collection of objects is called Class. It is a logical entity.
 ### Access Modifiers
 Access Modifiers or Access Specifiers in a class are used to assign the accessibility to the class members, i.e., they set some restrictions on the class members so that they can’t be directly accessed by the outside functions. <br/>
 
-There are 3 types of access modifiers available in C++: 
+There are 3 types of access modifiers available in C++:
+
 - **Public:** All the class members declared under the public specifier will be available to everyone. 
 
 The data members and member functions declared as public can be accessed by other classes and functions too. 
@@ -216,13 +306,12 @@ int main(){
 - Outside Class Function --> Scope Resolution Operator (::)
 
 ### What is Constructor?
-Constructor is a special method that is invoked automatically at the time of object creation. It is used to initialize the data members of new objects generally. 
-
-The constructor in C++ has the same name as the class or structure. Constructor is invoked at the time of object creation. 
-
-It constructs the values i.e. provides data for the object which is why it is known as constructors.
-
-Constructor does not have a return value, hence they do not have a return type.
+- Constructor is a special method that is invoked automatically at the time of object creation. 
+- It is used to initialize the data members of new objects generally. 
+- The constructor in C++ has the same name as the class or structure. 
+- Constructor is invoked at the time of object creation. 
+- It constructs the values i.e. provides data for the object which is why it is known as constructors.
+- Constructor does not have a return value, hence they do not have a return type.
 
 Constructors can be defined inside or outside the class declaration:-
 
@@ -462,9 +551,7 @@ int main(){
 | It is an overloaded constructor | It is a bitwise operator |
 | C++ compiler implicitly provides a copy constructor, if no copy constructor is defined in the class | A bitwise copy gets created, if the Assignment operator is not overloaded |
 
-## Virtual Constructor in C++
-
-### How constructor is different from a normal function?
+## How constructor is different from a normal function?
 - Constructor has same name as the class itself
 - Default Constructors don’t have input argument however, Copy and Parameterized Constructors have input arguments
 - Constructors don’t have return type
@@ -473,7 +560,7 @@ int main(){
 - If we do not specify a constructor, C++ compiler generates a default constructor for object (expects no parameters and has an empty body).
 
 ## Constructor Overloading
-We can have more than one constructor in a class with same name, as long as each has a different list of arguments.This concept is known as Constructor Overloading.
+- We can have more than one constructor in a class with same name, as long as each has a different list of arguments.This concept is known as Constructor Overloading.
 
 - Overloaded constructors essentially have the same name (exact name of the class) and differ by number and type of arguments.
 - A constructor is called depending upon the number and type of arguments passed.
@@ -515,7 +602,7 @@ int main(){
 ```
 
 ### Destructors 
-Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
+- Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
 
 - Destructor is also a special member function like constructor. Destructor destroys the class objects created by constructor.
 - Destructor has the same name as their class name preceded by a tiled (~) symbol.
@@ -580,7 +667,6 @@ When a class contains a pointer to memory allocated in class, we should write a 
 ### Can a destructor be virtual?
 Yes, In fact, it is always a good idea to make destructors virtual in base class when we have a virtual function
 
-## What is an Object?
 
 ### Class vs Object
 | Class | Object |
@@ -598,7 +684,7 @@ Student s1=new Student(); |
 ### Important Keywords
 - **static keyword:** is mainly used for memory management. It can be used with variables, methods, blocks and nested classes. It is used to share the same variable or method of a given class. Basically, static is used for a constant variable or a method that is same for every instance of a class
 
-- **Virtual keyword:** is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class.For example, this method can be overridden by any class that inherits it.
+- **Virtual keyword:** is used to modify a method, property, or event declaration and allow for it to be overridden in a derived class.For example, this method can be overridden by any class that inherits it.
 
 - **Abstract keyword:** is used to declare the method or a class as abstract.
 
