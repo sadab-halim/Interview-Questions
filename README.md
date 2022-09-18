@@ -97,6 +97,20 @@ public:
 
 Here, = sign has got nothing to do with the assignment, and value 0 is not assigned to anything. It is used to simply tell the compiler that a function will be pure and it will not have anybody
 
+## What is use od \0 character
+‘\0’ (null character) is used to refer a null value. It is often used at the end of an array of character i,e string to indicate the termination of array.It holds a nothing,not even 0
+
+## Why ‘for’ loop is called a entry control loop?
+In case of for loop, the condition is satisfied first then the statements get executed.Due to entry time checking, for loop is called entry control loop.
+
+## What is the difference between the expression “++a” and “a++”?
+With ++a, the increment happens first on variable a, and the resulting value is used. This is called as Prefix increment.
+With a++, the current value of the variable will be used in an operation. This is called as postfix increment.
+
+## What are actual arguments?
+Ans-When you create and use functions that need to perform an action on some given values, you need to pass these given values to that function. The values that are being passed into the called functions are referred to as actual arguments.
+
+
 # OOPS
 
 ## What is Object Oriented Programming?
