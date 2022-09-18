@@ -1,3 +1,103 @@
+# C Interview Questions
+## Why is C called a mid-level programming language?
+C has characteristics of both assembly-level i.e. low-level and higher-level languages. So as a result, C is commonly called a middle-level language. U
+
+## What is Token
+The individual elements of a program are called Tokens.
+
+## What is a preprocessor?
+A preprocessor is a software program that processes a source file before sending it to be compiled. Inclusion of header files, macro expansions, conditional compilation, and line control are all possible with the preprocessor
+
+## What is the difference between global int and static int?
+The difference between this is in scope. A truly global variable has a global scope and is visible everywhere in your program
+
+A static variable has a local scope but its variables are not allocated in the stack segment of the memory
+
+## Pointer
+A pointer is a variable that stores or points to another variable's address. The value of a variable is stored in a normal variable, whereas the address of a variable is stored in a pointer variable
+
+## What is pointer to pointer?
+A pointer can also be used to store the address of another pointer. A double pointer or pointer to pointer is such a pointer. The address of a variable is stored in the first pointer, whereas the address of the first pointer is stored in the second pointer
+
+## Why i++ executes faster than i+1?
+
+## Typecasting
+Typecasting is the process to convert a variable from one datatype to another.  If we want to store the large type value to an int type, then we will convert the data type into another data type explicitly.
+
+## When should we use the register storage specifier?
+If a variable is used frequently, it should be declared with the register storage specifier, and the compiler may allocate a CPU register for its storage to speed up variable lookup
+
+## Different types of control statements
+- If-else statement.
+    - normal if-else statement.
+    - Else-if statement
+    - nested if-else statement.
+- Switch statement
+
+## What is an r-value and l-value?
+- The term "r-value" refers to a data value stored in memory at a given address. 
+- An r-value is an expression that cannot have a value assigned to it, hence it can only exist on the right side of an assignment operator(=).
+- The term "l-value" refers to a memory location that is used to identify an object. 
+- The l-value can be found on either the left or right side of an assignment operator(=). 
+- l-value is frequently used as an identifier
+
+## Difference between malloc() and calloc()
+- calloc() and malloc() are memory dynamic memory allocating functions. 
+- The main difference is that malloc() only takes one argument, which is the number of bytes, but calloc() takes two arguments, which are the number of blocks and the size of each block.
+
+## Difference between struct and union in C
+- A struct is a group of complex data structures stored in a block of memory where each member on the block gets a separate memory location to make them accessible at once
+
+- Whereas in the union, all the member variables are stored at the same location on the memory as a result to which while assigning a value to a member variable will change the value of all other members
+
+## Memory Leak
+When we assign a variable it takes space of our RAM (either heap or RAM)dependent on the size of data type, however, if a programmer uses a memory available on the heap and forgets to a delta it, at some point all the memory available on the ram will be occupied with no memory left this can lead to a memory leak
+
+## What is Dynamic Memory Allocation
+
+## How are dangling pointers different from memory leaks?
+
+## Difference between macros and functions
+| Macros | Functions |
+| It is preprocessed rather than compiled | It is compiled not preprocessed. |
+| It is compiled not preprocessed. | Function checks for compilation errors |
+| Code length is increased. | Code length remains the same. | 
+| Macros are faster in execution. | Functions are a bit slower in execution. |
+| Macros are useful when a small piece of code is used multiple times in a program. | Functions are helpful when a large piece of code is repeated a number of times. |
+
+
+# C++ Interview Questions
+
+## Call by valu and Call by reference
+In call by value method, we pass a copy of the parameter is passed to the functions. For these copied values a new memory is assigned 
+
+and changes made to these values do not reflect the variable in the main function.
+
+In call by reference method, we pass the address of the variable and the address is used to access the actual argument used in the function call. So changes made in the parameter alter the passing argument
+
+## Difference between Virtual Function and Pure Virtual Function
+
+A virtual function is a member function in the base class that you redefine in a derived class. It is declared using the virtual keyword
+
+```c++:
+class base{
+public:
+    virtual void fun(){}
+};
+```
+
+A pure virtual function is a function that has no implementation and is declared by assigning 0. It has no body.
+
+```c++:
+class base{
+public:
+    virtual void fun() = 0;
+};
+```
+
+Here, = sign has got nothing to do with the assignment, and value 0 is not assigned to anything. It is used to simply tell the compiler that a function will be pure and it will not have anybody
+
+# OOPS
 
 ## What is Object Oriented Programming?
 Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
@@ -8,12 +108,6 @@ Object-oriented programming (OOP) is a computer programming model that organizes
 - Inheritance
 - Abstraction
 
-## How Object Oriented Programming is related to the real world?
-- There are mainly four pillars (features) of OOP. If all of these four features are presented in programming, the programming is called  perfect Object Oriented Programming.
-  - Abstraction
-  - Encapsulation
-  - Inheritance
-  - Polymorphism
 
 ### Object
 - Any real world entity which can have some characteristics or which can perform some tasks is called as Object. 
@@ -60,13 +154,57 @@ This is called abstraction.
 - This is because of accessibility restriction.
 
 ### Polymorphism ✅
-- Polymorphism can be defined as the ability of using the same name for doing different things. 
-- More precisely we say it as 'many forms of single entity'. 
-- This play a vital role in the concept of OOPS.
+The word “polymorphism” means having many forms.
+Polymorphism can be defined as the ability of a message to be displayed in more than one form. 
 
-- Let's say in our phone we have a 12MP camera available i.e. – it is having a functionality of CameraClick(). 
-- Now same mobile is having Wide mode available in camera, so functionality would be same but with mode. 
-- This type is said to be Static polymorphism or Compile time polymorphism. 
+A real-life example of polymorphism is a person who at the same time can have different characteristics. Like a man at the same time is a father, a husband and an employee. So the same person exhibits different behavior in different situations. This is called polymorphism.
+
+Polymorphism is mainly divided into two types:
+- Compile-time Polymorphism
+- Runtime Polymorphism
+
+### Compile-Time Polymorphism
+This type of polymorphism is achieved by function overloading or operator overloading.
+
+**Function Overloading:** When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded. 
+
+Functions can be overloaded by changing the number of arguments or/and changing the type of arguments
+
+This is also known as *Method Overloading* in Java.
+
+Advantages:
+- Increases the readability of the program.
+
+### Why Method Overloading is not possible by changing the return type of method?
+In java, method overloading is not possible by changing the return type of the method because there may occur ambiguity.
+
+### What Functions cannot be overloaded in C++?
+1. Function declarations that differ only in the return type.
+2. Member function declarations with the same name and the name parameter-type-list cannot be overloaded if any of them is a static member function declaration.
+
+**Operator Overloading:** we can make use of the addition operator (+) for string class to concatenate two strings. We know that the task of this operator is to add two operands. 
+
+So a single operator ‘+’, when placed between integer operands, adds them and when placed between string operands, concatenates them.
+
+### Which Operators cannot be overloaded in C++?
+Some of the operators cannot be overloaded. These operators are as follows:
+- “.” Member access or dot operator
+- “? : ” Ternary or conditional operator
+- “::” Scope resolution operator
+- “.*” Pointer to member operator
+- “sizeof” The object size operator
+- “typeid” Object type operator
+
+
+### Runtime Poylmorphism
+This type of polymorphism is achieved by Function Overriding.
+
+It is also known as *Dynamic Method Dispatch* in Java.
+
+**Function Overriding** occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden. 
+
+### Why Do We Need Polymorphism?
+Polymorphism allows us to reuse code by creating one function that's usable for multiple uses. We can also make operators polymorphic and use them to add not only numbers but also combine strings. This saves time and allows for a more streamlined program.
 
 ### Inheritance ✅
 - Inheritance is the ability to extend the functionality from base entity in new entity belonging to same group. 
@@ -189,9 +327,6 @@ Multiple inheritance where derived class will extend from multiple base classes.
 - The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slowe execution of the programme.
 - We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
 
-## What is Class? <br/>
-Collection of objects is called Class. It is a logical entity.
-
 ### Difference between Class and Structure <br/>
 | Class | Structure |
 | ----- | --------- |
@@ -202,6 +337,19 @@ Collection of objects is called Class. It is a logical entity.
 | It is used for Data abstraction and further inheritance | It is used for grouping of data |
 | It can have NULL values | It cannot have NULL values |
 | It may have all the types of constructors and destructors | It may have only parameterized constructor |
+
+### Class vs Object
+| Class | Object |
+| ----- | ------ |
+| Class is a blueprint or template from which objects are created | Object is an instance of a class |
+| Class is a group of similar objects | Object is a real world entity such as pen, laptop, mobile, bed, keyboard, mouse, chair etc |
+| Class is a logical entity | Object is a physical entity |
+| Class is declared using class keyword e.g.
+class Student{} | Object is created through new keyword mainly e.g.
+Student s1=new Student(); |
+| Class is declared once | Object is created many times as per requirement |
+| Class doesn't allocated memory when it is created | Object allocates memory when it is created |
+| There is only one way to define class in java using class keyword | There are many ways to create object in java such as new keyword, newInstance() method, clone() method, factory method and deserialization |
 
 ### Access Modifiers
 Access Modifiers or Access Specifiers in a class are used to assign the accessibility to the class members, i.e., they set some restrictions on the class members so that they can’t be directly accessed by the outside functions. <br/>
@@ -214,7 +362,7 @@ The data members and member functions declared as public can be accessed by othe
 
 The public members of a class can be accessed from anywhere in the program using the direct member access operator (.) with the object of that class. 
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -240,7 +388,7 @@ int main(){
 
 They are not allowed to be accessed directly by any object or function outside the class. Only the member functions or the friend functions are allowed to access the private data members of the class. 
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -271,7 +419,7 @@ The difference is that the class members declared as Protected can be accessed b
 
 **NOTE:** This access through inheritance can alter the access modifier of the elements of base class in derived class depending on the mode of Inheritance.
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -322,7 +470,7 @@ The syntax for defining the constructor outside the class: <br/>
 `<class-name>: :<class-name> (list-of-paramters) {// constructor defn}`
 
 ### Example - 1
-```java:
+```c++:
 // defining the constructor within the class
 #include <bits/stdc++.h>
 using namespace std;
@@ -355,7 +503,7 @@ int main(){
 }
 ```
 ### Example - 2
-```java:
+```c++:
 // defining the constructor outside the class
 #include <bits/stdc++.h>
 using namespace std;
@@ -406,7 +554,7 @@ int main(){
 
 **NOTE:** Even if we do not define any constructor explicitly, the compiler will automatically provide a default constructor implicitly.
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -456,7 +604,7 @@ Example e(0, 50);   // Implicit call
 - It is used to initialize the various data elements of different objects with different values when they are created.
 - It is used to overload constructors.
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -566,7 +714,7 @@ int main(){
 - A constructor is called depending upon the number and type of arguments passed.
 - While creating the object, arguments must be passed to let compiler know, which constructor needs to be called. 
 
-```java:
+```c++:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -603,7 +751,6 @@ int main(){
 
 ### Destructors 
 - Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
-
 - Destructor is also a special member function like constructor. Destructor destroys the class objects created by constructor.
 - Destructor has the same name as their class name preceded by a tiled (~) symbol.
 - It is not possible to define more than one destructor. 
@@ -641,8 +788,6 @@ Destructors with the access modifier as private are known as Private Destructors
 Whenever we want to control the destruction of objects of a class, we make the destructor private. For dynamically created objects, it may happen that we pass a pointer to the object to a function and the function deletes the object. 
 
 If the object is referred after the function call, the reference will become dangling.
-
-### Virtual Destructor
 
 ### Pure Virtual Destructor
 Pure virtual destructors are legal in standard C++ and one of the most important things to remember is that if a class contains a pure virtual destructor, it must provide a function body for the pure virtual destructor. 
@@ -738,65 +883,6 @@ Student s1=new Student(); |
 - JVM is platform dependent because it takes java byte code and generates byte code for the current operating system. 
 - So Java software is platform dependent but Java language is platform independent because different operating system have different JVMs.
 
-## Features of OOPS
-- Polymorphism
-- Inheritance
-- Encapsulation
-- Abstraction
-## Polymorphism
-The word “polymorphism” means having many forms.
-Polymorphism can be defined as the ability of a message to be displayed in more than one form. 
-
-A real-life example of polymorphism is a person who at the same time can have different characteristics. Like a man at the same time is a father, a husband and an employee. So the same person exhibits different behavior in different situations. This is called polymorphism.
-
-Polymorphism is mainly divided into two types:
-- Compile-time Polymorphism
-- Runtime Polymorphism
-
-(Pic) --> https://www.geeksforgeeks.org/polymorphism-in-c/
-
-### Compile-Time Polymorphism
-This type of polymorphism is achieved by function overloading or operator overloading.
-
-**Function Overloading:** When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded. 
-
-Functions can be overloaded by changing the number of arguments or/and changing the type of arguments
-
-This is also known as *Method Overloading* in Java.
-
-Advantages:
-- Increases the readability of the program.
-
-### Why Method Overloading is not possible by changing the return type of method?
-In java, method overloading is not possible by changing the return type of the method because there may occur ambiguity.
-
-### What Functions cannot be overloaded in C++?
-1. Function declarations that differ only in the return type.
-2. Member function declarations with the same name and the name parameter-type-list cannot be overloaded if any of them is a static member function declaration.
-
-**Operator Overloading:** we can make use of the addition operator (+) for string class to concatenate two strings. We know that the task of this operator is to add two operands. 
-
-So a single operator ‘+’, when placed between integer operands, adds them and when placed between string operands, concatenates them.
-
-### Which Operators cannot be overloaded in C++?
-Some of the operators cannot be overloaded. These operators are as follows:
-- “.” Member access or dot operator
-- “? : ” Ternary or conditional operator
-- “::” Scope resolution operator
-- “.*” Pointer to member operator
-- “sizeof” The object size operator
-- “typeid” Object type operator
-
-
-### Runtime Poylmorphism
-This type of polymorphism is achieved by Function Overriding.
-
-It is also known as *Dynamic Method Dispatch* in Java.
-
-**Function Overriding** occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden. 
-
-### Why Do We Need Polymorphism?
-Polymorphism allows us to reuse code by creating one function that's usable for multiple uses. We can also make operators polymorphic and use them to add not only numbers but also combine strings. This saves time and allows for a more streamlined program.
 
 ### Virtual Function ✅
 - A virtual function is a member function in the base class that we redefine in a derived class. It is declared using the virtual keyword.
@@ -1070,13 +1156,6 @@ When type of the object is determined at the runtime, it is known as dynamic bin
 ### Message Binding
 When type of the object is determined at the compiled time, it is known as dynamic binding.
 
-## Object Oriented Design Interview Questions
-### Design a HashMap
-### Design a LRU Cache
-### Design a Call Center
-### Design a Parking Lot
-### Design an Online Chat
-
 ## Miscellaneous
 ### C vs C++ vs Java ✅
 | Metrics | C | C++ | Java |
@@ -1165,19 +1244,124 @@ Early (or static) binding refers to compile time binding and Late (or dynamic) b
 
 - Java garbage collection is an automatic process. Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are not, and deleting the unused objects. 
 
-### Define Manipulators
-### What do we mean by finally block?
-### What is a final variable?
 ### What is meany by an exception?
-### Is an error basically the same as an exception?
-### What is Exception Handling
-### What is the method 'finalize' used for?
+- An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions. 
+- When an error occurs within a method, the method creates an object and hands it off to the runtime system.
+
+### Difference between Errors and Exceptions
+| Errors | Exceptions |
+| ------ | ---------- |
+| The error indicates trouble that primarily occurs due to the scarcity of system resources. | The exceptions are the issues that can appear at runtime and compile time |
+| It is not possible to recover from an error | It is possible to recover from an exception |
+
+### Exception Handling
+- Exception handling is the process of responding to unwanted or unexpected events when a computer program runs. 
+- Exception handling deals with these events to avoid the program or system crashing, and without this process, exceptions would disrupt the normal operation of a program.
+
 ### What are the three arguments of a ternary operator?
+The ternary operator take three arguments: The first is a comparison argument. The second is the result upon a true comparison. The third is the result upon a false comparison.
+
 ### Describe the concept of Enum
-### Basic understanding of design patterns
+Enumeration (or enum) is a user defined data type in C. It is mainly used to assign names to integral constants, the names make a program easy to read and maintain.
+
 ### Is it possible for a class to inherit the constructor of its base class?
+In inheritance, the derived class inherits all the members(fields, methods) of the base class, but derived class cannot inherit the constructor of the base class because constructors are not the members of the class.
+
 ### When should I use a struct instead of a class?
-### Cohesion vs Coupling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Java
+
+## Why is Java a platform independent language?
+## Why is Java not a pure object oriented language?
+- Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language.
+
+## Difference between Heap and Stack Memory in java. And how java utilizes this.
+- Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. 
+- On the other hand, Heap memory is the portion that was not allocated to the java program but it will be available for use by the java program when it is required, mostly during the runtime of the program.
+
+- Java Utilizes this memory as:
+- When we write a java program then all the variables, methods, etc are stored in the stack memory.
+- And when we create any object in the java program then that object was created in the heap memory. 
+- And it was referenced from the stack memory.
+
+## Why does Java not make use of pointers?
+- Java focuses on code simplicity, and the usage of pointers can make it challenging. 
+- Pointer utilization can also cause potential errors. 
+- Moreover, security is also compromised if pointers are used because the users can directly access memory with the help of pointers.
+
+- Thus, a certain level of abstraction is furnished by not including pointers in Java. 
+- Moreover, the usage of pointers can make the procedure of garbage collection quite slow and erroneous. 
+- Java makes use of references as these cannot be manipulated, unlike pointers.
+
+## What do you understand by instance variable and local variable?
+
+## JIT Compiler
+- JIT stands for Just-In-Time and it is used for improving the performance during run time. 
+- It does the task of compiling parts of byte code having similar functionality at the same time thereby reducing the amount of compilation time for the code to run.
+- The compiler is nothing but a translator of source code to machine executable code.
+
+## A single try block and multiple catch blocks can co-exist in a Java program. Explain.
+- Yes, multiple catch blocks can exist but specific approaches should come prior to the general approach because only the first catch block satisfying the catch condition is executed.
+
+## Difference between final, finally and finalize
+
+## When can we use super keyword?
+- The super keyword is used to access hidden fields and overridden methods or attributes of the parent class
+
+## Can the static methods be overloaded?
+- Yes! There can be two or more static methods in a class with the same name but differing input parameters.
+
+## Why is the main method static in Java?
+- The main method is always static because static members are those methods that belong to the classes, not to an individual object. 
+- So if the main method will not be static then for every object, It is available. 
+- And that is not acceptable by JVM. JVM calls the main method based on the class name itself. 
+- Not by creating the object.
+- Because there must be only 1 main method in the java program as the execution starts from the main method. 
+- So for this reason the main method is static
+
+## Can the static methods be overriden?
+- No! Declaration of static methods having the same signature can be done in the subclass but run time polymorphism can not take place in such cases.
+- Overriding or dynamic polymorphism occurs during the runtime, but the static methods are loaded and looked up at the compile time statically. 
+- Hence, these methods cant be overridden
+
+## Garbage Collection
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
