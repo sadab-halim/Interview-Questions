@@ -6,14 +6,41 @@ A database is a collection of related data which represents some aspect of the r
 - It consists of a group of programs which manipulate the database. 
 - The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
 - In large systems, a DBMS helps users and other third-party software to store and retrieve data.
-- Database management systems wee developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
-1.	Data redundancy and inconsistency
-2.	Difficulty in accessing data
-3.	Data isolation – multiple files and formats
-4.	Integrity problems
-5.	Atomicity of updates
-6.	Concurrent access by multiple users
-7.	Security problems
+
+## Types of DBMS
+- **Relational DBMS (RDBMS)**: This type of DBMS, uses a structure which allows the users to access data in relation to another piece of data in a database. In this type of DBMS, data is stored in the form of tables.
+- **Hierarchical DBMS:** This type of DBMS has a structure similar to that of a tree, wherein the nodes represent records and the branches of the tree represent fields.
+- **Network DBMS:** This type of DBMS supports many-to-many relations wherein multiple member records can be linked.
+- **Object-oriented DBMS:** Uses small individual software called object to store pieces of data and the instructions for the actions to be done with the data.
+
+## DBMS and RDBMS
+| DBMS | RDBMS |
+| ---- | ----- |
+| DBMS stores data as file. | RDBMS stores data in tabular form. |
+| Data elements need to access individually. | Multiple data elements can be accessed at the same time. |
+| No relationship between data. | Data is stored in the form of tables which are related to each other. |
+| Normalization is not present. | Normalization is present. |
+| It deals with small quantity of data. | It deals with large amount of data. |
+| The data in a DBMS is subject to low security levels with regards to data manipulation. | There exists multiple levels of data security in a RDBMS. |
+
+## Advantages of DBMS
+- Sharing of Data
+- Redundancy control
+- Data Independence
+- Integrity constraints
+
+## Different Languages in DBMS
+- **DDL (Data Definition Language):** It contains commands which are required to define the database.
+Ex: CREATE, ALTER, DROP, TRUNCATE, RENAME etc.
+
+- **DML (Data Manipulation Language):** It contains commands which are required to manipulate the data present in the database.
+Ex: SELECT, UPDATE, INSERT, DELETE, etc
+
+- **DCL (Data Control Language):** It contains commands which are required to deal with user permissions and controls of the database system.
+Ex: GRANT and REVOKE
+
+- **TCL (Transaction Control Language):** It contains commands which are required to deal with the transaction of the database.
+Ex: COMMIT, ROLLBACK, and SAVEPOINT
 
 ## ER diagram:
 - ER diagram or Entity Relationship diagram is a conceptual model that gives the graphical representation of the logical structure of the database.
@@ -36,19 +63,17 @@ An entity set is a set of the same type of entities.
 - Discriminator can identify a group of entities from the entity set.
 - Discriminator is represented by underlining with a dashed line.
 
-## Relationship:
-A relationship is defined as an association among several entities.
-- **Unary Relationship Set** - Unary relationship set is a relationship set where only one entity set participates in a relationship set.
-- **Binary Relationship Set** - Binary relationship set is a relationship set where two entity sets participate in a relationship set.
-- **Ternary Relationship Set** - Ternary relationship set is a relationship set where three entity sets participate in a relationship set.
-- **N-ary Relationship Set** - N-ary relationship set is a relationship set where ‘n’ entity sets participate in a relationship set.
-
-## Cardinality Constraint:
+## Cardinality:
 Cardinality constraint defines the maximum number of relationship instances in which an entity can participate.
-- **One-to-One Cardinality** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with at most one entity in set A.
-- **One-to-Many Cardinality** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with at most one entity in set A.
-- **Many-to-One Cardinality** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with any number of entities in set A.
-- **Many-to-Many Cardinality** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with any number (zero or more) of entities in set A.
+- **One-to-One Relationship** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with at most one entity in set A.
+
+- **One-to-Many Relationship** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with at most one entity in set A.
+
+- **Many-to-One Relationship** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with any number of entities in set A.
+
+- **Many-to-Many Relationship** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with any number (zero or more) of entities in set A.
+
+- **Self-Referencing Relationship** - Used when a record in table A is related to the same table itself.
 
 ## Attributes:
 Attributes are the descriptive properties which are owned by each entity of an Entity Set.
@@ -105,6 +130,15 @@ A key is a set of attributes that can identify each tuple uniquely in the given 
 - **Unique Key**
    - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. 
    - It may have a NULL value.
+
+## Difference between DROP, TRUNCATE and DELETE
+| DELETE | DROP | TRUNCATE |
+| ---- | -------- | ------ |
+| DELETE command is DML command | DROP command is DDL command | TRUNCATE command is a DDL command |
+| It deletes one or more existing records from the table in the database | It drops the complete table from the database | It deletes all the rows from the existing table, leaving the row with the column names. |
+| We can restore any deleted row or multiple rows from the database using the ROLLBACK command | We cannot get the complete table deleted from the database using the ROLLBACK command | We cannot restore all the deleted rows from the database using the ROLLBACK command |
+| DELETE command does not free the allocated space of the table from memory | DROP command removes the space allocated for the table from memory. | TRUNCATE command does not free the space allocated for the table from memory |
+| DELETE FROM table_name WHERE condition; | DROP TABLE table_name; | TRUNCATE TABLE table_name; |  
 
 ## Functional Dependency:
 In any relation, a functional dependency α → β holds if- Two tuples having same value of attribute α also have same value for attribute β.
@@ -179,39 +213,11 @@ A → B is called a transitive dependency if and only if A is not a super key an
 ## Denormalization ✅
 Denormalization is a technique used to merge data from multiple tables into a single table that can be queried quickly.
 
-## Transaction:
-Transaction is a single logical unit of work formed by a set of operations.
+## Difference between a 2-tier and 3-tier architecture in a DBMS
+The **2-tier architecture** refers to the client-server architecture in which applications at the client end directly communicate with the database at the server end without any middleware involved.
+Example – Contact Management System created using MS-Access or Railway Reservation System, etc.
 
-### Operations in Transaction:
-- **Read Operation** - Read(A) instruction will read the value of ‘A’ from the database and will store it in the buffer in main memory.
-- **Write Operation** – Write(A) will write the updated value of ‘A’ from the buffer to the database.
-
-## Transaction States:
-- **Active State** –
-   - This is the first state in the life cycle of a transaction.
-   - A transaction is called in an active state as long as its instructions are getting executed.
-   - All the changes made by the transaction now are stored in the buffer in main memory.
-
-- **Partially Committed State** –
-   - After the last instruction of the transaction has been executed, it enters into a partially committed state.
-   - After entering this state, the transaction is considered to be partially committed.
-   - It is not considered fully committed because all the changes made by the transaction are still stored in the buffer in main memory.
-
-- **Committed State** –
-   - After all the changes made by the transaction have been successfully stored into the database, it enters into a committed state.
-   - Now, the transaction is considered to be fully committed.
-
-- **Failed State** –
-   - When a transaction is getting executed in the active state or partially committed state and some failure occurs due to which it becomes impossible to continue the execution, it enters into a failed state.
- 
-- **Aborted State** –
-   - After the transaction has failed and entered into a failed state, all the changes made by it have to be undone.
-   - To undo the changes made by the transaction, it becomes necessary to roll back the transaction.
-   - After the transaction has rolled back completely, it enters into an aborted state.
-
-- **Terminated State** –
-   - This is the last state in the life cycle of a transaction.
-   - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
+The **3-tier architecture** contains another layer between the client and the server to provide GUI to the users and make the system much more secure and accessible. In this type of architecture, the application present on the client end interacts with an application on the server end which further communicates with the database system
 
 ## Transactions
 - A transaction is a collection of logically related operations which reads and possibly updates the various data items in the database. 
@@ -319,3 +325,36 @@ At every level , we have Key and Data Pointer and data pointer points to either 
 - Internal node can have children between ⌈ P/2 ⌉ and P Internal node can have keys between ⌈ P/2 ⌉ – 1 and P-1 B+ Trees
 
 In B+ trees, the structure of leaf and non-leaf are different, so their order is. Order of non-leaf will be higher as compared to leaf nodes. Searching time will be less in B+ trees, since it doesn’t have record pointers in non-leaf because of which depth will decrease.
+
+## Data Warehousing
+The process of collecting, extracting, transforming, and loading data from multiple sources and storing them in one database is known as **data warehousing.**
+
+## Different levels of data abstraction in DBMS
+The process of hiding irrelevant details from users is known as data abstraction.
+
+Data Abstraction can be divided into three levels:
+- **Physical Level:** it is the lowest level and is managed by DBMS. This level consists of data storage descriptions and the details of this level are typically hidden from system admins, developers, and users.
+
+- **Conceptual or Logical Level:** it is the level on which developers and system admins work and it determines what data is stored in the database and what is the relationship between the data points.
+
+- **External or View Level:** it is the level that describes only part of the database and hides the details of the table schema and its physical storage from the users. The result of a query is an example of View level data abstraction.  A view is a virtual table created by selecting fields from one or more tables present in the database.
+
+## Do we consider NULL values the same as that of blank space or zero
+A NULL value is not at all same as that of zero or a blank space.
+The NULL value represents a value which is unavailable, unknown, assigned or not applicable where as zero is a number and blank space is a character.
+
+## Triggers
+- A special kind of stored procedure that is not called directly by a user is called a trigger.
+- A trigger is created and is programmed to fire when a specific event occurs
+- A trigger cannot be called or execute directly by a user.
+- We cannot schedule a trigger
+- Parameters cannot be passed as input
+- Cannot return values
+
+## Stored Procedures
+- A group of SQL statements which can be reused again and again. 
+- These statements are created and stored in the database.
+- We can execute stored procedures by using the exec command, whenever we want.
+- We call a stored procedure from another stored procedure.
+- Parameters can bes passed as input
+- Can return with zero or n value
