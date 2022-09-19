@@ -72,7 +72,7 @@ A Network Topology is the arrangement with which computer systems or network dev
 
 ### Star Topology
 - Star Topology is an arrangement of the network in which every node is connected to the central hub, switch or a central computer.
-- The central computer is known as a server, and the peripherial devices attached to the server are known as clients.
+- The central computer is known as a server, and the peripheral devices attached to the server are known as clients.
 - Coaxial cable or RJ-45 cables are used to connect the computers.
 - Hub or Switches are mainly used as connection devices in a physical star topology.
 
@@ -154,7 +154,7 @@ The way in which data is transmitted from one device to another device is known 
 - **Network Layer:** It is responsible for moving the packets from source to destination
 - **Transport Layer:** It provides reliable message delivery from process to process
 - **Session Layer:** It is used to establish, manage and terminate the sessions
-- **Presentation Layer:** It is responsible for translation, compressions encryption
+- **Presentation Layer:** It is responsible for translation, compressions and encryption
 - **Application Layer:** This layer provide the services to the users
 
 ## TCP/IP Model 
@@ -201,7 +201,7 @@ The way in which data is transmitted from one device to another device is known 
 ## HTTP and HTTPS protocol ✅
 - HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information can be transmitted on the World Wide Web (WWW).  
 - It helps the web browsers and web servers for communication. 
-- It is a ‘stateless protocol’ where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
+- It is a *‘stateless protocol’* where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
 
 - HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. 
 - It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default
@@ -215,21 +215,18 @@ The way in which data is transmitted from one device to another device is known 
 ## SMTP Protocol
 - SMTP is the Simple Mail Transfer Protocol. 
 - SMTP sets the rule for communication between servers. 
-- This set of rules helps the software to transmit emails over the internet. - It supports both End-to-End and Store-and-Forward methods. 
+- This set of rules helps the software to transmit emails over the internet. 
+- It supports both End-to-End and Store-and-Forward methods. 
 - It is in always-listening mode on port 25
 
-## DNS ✅
-- DNS is the Domain Name System. 
-- It is considered as the devices/services directory of the Internet. 
-- It is a decentralized and hierarchical naming system for devices/services connected to the Internet. 
-- It translates the domain names to their corresponding IPs.
-
 ## Router vs Gateway ✅
-- Router is a networking device used for connecting two or more network segments. 
-- It directs the traffic in the network. 
-- It transfers information and data like web pages, emails, images, videos, etc. from source to destination in the form of packets. 
-- It operates at the network layer. 
-- The gateways are also used to route and regulate the network traffic but, they can also send data between two dissimilar networks while a router can only send data to similar networks
+| Router | Gateway |
+| ------ | ------- |
+| It's a piece of hardware that's in charge of receiving, processing, and forwarding data packets to other networks. | It is a gadget that allows networks with various protocols to communicate with one another. |
+| The OSI model's layer 3 and layer 4 are used by routers. | The OSI model's layer 5 is where a gateway functions. |
+| A router's primary job is to transport traffic from one network to another. | A gateway's primary role is to convert one protocol to another. |
+| A router's main function is to store routing information for various networks and route traffic based on the destination. | A gateway's main function is to distinguish between what is within and what is outside the network. |
+
 
 ## Router vs Bridge ✅
 | Router | Bridge |
@@ -262,6 +259,17 @@ The way in which data is transmitted from one device to another device is known 
 - It is an application layer protocol used to auto-configure devices on IP networks enabling them to use the TCP and UDP-based protocols. 
 - The DHCP servers auto-assign the IPs and other network configurations to the devices individually which enables them to communicate over the IP network. 
 - It helps to get the subnet mask, IP address and helps to resolve the DNS. It uses port 67 by default.
+
+
+## Distance Vector Routing:
+In distance vector routing, each node shares its routing table with its immediate neighbours periodically and when there is a change.
+
+## Routing Information Protocol
+The Routing Information Protocol (RIP) is an intradomain routing protocol used inside an autonomous system. It is a very simple protocol based on distance vector routing.
+
+## Link State Routing
+In link state routing, if each node in the domain has the entire topology of the domain the list of nodes and links, how they are connected including the type, cost (metric), and condition of the links (up or down)-the node can use
+Dijkstra's algorithm to build a routing table.
 
 ## ARP Protocol
 - ARP is  Address Resolution Protocol. 
@@ -312,7 +320,7 @@ The client requests the server for a file. When the server receives a request fo
 
 - **Multicasting:** If the message is sent to a subset of nodes from the source then it is known as multicasting. Used to send the same data to multiple receivers
 
-**Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
+- **Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
 
 ## google.com ✅
 - The browser checks the cache first if the content is fresh and present in cache display the same.
