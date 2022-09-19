@@ -6,7 +6,7 @@ A database is a collection of related data which represents some aspect of the r
 - It consists of a group of programs which manipulate the database. 
 - The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
 - In large systems, a DBMS helps users and other third-party software to store and retrieve data.
-- Database management systems were developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
+- Database management systems wee developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
 1.	Data redundancy and inconsistency
 2.	Difficulty in accessing data
 3.	Data isolation – multiple files and formats
@@ -213,6 +213,9 @@ Transaction is a single logical unit of work formed by a set of operations.
    - This is the last state in the life cycle of a transaction.
    - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
 
+## Transactions
+- A transaction is a collection of logically related operations which reads and possibly updates the various data items in the database. 
+- Usually, a transaction is initiated by a user program written in SQL
 ## ACID Properties ✅
 To ensure the consistency of the database, certain properties are followed by all the transactions occurring in the system. These properties are called as ACID Properties of a transaction.
 
@@ -281,12 +284,25 @@ then such a schedule is known as a Recoverable Schedule.
 Joins are the combination of related tuples from the two different relations or tables into a single type. 
 
 ## Types of Joins ✅
-- **Inner Join:** returns rows when there is a match in both the tables
-- **Left Join:** returns all rows from the left table, even if there are no matches in the right table.
-- **Right Join:** returns all rows from the right table, even if there are no matches in the left table.
-- **Full Join:** returns rows where there is a match in one of the tables
-- **Self Join:** is used to join a table to itself as if the table were two tables, temporarily remaining at least one table in the SQL statement.
-- **Cross Join:** returns the cartesian product of the sets of records from the two or more joined tables.
+- **Inner Join:**
+    - It takes all the records from both tables until and unless the conditions match. 
+    - It means this join will return only those common rows in both tables.
+
+- **Left Join:**
+    - The left join returns all the records from (left table) table one, whether the record in table 2 matches or not, according to the join condition. 
+    - The record, which matches their result set is the same as the inner join result, and all uncommon records from another table will result in null.
+
+- **Right Join:**
+    - In Right Outer, join for both tables will return all the records from table 2, whether the record in table 1 matches or not to the join condition. - The record which matches their result set is the same as the inner join result, and all nonmatching records from another table will result in null.
+
+- **Full Join:**
+    - Full Join returns the output, which matches rows and unmatched rows between the two tables. Full Join is the same as Cross Join.
+
+- **Self Join:** 
+    - is used to join a table to itself as if the table wee two tables, temporarily remaining at least one table in the SQL statement.
+
+- **Cross Join:** 
+    - returns the cartesian product of the sets of records from the two or more joined tables.
 
 ## File Structures:
 - **Primary Index:** A primary index is an ordered file, records of fixed length with two fields. First field is the same as the primary key as a data file and the second field is a pointer to the data block, where the key is available. The average number of block accesses using index = log2 Bi + 1, where Bi = number of index blocks.

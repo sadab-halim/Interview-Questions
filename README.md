@@ -68,7 +68,7 @@ When we assign a variable it takes space of our RAM (either heap or RAM)dependen
 
 # C++ Interview Questions
 
-## Call by valu and Call by reference
+## Call by value and Call by reference
 In call by value method, we pass a copy of the parameter is passed to the functions. For these copied values a new memory is assigned 
 
 and changes made to these values do not reflect the variable in the main function.
@@ -210,7 +210,7 @@ Some of the operators cannot be overloaded. These operators are as follows:
 - “typeid” Object type operator
 
 
-### Runtime Poylmorphism
+### Runtime Polymorphism
 This type of polymorphism is achieved by Function Overriding.
 
 It is also known as *Dynamic Method Dispatch* in Java.
