@@ -1569,7 +1569,7 @@ The process scheduling is the activity of the process manager that handles the r
 - The processor should know in advance how much time process will take.
 
 ## Shortest Remaining Time First (SRTF)
-- The processor is allocated to the job closest to completion but it can be preempted by a newe ready job with shorter time to completion.
+- The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion.
 - Impossible to implement in interactive systems where required CPU time is not known.
 - It is often used in batch environments where short jobs need to give preference.
 
@@ -1611,7 +1611,7 @@ But on the other hand disadvantage of being inflexible.
 - It is very helpful and important beacuse devices access or acquire data at different rates.
 - This operation also uses disk as a very large buffer and is capable of overlapping I/O operations for one task with processor operations for another task.
 
-## Thread ✅
+## Thread
 - Thread is an execution unit that consists of its own program counter, a stack, and a set of registers where the program counter mainly keeps track of which instruction to execute next, a set of registers mainly hold its current working variables, and a stack mainly contains the history of execution
 - Threads are also known as Lightweight processes. 
 - Threads are a popular way to improve the performance of an application through parallelism. 
@@ -1638,6 +1638,7 @@ But on the other hand disadvantage of being inflexible.
     Kernel threads are supported within the kernel of the OS itself. All modern OSs support kernel-level threads, allowing the kernel to perform multiple simultaneous tasks and/or to service multiple kernel system calls simultaneously.
     
 ## Process Synchronization
+Process Synchronization is the way by which processes that share the same memory space are managed in an operating system. It helps maintain the consistency of data by using variables or hardware so that only one process can make changes to the shared memory at a time.
 
 ## Deadlock ✅
 - Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process. 
@@ -1682,35 +1683,31 @@ But on the other hand disadvantage of being inflexible.
 | Logical address can be change | Physical address will not change |
 | Also called ad Virtual Address | Also called as Real Address |
 
-## What is Swapping ? ✅
+## Swapping
 Swapping is a mechanism in which a process can be swapped temporarily out of main memory (or move) to secondary storage (disk) and make that memory available to other processes. At some later time, the system swaps back the process from the secondary storage to main memory.
 
 Swapping is also known as a technique for memory compaction.
 
-## Paging ✅
+## Paging
 - Paging is a storage mechanism that allows OS to retrieve processes from the secondary storage into the main memory in the form of pages. 
 - In the Paging method, the main memory is divided into small fixed-size blocks of physical memory, which is called frames. 
 - The size of a frame should be kept the same as that of a page to have maximum utilization of the main memory and to avoid external fragmentation. - - Paging is used for faster access to data, and it is a logical concept.
 
-## Segmentation ✅
+## Segmentation
 - Segmentation is a technique of memory management. 
 - It is just like the Paging technique except the fact that in segmentation, the segments are of variable length but, in Paging, the pages are of fixed size. 
 - In segmentation, the memory is split into variable-length parts. Each part is known as segments. 
 - The information which is related to the segment is stored in a table which is called a segment table.
 
-## Starvation ✅
+## Starvation
 - It is generally a problem that usually occurs when a process has not been able to get the required resources it needs for progress with its execution for a long period of time. 
 - In this condition, low priority processes get blocked and only high priority processes proceed towards completion because of which low priority processes suffer from lack of resources. 
 
-## Aging ✅`
+## Aging
 - It is a technique that is used to overcome the situation or problem of starvation. 
 - It simply increases the priority of processes that wait in the system for resources for a long period of time. 
 - It is considered the best technique to resolve the problem of starvation as it adds an aging factor to the priority of each and every request by various processes for resources. 
 - It also ensures that low-level queue jobs or processes complete their execution
-
-
-
-
 
 ## Semaphore ✅
 Semaphore is defined as an integer variable which is used to solve the problem of the critical section in process synchronization. In semaphore, we use two types of atomic operations, and that operations are wait and signal.
@@ -1739,16 +1736,6 @@ The definitions of wait and signal are as follows:
 | In semaphore, wait() and signal() operations are performed to modify the value of semaphore. | In mutex, locked or unlocked operation is performed. |
 | In semaphore, there may be multiple program threads. | In mutex, there may also be a multiple program thread but not simultaneously. |
 
-
-
-
-
-
-
-
-
-
-
 ## Memory Management
 - CPU can directly access registers and main memory
 - Protection of memory space is handled by hardware
@@ -1756,22 +1743,25 @@ The definitions of wait and signal are as follows:
 - Mapping from logical to physical address is done by MMU
 
 ## Logical vs Physical Address Space
-
-## Swapping
-
-## Contigous Memory Location
+| Logical Address | Physical Address |
+| --------------- | ---------------- |
+| Logical Address Space is set of all logical addresses generated by CPU in reference to a program. | Physical Address is set of all physical addresses mapped to the corresponding logical addresses. |
+| User can view the logical address of a program. | User can never view physical address of program. |
+| Generated by the CPU | Computed by MMU |
+| The user can use the logical address to access the physical address. | The user can indirectly access physical address but not directly. |
+| Logical address can be change. | Physical address will not change. |
 
 ## Fragmentation
 Fragmentation is an unwanted problem in the operating system in which the processes are loaded and unloaded from memory, and free memory space is fragmented.
 
-## Internal Fragmentation
+## Internal Fragmentation vs External Fragmentation
+| Internal Fragmentation | External Fragmentation |
+| ---------------------- | ---------------------- |
+| In internal fragmentation fixed-sized memory, blocks square measure appointed to process. | In external fragmentation, variable-sized memory blocks square measure appointed to the method. |
+| Internal fragmentation happens when the method or process is smaller than the memory. | External fragmentation happens when the method or process is removed. |
+| Internal fragmentation occurs when memory is divided into fixed-sized partitions. | External fragmentation occurs when memory is divided into variable size partitions based on the size of processes. |
+| Internal fragmentation occurs with paging and fixed partitioning. | External fragmentation occurs with segmentation and dynamic partitioning. |
 
-## External Fragmentation
-
-
-## Paging
-
-## Segmentation
 
 ## Paging vs Segmentation ✅
 | Paging | Segmentation |
@@ -1813,7 +1803,7 @@ To keep multiple processes in memory to allow multiprogramming.
 - If, at any point, the RAM space is needed for something more urgent, data can be swapped out of RAM and into virtual memory. 
 - The computer's memory manager is in charge of keeping track of the shifts between physical and virtual memory. 
 - If that data is needed again, the computer's MMU will use a context switch to resume execution.
-- While copying virtual memory into physical memory, the OS divides memory with a fixed number of addresses into either pagefiles or swap files. 
+- While copying virtual memory into physical memory, the OS divides memory with a fixed number of addresses into either page files or swap files. 
 - Each page is stored on a disk, and when the page is needed, the OS copies it from the disk to main memory and translates the virtual addresses into real addresses.
 - However, the process of swapping virtual memory to physical is rather slow. This means using virtual memory generally causes a noticeable reduction in performance. 
 - Because of swapping, computers with more RAM are considered to have better performance.
@@ -1829,14 +1819,14 @@ To keep multiple processes in memory to allow multiprogramming.
 - Increases effective use of CPU
 
 ## Disadvantages of Virtual Memory
-- Makes the system slowe
+- Makes the system slower
 - Lesser Hard Disk Space
 - Reduces System Stability
 
 ## Demand Paging ✅
 - Demand paging is a process that keeps pages of a process that are infrequently used in secondary memory, and pulls them only when required to satisfy the demand. <br/>
 - It is also called lazy swapper because the swapping of pages is done only when the CPU requires it. 
-- Example: Imagine that we are scrolling through an e-commerce platform and like some clothes. However, since we don't have space in we wardrobe, we save it in we wishlist and decide to buy them only when needed.
+- Example: Imagine that you are scrolling through an e-commerce platform and like some clothes. However, since you don't have space in your wardrobe, you save it in your wishlist and decide to buy them only when needed.
 
 ## Pure Demand Paging ✅
 - There are cases when no pages are loaded into the memory initially, pages are only loaded when demanded by the process by generating page faults. 
@@ -1851,7 +1841,7 @@ To keep multiple processes in memory to allow multiprogramming.
 A Page Fault occurs when a program running in CPU tries to access a page that is in the address space of that program, but the requested page is currently not loaded into the main physical memory, the RAM of the system.
 
 ## Swap Space ✅
-Section of hard disk used for implementing virtual memory is called swap space.
+Swap space is a space on a hard disk that is a substitute for physical memory. It is used as virtual memory which contains process memory images. Whenever our computer runs short of physical memory it uses its virtual memory and stores information in memory on disk.
 
 ## Page Replacement Algorithm
 - Page replacement occurs due to page faults. 
@@ -1939,7 +1929,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 - Real Time Operating System (RTOS) is an operating system that is used for real-time applications i.e., for those applications where data processing should be done in a fixed and small measure of time. 
 - It performs much better on tasks that are needed to be executed within a short time. 
 - It also takes care of execution, monitoring, and all-controlling processes. 
-- It also occupies less memory and consumes fewe resources
+- It also occupies less memory and consumes fewer resources
 
 
 ## Multiprogramming
@@ -2001,6 +1991,7 @@ The key difference between virtual memory and physical memory is that RAM is ver
 
 
 
+
 ## Database
 A database is a collection of related data which represents some aspect of the real world. A database system is designed to be built and populated with data for a certain task.
 
@@ -2009,14 +2000,41 @@ A database is a collection of related data which represents some aspect of the r
 - It consists of a group of programs which manipulate the database. 
 - The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. 
 - In large systems, a DBMS helps users and other third-party software to store and retrieve data.
-- Database management systems wee developed to handle the following difficulties of typical File-processing systems supported by conventional operating systems.
-1.	Data redundancy and inconsistency
-2.	Difficulty in accessing data
-3.	Data isolation – multiple files and formats
-4.	Integrity problems
-5.	Atomicity of updates
-6.	Concurrent access by multiple users
-7.	Security problems
+
+## Types of DBMS
+- **Relational DBMS (RDBMS)**: This type of DBMS, uses a structure which allows the users to access data in relation to another piece of data in a database. In this type of DBMS, data is stored in the form of tables.
+- **Hierarchical DBMS:** This type of DBMS has a structure similar to that of a tree, wherein the nodes represent records and the branches of the tree represent fields.
+- **Network DBMS:** This type of DBMS supports many-to-many relations wherein multiple member records can be linked.
+- **Object-oriented DBMS:** Uses small individual software called object to store pieces of data and the instructions for the actions to be done with the data.
+
+## DBMS and RDBMS
+| DBMS | RDBMS |
+| ---- | ----- |
+| DBMS stores data as file. | RDBMS stores data in tabular form. |
+| Data elements need to access individually. | Multiple data elements can be accessed at the same time. |
+| No relationship between data. | Data is stored in the form of tables which are related to each other. |
+| Normalization is not present. | Normalization is present. |
+| It deals with small quantity of data. | It deals with large amount of data. |
+| The data in a DBMS is subject to low security levels with regards to data manipulation. | There exists multiple levels of data security in a RDBMS. |
+
+## Advantages of DBMS
+- Sharing of Data
+- Redundancy control
+- Data Independence
+- Integrity constraints
+
+## Different Languages in DBMS
+- **DDL (Data Definition Language):** It contains commands which are required to define the database.
+Ex: CREATE, ALTER, DROP, TRUNCATE, RENAME etc.
+
+- **DML (Data Manipulation Language):** It contains commands which are required to manipulate the data present in the database.
+Ex: SELECT, UPDATE, INSERT, DELETE, etc
+
+- **DCL (Data Control Language):** It contains commands which are required to deal with user permissions and controls of the database system.
+Ex: GRANT and REVOKE
+
+- **TCL (Transaction Control Language):** It contains commands which are required to deal with the transaction of the database.
+Ex: COMMIT, ROLLBACK, and SAVEPOINT
 
 ## ER diagram:
 - ER diagram or Entity Relationship diagram is a conceptual model that gives the graphical representation of the logical structure of the database.
@@ -2039,19 +2057,17 @@ An entity set is a set of the same type of entities.
 - Discriminator can identify a group of entities from the entity set.
 - Discriminator is represented by underlining with a dashed line.
 
-## Relationship:
-A relationship is defined as an association among several entities.
-- **Unary Relationship Set** - Unary relationship set is a relationship set where only one entity set participates in a relationship set.
-- **Binary Relationship Set** - Binary relationship set is a relationship set where two entity sets participate in a relationship set.
-- **Ternary Relationship Set** - Ternary relationship set is a relationship set where three entity sets participate in a relationship set.
-- **N-ary Relationship Set** - N-ary relationship set is a relationship set where ‘n’ entity sets participate in a relationship set.
-
-## Cardinality Constraint:
+## Cardinality:
 Cardinality constraint defines the maximum number of relationship instances in which an entity can participate.
-- **One-to-One Cardinality** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with at most one entity in set A.
-- **One-to-Many Cardinality** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with at most one entity in set A.
-- **Many-to-One Cardinality** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with any number of entities in set A.
-- **Many-to-Many Cardinality** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with any number (zero or more) of entities in set A.
+- **One-to-One Relationship** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with at most one entity in set A.
+
+- **One-to-Many Relationship** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with at most one entity in set A.
+
+- **Many-to-One Relationship** - An entity in set A can be associated with at most one entity in set B. An entity in set B can be associated with any number of entities in set A.
+
+- **Many-to-Many Relationship** - An entity in set A can be associated with any number (zero or more) of entities in set B. An entity in set B can be associated with any number (zero or more) of entities in set A.
+
+- **Self-Referencing Relationship** - Used when a record in table A is related to the same table itself.
 
 ## Attributes:
 Attributes are the descriptive properties which are owned by each entity of an Entity Set.
@@ -2108,6 +2124,15 @@ A key is a set of attributes that can identify each tuple uniquely in the given 
 - **Unique Key**
    - It is unique for all the records of the table. Once assigned, its value cannot be changed i.e. it is non-updatable. 
    - It may have a NULL value.
+
+## Difference between DROP, TRUNCATE and DELETE
+| DELETE | DROP | TRUNCATE |
+| ---- | -------- | ------ |
+| DELETE command is DML command | DROP command is DDL command | TRUNCATE command is a DDL command |
+| It deletes one or more existing records from the table in the database | It drops the complete table from the database | It deletes all the rows from the existing table, leaving the row with the column names. |
+| We can restore any deleted row or multiple rows from the database using the ROLLBACK command | We cannot get the complete table deleted from the database using the ROLLBACK command | We cannot restore all the deleted rows from the database using the ROLLBACK command |
+| DELETE command does not free the allocated space of the table from memory | DROP command removes the space allocated for the table from memory. | TRUNCATE command does not free the space allocated for the table from memory |
+| DELETE FROM table_name WHERE condition; | DROP TABLE table_name; | TRUNCATE TABLE table_name; |  
 
 ## Functional Dependency:
 In any relation, a functional dependency α → β holds if- Two tuples having same value of attribute α also have same value for attribute β.
@@ -2182,39 +2207,11 @@ A → B is called a transitive dependency if and only if A is not a super key an
 ## Denormalization ✅
 Denormalization is a technique used to merge data from multiple tables into a single table that can be queried quickly.
 
-## Transaction:
-Transaction is a single logical unit of work formed by a set of operations.
+## Difference between a 2-tier and 3-tier architecture in a DBMS
+The **2-tier architecture** refers to the client-server architecture in which applications at the client end directly communicate with the database at the server end without any middleware involved.
+Example – Contact Management System created using MS-Access or Railway Reservation System, etc.
 
-### Operations in Transaction:
-- **Read Operation** - Read(A) instruction will read the value of ‘A’ from the database and will store it in the buffer in main memory.
-- **Write Operation** – Write(A) will write the updated value of ‘A’ from the buffer to the database.
-
-## Transaction States:
-- **Active State** –
-   - This is the first state in the life cycle of a transaction.
-   - A transaction is called in an active state as long as its instructions are getting executed.
-   - All the changes made by the transaction now are stored in the buffer in main memory.
-
-- **Partially Committed State** –
-   - After the last instruction of the transaction has been executed, it enters into a partially committed state.
-   - After entering this state, the transaction is considered to be partially committed.
-   - It is not considered fully committed because all the changes made by the transaction are still stored in the buffer in main memory.
-
-- **Committed State** –
-   - After all the changes made by the transaction have been successfully stored into the database, it enters into a committed state.
-   - Now, the transaction is considered to be fully committed.
-
-- **Failed State** –
-   - When a transaction is getting executed in the active state or partially committed state and some failure occurs due to which it becomes impossible to continue the execution, it enters into a failed state.
- 
-- **Aborted State** –
-   - After the transaction has failed and entered into a failed state, all the changes made by it have to be undone.
-   - To undo the changes made by the transaction, it becomes necessary to roll back the transaction.
-   - After the transaction has rolled back completely, it enters into an aborted state.
-
-- **Terminated State** –
-   - This is the last state in the life cycle of a transaction.
-   - After entering the committed state or aborted state, the transaction finally enters into a terminated state where its life cycle finally comes to an end.
+The **3-tier architecture** contains another layer between the client and the server to provide GUI to the users and make the system much more secure and accessible. In this type of architecture, the application present on the client end interacts with an application on the server end which further communicates with the database system
 
 ## Transactions
 - A transaction is a collection of logically related operations which reads and possibly updates the various data items in the database. 
@@ -2323,6 +2320,40 @@ At every level , we have Key and Data Pointer and data pointer points to either 
 
 In B+ trees, the structure of leaf and non-leaf are different, so their order is. Order of non-leaf will be higher as compared to leaf nodes. Searching time will be less in B+ trees, since it doesn’t have record pointers in non-leaf because of which depth will decrease.
 
+## Data Warehousing
+The process of collecting, extracting, transforming, and loading data from multiple sources and storing them in one database is known as **data warehousing.**
+
+## Different levels of data abstraction in DBMS
+The process of hiding irrelevant details from users is known as data abstraction.
+
+Data Abstraction can be divided into three levels:
+- **Physical Level:** it is the lowest level and is managed by DBMS. This level consists of data storage descriptions and the details of this level are typically hidden from system admins, developers, and users.
+
+- **Conceptual or Logical Level:** it is the level on which developers and system admins work and it determines what data is stored in the database and what is the relationship between the data points.
+
+- **External or View Level:** it is the level that describes only part of the database and hides the details of the table schema and its physical storage from the users. The result of a query is an example of View level data abstraction.  A view is a virtual table created by selecting fields from one or more tables present in the database.
+
+## Do we consider NULL values the same as that of blank space or zero
+A NULL value is not at all same as that of zero or a blank space.
+The NULL value represents a value which is unavailable, unknown, assigned or not applicable where as zero is a number and blank space is a character.
+
+## Triggers
+- A special kind of stored procedure that is not called directly by a user is called a trigger.
+- A trigger is created and is programmed to fire when a specific event occurs
+- A trigger cannot be called or execute directly by a user.
+- We cannot schedule a trigger
+- Parameters cannot be passed as input
+- Cannot return values
+
+## Stored Procedures
+- A group of SQL statements which can be reused again and again. 
+- These statements are created and stored in the database.
+- We can execute stored procedures by using the exec command, whenever we want.
+- We call a stored procedure from another stored procedure.
+- Parameters can bes passed as input
+- Can return with zero or n value
+
+
 
 
 
@@ -2388,7 +2419,7 @@ An interconnection between public, private, commercial, industrial, or governmen
    - An intranet is a private network based on the internet protocol such as Transmission Control protocol and internet protocol. 
    - An intranet belongs to an organization which is only accessible by the organization's employee or members
 
-## Topologies ✅
+## Topologies
 A Network Topology is the arrangement with which computer systems or network devices are connected to each other. 
 
 ## Types of Topologies ✅
@@ -2401,9 +2432,9 @@ A Network Topology is the arrangement with which computer systems or network dev
 
 ### Star Topology
 - Star Topology is an arrangement of the network in which every node is connected to the central hub, switch or a central computer.
-- The central computer is known as a server, and the peripherial devices attached to the server are known as clients.
+- The central computer is known as a server, and the peripheral devices attached to the server are known as clients.
 - Coaxial cable or RJ-45 cables are used to connect the computers.
-- Hub or Switches are mainly used as connection devices in a star topology.
+- Hub or Switches are mainly used as connection devices in a physical star topology.
 
 ### Ring Topology
 - Ring topology is like a bus topology but with connected ends
@@ -2446,7 +2477,6 @@ The way in which data is transmitted from one device to another device is known 
 - Simplex Mode
 - Half-Duplex Mode
 - Full-Duplex Mode
-
 ## Simplex Mode 
 - The communication is unidirectional, as on a one-way street. 
 - Only one of the two devices on a link can transmit; the other can only receive.
@@ -2464,12 +2494,12 @@ The way in which data is transmitted from one device to another device is known 
 - In full-duplex mode, signals going in one direction share the capacity of the link: with signals going in the other direction. 
 - This sharing can occur in two ways: Either the link must contain two physically separate transmission paths, one for sending and the other for receiving; or the capacity of the channel is divided between the signals traveling in both directions.
 
-## OSI Model ✅
+## OSI Model
 - OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer.
 - It consists of seven layers, and each layer performs a particular network function.
 - OSI model divides the whole task into seven smaller and manageable tasks. Each layer is assigned a particular task.
 - Each layer is self-contained, so that task assigned to each layer can be performed independently.
-## OSI Layers ✅
+## OSI Layers
 - Physical Layer {Responsibility of the Network}
 - Data Link Layer {Responsibility of the Network}
 - Network Layer {Responsibility of the Network}
@@ -2478,13 +2508,13 @@ The way in which data is transmitted from one device to another device is known 
 - Presentation Layer {Responsibility of the Host}
 - Application Layer {Responsibility of the Host}
 
-## Summary of Layers ✅
+## Summary of Layers
 - **Physical Layer:** It provides a physical medium through which bits are transmitted
 - **Data Link Layer:** It is used for error free transfer of data frames
 - **Network Layer:** It is responsible for moving the packets from source to destination
 - **Transport Layer:** It provides reliable message delivery from process to process
 - **Session Layer:** It is used to establish, manage and terminate the sessions
-- **Presentation Layer:** It is responsible for translation, compressions encryption
+- **Presentation Layer:** It is responsible for translation, compressions and encryption
 - **Application Layer:** This layer provide the services to the users
 
 ## TCP/IP Model 
@@ -2513,9 +2543,6 @@ The way in which data is transmitted from one device to another device is known 
 - **Distortion:** Distortion occurs when there is a change in the shape of the signal. 
 - **Noise:** When data is travelled over a transmission medium, some unwanted signal is added to it which creates the noise.
 
-## IP Address
-- An IP address is a unique address that identifies a device on the internet or a local network. 
-- IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network.
 ## IPv4 Address
 - An IP address is a 32-bit dynamic address of a node in the network. 
 - An IPv4 address has 4 octets of 8-bit each with each number with a value up to 255.
@@ -2534,35 +2561,32 @@ The way in which data is transmitted from one device to another device is known 
 ## HTTP and HTTPS protocol ✅
 - HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information can be transmitted on the World Wide Web (WWW).  
 - It helps the web browsers and web servers for communication. 
-- It is a ‘stateless protocol’ where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
+- It is a *‘stateless protocol’* where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default.
 
 - HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. 
 - It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default
 
-## xyz ✅
+## "This Site Can't Be Reached" ✅
 - Restart Internet Connection
-- Disable our firewall and antivirus
-- Clear our browser cache
-- Flush our DNS cache
-- Change the DNS servers
+- Disable your firewall and antivirus
+- Clear your browser cache
+- Flush your DNS cache
+- Change your DNS servers
 ## SMTP Protocol
 - SMTP is the Simple Mail Transfer Protocol. 
 - SMTP sets the rule for communication between servers. 
-- This set of rules helps the software to transmit emails over the internet. - It supports both End-to-End and Store-and-Forward methods. 
+- This set of rules helps the software to transmit emails over the internet. 
+- It supports both End-to-End and Store-and-Forward methods. 
 - It is in always-listening mode on port 25
 
-## DNS ✅
-- DNS is the Domain Name System. 
-- It is considered as the devices/services directory of the Internet. 
-- It is a decentralized and hierarchical naming system for devices/services connected to the Internet. 
-- It translates the domain names to their corresponding IPs.
-
 ## Router vs Gateway ✅
-- Router is a networking device used for connecting two or more network segments. 
-- It directs the traffic in the network. 
-- It transfers information and data like web pages, emails, images, videos, etc. from source to destination in the form of packets. 
-- It operates at the network layer. 
-- The gateways are also used to route and regulate the network traffic but, they can also send data between two dissimilar networks while a router can only send data to similar networks
+| Router | Gateway |
+| ------ | ------- |
+| It's a piece of hardware that's in charge of receiving, processing, and forwarding data packets to other networks. | It is a gadget that allows networks with various protocols to communicate with one another. |
+| The OSI model's layer 3 and layer 4 are used by routers. | The OSI model's layer 5 is where a gateway functions. |
+| A router's primary job is to transport traffic from one network to another. | A gateway's primary role is to convert one protocol to another. |
+| A router's main function is to store routing information for various networks and route traffic based on the destination. | A gateway's main function is to distinguish between what is within and what is outside the network. |
+
 
 ## Router vs Bridge ✅
 | Router | Bridge |
@@ -2579,7 +2603,7 @@ The way in which data is transmitted from one device to another device is known 
 | TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data. | UDP is the Datagram-oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast types of network transmission. |
 | TCP is reliable as it guarantees the delivery of data to the destination router. | The delivery of data to the destination cannot be guaranteed in UDP. |
 | TCP provides extensive error-checking mechanisms. It is because it provides flow control and acknowledgment of data. | UDP has only the basic error checking mechanism using checksums. |
-| TCP is comparatively slowe than UDP. | UDP is faster, simpler, and more efficient than TCP. |
+| TCP is comparatively slower than UDP. | UDP is faster, simpler, and more efficient than TCP. |
 | TCP has a (20-60) bytes variable length header. | UDP has an 8 bytes fixed-length header. |
 | TCP doesn’t support Broadcasting. | UDP supports Broadcasting.|
 | TCP is used by HTTP, HTTPs, FTP, SMTP and Telnet. | UDP is used by DNS, DHCP, TFTP, SNMP, RIP, and VoIP. |
@@ -2595,6 +2619,17 @@ The way in which data is transmitted from one device to another device is known 
 - It is an application layer protocol used to auto-configure devices on IP networks enabling them to use the TCP and UDP-based protocols. 
 - The DHCP servers auto-assign the IPs and other network configurations to the devices individually which enables them to communicate over the IP network. 
 - It helps to get the subnet mask, IP address and helps to resolve the DNS. It uses port 67 by default.
+
+
+## Distance Vector Routing:
+In distance vector routing, each node shares its routing table with its immediate neighbours periodically and when there is a change.
+
+## Routing Information Protocol
+The Routing Information Protocol (RIP) is an intradomain routing protocol used inside an autonomous system. It is a very simple protocol based on distance vector routing.
+
+## Link State Routing
+In link state routing, if each node in the domain has the entire topology of the domain the list of nodes and links, how they are connected including the type, cost (metric), and condition of the links (up or down)-the node can use
+Dijkstra's algorithm to build a routing table.
 
 ## ARP Protocol
 - ARP is  Address Resolution Protocol. 
@@ -2640,24 +2675,12 @@ The client requests the server for a file. When the server receives a request fo
 | Hub is a half duplex transmission mode. | While switch is a full duplex transmission mode. |
 | Hub cannot be used as a repeater. | While switch can be used as a repeater. |
 | Hacking of systems attached to hub is complex. | Hacking of systems attached to switch is little easy. |
-
-## Switch vs Router ✅
-| Switch | Router |
-| ------ | ------ |
-| The main objective of switch is to connect various devices simultaneously. | The main objective of router is to connect various networks simultaneously. |
-| It works in data link layer. | It works in Network Layer |
-| Switch is used by only LAN | Router is used by LAN as well as MAN. |
-| Sswitch data is sent in the form of frame. | Through the router, data is sent in the form of packets. |
-| Switch is not compatible with NAT. Router is compatible with NAT |
-
-
-
 ## Unicasting vs Multicasting vs Broadcasting ✅
 - **Unicasting:** If the message is sent to a single node from the source then it is known as unicasting. This is commonly used in networks to establish a new connection
 
 - **Multicasting:** If the message is sent to a subset of nodes from the source then it is known as multicasting. Used to send the same data to multiple receivers
 
-**Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
+- **Broadcasting:** If the message is sent to all the nodes in a network from a source then it is known as broadcasting. DHCP and ARP in the local network use broadcasting.
 
 ## google.com ✅
 - The browser checks the cache first if the content is fresh and present in cache display the same.
@@ -2799,6 +2822,7 @@ In public-key encryption/decryption, the public key that is used for encryption 
 - **Stateful firewall filters** − It is also known as a network firewall; this filter maintains a record of all the connections passing through. It can determine if a packet is either the start of a new connection or a part of an existing connection or is an invalid packet.
 
 - **Application firewall** − A web application firewall is used for HTTP applications. There are sets of rules that are applied to monitor or block data packets from HTTP network traffic. 
+
 
 
 
