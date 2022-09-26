@@ -67,12 +67,12 @@
 ## Selection Sort
  - This sorting algorithm iterates through the array and finds the smallest element in the array
  - and swaps it with the first element.
- - This process is repeated until the list is sorted.
+ - This process is repeated until the array is sorted.
  - Steps:
     - From the given array find the smallest element by traversing the array
     - Swap the first element in the array with the smallest element from the array
     - Now, exclude the first element and select the smallext element from the remaining elemnts of the array
-    - We repeat these steps till the list is sorted
+    - We repeat these steps till the array is sorted
 
  - Advantages:
     - It gives the same time complexity regardless of arrangements of items in the array
