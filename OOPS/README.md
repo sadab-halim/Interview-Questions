@@ -1,6 +1,37 @@
-
 ## What is Object Oriented Programming?
 Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.
+### Object
+- Any real world entity which can have some characteristics or which can perform some tasks is called as Object. 
+- This object is also called an instance i.e. a copy of entity in programming language. 
+- If we consider the example, a mobile manufacturing company can be an object. 
+- Each object can be different based on their characteristics. 
+- For example, here are two objects.
+
+```
+Mobile mob1 = new Mobile();
+Mobile mob2 = new Mobile()
+```
+### Class
+- A class in OOP is a plan which describes the object. We call it a blueprint of how the object should be represented. 
+- Mainly a class would consist of a name, attributes, and operations. 
+- Considering the example, the Mobile can be a class, which has some attributes like Profile Type, IMEI Number, Processor, and some more. It can have operations like Dial, Receive and SendMessage.
+
+### Class vs Object
+| Class | Object |
+| ----- | ------ |
+| Class is a blueprint or template from which objects are created | Object is an instance of a class |
+| Class is a group of similar objects | Object is a real world entity such as pen, laptop, mobile, bed, keyboard, mouse, chair etc |
+| Class is a logical entity | Object is a physical entity |
+| Class is declared using class keyword e.g.
+class Student{} | Object is created through new keyword mainly e.g.
+Student s1=new Student(); |
+| Class is declared once | Object is created many times as per requirement |
+| Class doesn't allocated memory when it is created | Object allocates memory when it is created |
+| There is only one way to define class in java using class keyword | There are many ways to create object in java such as new keyword, newInstance() method, clone() method, factory method and deserialization |
+
+
+
+
 
 ## Pillar of OOPS
 - Polymorphism
@@ -8,72 +39,123 @@ Object-oriented programming (OOP) is a computer programming model that organizes
 - Inheritance
 - Abstraction
 
-## How Object Oriented Programming is related to the real world?
-- There are mainly four pillars (features) of OOP. If all of these four features are presented in programming, the programming is called  perfect Object Oriented Programming.
-  - Abstraction
-  - Encapsulation
-  - Inheritance
-  - Polymorphism
+## Polymorphism
+The word “polymorphism” means having many forms.
+Polymorphism can be defined as the ability of a message to be displayed in more than one form. 
 
-### Object
-- Any real world entity which can have some characteristics or which can perform some tasks is called as Object. 
-- This object is also called an instance i.e. a copy of entity in programming language. 
-- If we consider the example, a mobile manufacturing company can be an object. 
-- Each object can be different based on their characteristics. 
-- For example, here are two objects.
-```
-Mobile mob1 = new Mobile();
-Mobile mob2 = new Mobile()
-```
+A real-life example of polymorphism is a person who at the same time can have different characteristics. Like a man at the same time is a father, a husband and an employee. So the same person exhibits different behavior in different situations. This is called polymorphism.
 
-### Class
-- A class in OOP is a plan which describes the object. We call it a blueprint of how the object should be represented. 
-- Mainly a class would consist of a name, attributes, and operations. 
-- Considering the example, the Mobile can be a class, which has some attributes like Profile Type, IMEI Number, Processor, and some more. It can have operations like Dial, Receive and SendMessage.
+Polymorphism is mainly divided into two types:
+- Compile-time Polymorphism
+- Runtime Polymorphism
 
-There are some OOPS principle that need to be satisfied while creating a class. This principle is called as **SOLID** where each letter has some specification.
-- **SRP** (Single Responsibility Principle): A class should have one, and only one responsibility
-- **OCP** (Open Closed Principle): We should be able to extend a classes behavior, without modifying it. (Inheritance)
-- **LSP** (Liskov Substitution Principle): Derived classes must be substitutable for their base classes. (Polymorphism)
-- **ISP** (Interface Segregation Principle): Make fine chopped interface instead of huge interface as client cannot be forced to implement an interface which they don't use.
-- **DIP** (Dependency Inversion Principle): Depend on abstractions, not on concretions. (Abstraction)
+### Compile-Time Polymorphism
+This type of polymorphism is achieved by function overloading or operator overloading.
 
-### Abstraction ✅
-- Abstraction allows us to expose limited data and functionality of objects publicly and hide the actual implementation. 
-- It is the most important pillar in OOPS. In our example of Mobile class and objects like Nokia, Samsung, IPhone.
- 
-- Some features of mobiles, Dialing a number call some method internally which concatenate the numbers and displays it on screen but what is it doing we don’t know.
-- Clicking on green button actual send signals to calling person's mobile but we are unaware of how it is doing.
-This is called abstraction. 
-- In classes, we can create methods that can be called and used by the users of the class but users will have no idea what these methods do internally. 
+**Function Overloading:** When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded. 
 
-### Encapsulation ✅
-- Encapsulation is defined as the process of enclosing one or more details from outside world through access right. 
-- It says how much access should be given to particular details. 
-- Both Abstraction & Encapsulation works hand in hand because Abstraction says what details to be made visible and Encapsulation provides the level of access right to that visible details.
+Functions can be overloaded by changing the number of arguments or/and changing the type of arguments
 
-- Talking about Bluetooth which we usually have it in our mobile. When we switch on a Bluetooth.
-- I am able to connect to another mobile or bluetooth enabled devices but I'm not able to access the other mobile features like dialing a number, accessing inbox etc. 
-- This is because, Bluetooth feature is given some level of abstraction.
+This is also known as *Method Overloading* in Java.
 
-- Another point is when mobile A is connected with mobile B via Bluetooth whereas mobile B is already connected to mobile C then A is not allowed to connect C via B. 
-- This is because of accessibility restriction.
+Advantages:
+- Increases the readability of the program.
 
-### Polymorphism ✅
-- Polymorphism can be defined as the ability of using the same name for doing different things. 
-- More precisely we say it as 'many forms of single entity'. 
-- This play a vital role in the concept of OOPS.
+### Why Method Overloading is not possible by changing the return type of method?
+In java, method overloading is not possible by changing the return type of the method because there may occur ambiguity.
 
-- Let's say in our phone we have a 12MP camera available i.e. – it is having a functionality of CameraClick(). 
-- Now same mobile is having Wide mode available in camera, so functionality would be same but with mode. 
-- This type is said to be Static polymorphism or Compile time polymorphism. 
+### What Functions cannot be overloaded in C++?
+1. Function declarations that differ only in the return type.
+2. Member function declarations with the same name and the name parameter-type-list cannot be overloaded if any of them is a static member function declaration.
 
-### Inheritance ✅
-- Inheritance is the ability to extend the functionality from base entity in new entity belonging to same group. 
-- This will help us to reuse the functionality which is already defined before and extend into a new entity. 
+**Operator Overloading:** we can make use of the addition operator (+) for string class to concatenate two strings. We know that the task of this operator is to add two operands. 
 
-- Basic Mobile functionality is to send a message, dial and receive a call. 
-- So the brands of mobile is using this basic functionality by extending the mobile class functionality and adding their own new features to their respective brand.
+So a single operator ‘+’, when placed between integer operands, adds them and when placed between string operands, concatenates them.
+
+### Which Operators cannot be overloaded in C++?
+Some of the operators cannot be overloaded. These operators are as follows:
+- “.” Member access or dot operator
+- “? : ” Ternary or conditional operator
+- “::” Scope resolution operator
+- “.*” Pointer to member operator
+- “sizeof” The object size operator
+- “typeid” Object type operator
+
+
+### Runtime Poylmorphism
+This type of polymorphism is achieved by Function Overriding.
+
+It is also known as *Dynamic Method Dispatch* in Java.
+
+**Function Overriding** occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden. 
+
+### Why Do We Need Polymorphism?
+Polymorphism allows us to reuse code by creating one function that's usable for multiple uses. We can also make operators polymorphic and use them to add not only numbers but also combine strings. This saves time and allows for a more streamlined program.
+
+
+
+
+
+## Encapsulation
+Encapsulation is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+
+A real life example of encapsulation, in a company there are different sections like the accounts section, finance section, sales section etc. The finance section handles all the financial transactions and keep records of all the data related to finance. 
+
+Similarly the sales section handles all the sales related activities and keep records of all the sales. Now there may arise a situation when for some reason an official from finance section needs all the data about sales in a particular month. In this case, he is not allowed to directly access the data of sales section. 
+
+He will first have to contact some other officer in the sales section and then request him to give the particular data. This is what encapsulation is. Here the data of sales section and the employees that can manipulate them are wrapped under a single name “sales section”. 
+
+We can not access any function from class directly. We need an object to access that function which is using the member the variable of that class.
+
+The function which we are making inside the class ,it must use the all member variable then only it is called encapsulation.
+
+If we  don’t  make function inside the class which is using the member  variable of the class then we don’t call it encapsulation.  
+
+Encapsulation also lead to data abstraction or hiding. As using encapsulation also hides the data.
+
+Role of Access Specifiers in Encapsulation:
+1. The data members should be labeled as private using the private access specifiers
+2. The member function which manipulates the data members should be labeled as public using the public access specifier
+
+Advantages:
+- It provides you the control over the data.
+- It is a way to achieve data hiding
+- The encapsulate class is easy to test. So, it is better for unit testing.
+### How Do We Achieve Encapsulation?
+The encapsulation can be achieved by the use of 3 keywords in java:
+
+- **private:** The variables or methods that have been declared as private will not be accessible outside the class in which they have been declared. But, an outer class cannot be made private.
+
+- **protected:** The variable or methods that have been declared as private will be accessible inside the class in which they have been defined and in the classes which extends this class. Also, an outer cannot be made protected.
+
+- **public:** The variable or methods that have been declared as public will be accessible anywhere. Also, a class can be made public.
+
+
+
+
+
+## Abstraction
+An abstraction is a way of hiding the implementation details and showing only the functionality to the users. In other words, it ignores the irrelevant details and shows only the required one.
+
+
+
+## Inheritance
+The capability of a class to derive properties and characteristics from another class is called Inheritance.
+
+Inheritance is a feature or a process in which, new classes are created from the existing classes. The new class created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”. The derived class now is said to be inherited from the base class.
+
+When we say derived class inherits the base class, it means, the derived class inherits all the properties of the base class, without changing the properties of base class and may add new features to its own. These new features in the derived class will not affect the base class. 
+
+The derived class is the specialized class for the base class:
+- **Sub Class:** The class that inherits properties from another class is called Subclass or Derived Class. 
+- **Super Class:** The class whose properties are inherited by a subclass is called Base Class or Superclass. 
+
+### Why and when should we use Inheritance?
+When duplication occurs in the code, it increases the chances of error and data redundancy. To avoid this type of situation, inheritance is used.
+
+Using inheritance, we have to write the functions only one time instead of three times as we have inherited the rest of the the classes from the base class
+
+
 
 ### Modes of Inheritance
 There are 3 modes of inheritance:
@@ -90,15 +172,15 @@ There are 3 modes of inheritance:
 | Protected | Protected | Protected | Private |
 | Private | Not Accessible (Hidden) | Not Accessible (Hidden) | Not Accessible (Hidden) |
 
-There are mainly 4 types of Inheritance:
-- Single Level Inheritance
-- Multiple Inheritance
+### Types of Inheritance
+- Single Inheritance
 - Multilevel Inheritance
+- Multiple Inheritance
 - Hierarchical Inheritance
 - Hybrid Inheritance
 
-#### Single Level Inheritance
-In Single level inheritance, there is single base class & a single derived class i.e. - A base mobile features is extended by Samsung brand.
+### Single Inheritance
+In single inheritance, a class is allowed to inherit from only one class. i.e. one subclass is inherited by one base class only.
 
 *Syntax*
 ```c++:
@@ -142,8 +224,8 @@ class A: public B, public C{
 };
 ```
 
-#### Multilevel Inheritance
-In Multilevel inheritance, there is more than one single level of derivation. i.e. - After base features are extended by Samsung brand. Now Samsung brand has manufactured its new model with new added features or advanced OS like Android OS, v13.
+### Multilevel Inheritance
+In this type of inheritance, a derived class is created from another derived class.
 
 *Syntax:*
 ```java:
@@ -160,8 +242,8 @@ class A: public B{
 };
 ```
 
-#### Hierachical Inheritance
-In this type of inheritance, multiple derived class would be extended from base class, it's similar to single level inheritance but this time along with Samsung, iPhone is also taking part in inheritance.
+### Hierarchical Inheritance
+In this type of inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class.
 
 *Syntax:*
 ```c++:
@@ -179,8 +261,46 @@ class D : public A  {
 }   
 ```
 
-#### Hybrid Inheritance
-Single, Multilevel, & hierarchal inheritance all together construct a hybrid inheritance.
+### Hybrid (Virtual) Inheritance
+Hybrid Inheritance is implemented by combining more than one type of inheritance. For example: Combining Hierarchical inheritance and Multiple Inheritance. 
+
+**NOTE:** We cannot create an instance of Abstract Class, It reduces the duplication of code.
+
+### Abstraction vs Encapsulation
+| Abstraction | Encapsulation |
+| ----------- | ------------- |
+| Abstraction is the process or method of gaining the information. | Encapsulation is the process or method to contain the information. |
+| In abstraction, problems are solved at the design or interface level. | in Encapsulation, problems are solved at the implementation level. |
+| Abstraction is the method of hiding the unwanted information. | Encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. |
+| We can implement abstraction using abstract class and interfaces. | Encapsulation can be implemented using by access modifier i.e. private, protected and public. |
+| The objects that help to perform abstraction are encapsulated. | The objects that result in encapsulation need not be abstracted. |
+| Abstraction provides access to specific part of data. | Encapsulation hides data and the user can not access same directly (data hiding. |
+| Abstraction focus is on “what” should be done. | Encapsulation focus is on “How” it should be done. |
+
+| Abstract Class | Interface |
+| -------------- | --------- |
+| Abstract class can have abstract and non-abstract methods. | Interface can have only abstract methods. |
+| Abstract class doesn't support multiple inheritance. | Interface supports multiple inheritance. |
+| Abstract class can provide the implementation of interface. | Interface can't provide the implementation of abstract class. |
+| The abstract keyword is used to declare abstract class. | The interface keyword is used to declare interface. |
+### How To Achieve Abstraction?
+- In C++
+    - Access Specifiers
+    - Header Files
+
+- In Java
+    - Interfaces
+    - Abstract Classes
+
+Connecting a method call to the method body is known as **binding**.
+There are two types of binding:
+- Dynamic Binding
+- Message Binding
+
+### Dynamic Binding
+When type of the object is determined at the runtime, it is known as dynamic binding.
+### Message Binding
+When type of the object is determined at the compiled time, it is known as dynamic binding.
 
 ### Interface
 Multiple inheritance where derived class will extend from multiple base classes.
@@ -188,9 +308,6 @@ Multiple inheritance where derived class will extend from multiple base classes.
 ## Limitations of OOPS
 - The length of the programmes developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
 - We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
-
-## What is Class? <br/>
-Collection of objects is called Class. It is a logical entity.
 
 ### Difference between Class and Structure <br/>
 | Class | Structure |
@@ -311,7 +428,10 @@ int main(){
 - The constructor in C++ has the same name as the class or structure. 
 - Constructor is invoked at the time of object creation. 
 - It constructs the values i.e. provides data for the object which is why it is known as constructors.
+- Constructors are mostly declared in the public section of the class though it can be declared in the private section of the class.
 - Constructor does not have a return value, hence they do not have a return type.
+- Constructors can be overloaded.
+- Constructor can not be declared virtual.
 
 Constructors can be defined inside or outside the class declaration:-
 
@@ -393,13 +513,6 @@ int main(){
 }
 ```
 
-### Characteristics of the constructor:
-- The name of the constructor is the same as its class name.
-- Constructors are mostly declared in the public section of the class though it can be declared in the private section of the class.
-- Constructors do not return values; hence they do not have a return type.
-- A constructor gets called automatically when we create the object of the class.
-- Constructors can be overloaded.
-- Constructor can not be declared virtual.
 
 ### Types of Constructors:
 - **Default Constructor:** is the constructor which doesn’t take any argument. It has no parameters. It is also called a zero-argument constructor.
@@ -437,6 +550,8 @@ int main(){
     return 0;
 }
 ```
+
+
 - **Parameterized Constructor:** It is possible to pass arguments to constructors. Typically, these arguments help initialize an object when it is created. 
 
 To create a parameterized constructor, simply add parameters to it the way you would to any other function. 
@@ -603,14 +718,15 @@ int main(){
 
 ### Destructors 
 - Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
-
 - Destructor is also a special member function like constructor. Destructor destroys the class objects created by constructor.
 - Destructor has the same name as their class name preceded by a tiled (~) symbol.
 - It is not possible to define more than one destructor. 
+- It cannot be declared static or const.
 - The destructor is only one way to destroy the object create by constructor. Hence destructor can-not be overloaded.
 - Destructor neither requires any argument nor returns any value.
 - It is automatically called when object goes out of scope. 
 - Destructor release memory space occupied by the objects created by constructor.
+- A destructor should be declared in the public section of the class.
 - In destructor, objects are destroyed in the reverse of an object creation.
 
 Syntax for defining the destructor within the class: <br/>
@@ -619,16 +735,8 @@ Syntax for defining the destructor within the class: <br/>
 Syntax for defining the destructor outside the class: <br/>
 `<class-name>: : ~ <class-name>(){}`
 
-### Properties of Destructor
-- Destructor function is automatically invoked when the objects are destroyed.
-- It cannot be declared static or const.
-- The destructor does not have arguments.
-- It has no return type not even void.
-- An object of a class with a Destructor cannot become a member of the union.
-- A destructor should be declared in the public section of the class.
-
 ### When is Destructor called?
-A destructor function is called automatically when the object goes out of scope: 
+A destructor is called automatically when the object goes out of scope: 
 - the function ends
 - the program ends
 - a block containing local variable ends
@@ -643,6 +751,7 @@ Whenever we want to control the destruction of objects of a class, we make the d
 If the object is referred after the function call, the reference will become dangling.
 
 ### Virtual Destructor
+A virtual destructor is used to free up the memory space allocated by the derived class object or instance while deleting instances of the derived class using a base class pointer object.
 
 ### Pure Virtual Destructor
 Pure virtual destructors are legal in standard C++ and one of the most important things to remember is that if a class contains a pure virtual destructor, it must provide a function body for the pure virtual destructor. 
@@ -651,14 +760,6 @@ It requires a function body because destructors (unlike other functions) are not
 
 If the definition of the pure virtual destructor is not provided, then what function body will be called during object destruction? Therefore the compiler and linker enforce the existence of a function body for pure virtual destructors. 
 
-
-### How are destructors different from a normal member function?
-Destructors have same name as the class preceded by a tilde (~) 
-Destructors don’t take any argument and don’t return anything
-
-### Can there be more than one destructor in a class? 
-No, there can only one destructor in a class with classname preceded by ~, no parameters and no return type.
-
 ### Why do we need to write a user-defined destructor?
 If we do not write our own destructor in class, compiler creates a default destructor for us. The default destructor works fine unless we have dynamically allocated memory or pointer in class. 
 
@@ -666,20 +767,6 @@ When a class contains a pointer to memory allocated in class, we should write a 
 
 ### Can a destructor be virtual?
 Yes, In fact, it is always a good idea to make destructors virtual in base class when we have a virtual function
-
-
-### Class vs Object
-| Class | Object |
-| ----- | ------ |
-| Class is a blueprint or template from which objects are created | Object is an instance of a class |
-| Class is a group of similar objects | Object is a real world entity such as pen, laptop, mobile, bed, keyboard, mouse, chair etc |
-| Class is a logical entity | Object is a physical entity |
-| Class is declared using class keyword e.g.
-class Student{} | Object is created through new keyword mainly e.g.
-Student s1=new Student(); |
-| Class is declared once | Object is created many times as per requirement |
-| Class doesn't allocated memory when it is created | Object allocates memory when it is created |
-| There is only one way to define class in java using class keyword | There are many ways to create object in java such as new keyword, newInstance() method, clone() method, factory method and deserialization |
 
 ### Important Keywords
 - **static keyword:** is mainly used for memory management. It can be used with variables, methods, blocks and nested classes. It is used to share the same variable or method of a given class. Basically, static is used for a constant variable or a method that is same for every instance of a class
@@ -722,72 +809,22 @@ Student s1=new Student(); |
   
 - **Explicit keyword:**
 - **this keyword:**
-- **new keyword:**
-- **const keyword:**
-- **super keyword:**
-## Features of OOPS
-- Polymorphism
-- Inheritance
-- Encapsulation
-- Abstraction
-## Polymorphism
-The word “polymorphism” means having many forms.
-Polymorphism can be defined as the ability of a message to be displayed in more than one form. 
+   - this is a keyword that refers to the current instance of the class. 
+   - There can be 3 main usage of this keyword in C++. 
+   - It can be used to pass current object as a parameter to another method. 
+   - It can be used to refer current class instance variable. 
+   - It can be used to declare indexers.
 
-A real-life example of polymorphism is a person who at the same time can have different characteristics. Like a man at the same time is a father, a husband and an employee. So the same person exhibits different behavior in different situations. This is called polymorphism.
+- **new keyword:** signifies a request for the memory allocation on the heap. If the sufficient memory is available, it initializes the memory and returns its address to the pointer variable. The new operator should only be used if the data object should remain in memory until delete is called
 
-Polymorphism is mainly divided into two types:
-- Compile-time Polymorphism
-- Runtime Polymorphism
+- **const keyword:** The const keyword specifies that a variable's value is constant and tells the compiler to prevent the programmer from modifying it.
 
-(Pic) --> https://www.geeksforgeeks.org/polymorphism-in-c/
+- **Java super keyword:** The super keyword refers to superclass (parent) objects. It is used to call superclass methods, and to access the superclass constructor. The most common use of the super keyword is to eliminate the confusion between superclasses and subclasses that have methods with the same name.
 
-### Compile-Time Polymorphism
-This type of polymorphism is achieved by function overloading or operator overloading.
-
-**Function Overloading:** When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded. 
-
-Functions can be overloaded by changing the number of arguments or/and changing the type of arguments
-
-This is also known as *Method Overloading* in Java.
-
-Advantages:
-- Increases the readability of the program.
-
-### Why Method Overloading is not possible by changing the return type of method?
-In java, method overloading is not possible by changing the return type of the method because there may occur ambiguity.
-
-### What Functions cannot be overloaded in C++?
-1. Function declarations that differ only in the return type.
-2. Member function declarations with the same name and the name parameter-type-list cannot be overloaded if any of them is a static member function declaration.
-
-**Operator Overloading:** we can make use of the addition operator (+) for string class to concatenate two strings. We know that the task of this operator is to add two operands. 
-
-So a single operator ‘+’, when placed between integer operands, adds them and when placed between string operands, concatenates them.
-
-### Which Operators cannot be overloaded in C++?
-Some of the operators cannot be overloaded. These operators are as follows:
-- “.” Member access or dot operator
-- “? : ” Ternary or conditional operator
-- “::” Scope resolution operator
-- “.*” Pointer to member operator
-- “sizeof” The object size operator
-- “typeid” Object type operator
-
-
-### Runtime Poylmorphism
-This type of polymorphism is achieved by Function Overriding.
-
-It is also known as *Dynamic Method Dispatch* in Java.
-
-**Function Overriding** occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden. 
-
-### Why Do We Need Polymorphism?
-Polymorphism allows us to reuse code by creating one function that's usable for multiple uses. We can also make operators polymorphic and use them to add not only numbers but also combine strings. This saves time and allows for a more streamlined program.
 
 ### Virtual Function
-- A virtual function is a member function in the base class that you redefine in a derived class. It is declared using the virtual keyword.
-
+- A virtual function is a member function in the base class that we redefine in a derived class. 
+- It is declared using the virtual keyword.
 - It is used to tell the compiler to perform dynamic linkage or late binding on the function.
 
 - There is a necessity to use the single pointer to refer to all the objects of the different classes. So, we create the pointer to the base class that refers to all the derived objects. But, when base class pointer contains the address of the derived class object, always executes the base class function. This issue can only be resolved by using the 'virtual' function.
@@ -801,8 +838,7 @@ Rules of Virtual Function:
 - They can be a friend of another class.
 - A virtual function must be defined in the base class, even though it is not used.
 
-- The prototypes of a virtual function of the base class and all the derived classes must be identical. If the two functions with the same name but different prototypes, C++ will consider them as the overloaded functions.
-
+- The prototypes of a virtual function of the base class and all the derived classes are identical. 
 - We cannot have a virtual constructor, but we can have a virtual destructor
 
 ### Virtual Class
@@ -833,215 +869,12 @@ Whenever a virtual function is called using a base class reference or pointer it
 
 ### Pure Virtual Function
 - A virtual function is not used for performing any task. It only serves as a placeholder.
-
 - When the function has no definition, such function is known as "do-nothing" function.
-
-- The "do-nothing" function is known as a pure virtual function. A pure virtual function is a function declared in the base class that has no definition relative to the base class.
-
-- A class containing the pure virtual function cannot be used to declare the objects of its own, such classes are known as abstract base classes.
-
-- The main objective of the base class is to provide the traits to the derived classes and to create the base pointer used for achieving the runtime polymorphism.
-
-## Inheritance
-The capability of a class to derive properties and characteristics from another class is called Inheritance.
-
-Inheritance is a feature or a process in which, new classes are created from the existing classes. The new class created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”. The derived class now is said to be inherited from the base class.
-
-When we say derived class inherits the base class, it means, the derived class inherits all the properties of the base class, without changing the properties of base class and may add new features to its own. These new features in the derived class will not affect the base class. 
-
-The derived class is the specialized class for the base class:
-- **Sub Class:** The class that inherits properties from another class is called Subclass or Derived Class. 
-- **Super Class:** The class whose properties are inherited by a subclass is called Base Class or Superclass. 
-
-### Why and when should we use Inheritance?
-When duplication occurs in the code, it increases the chances of error and data redundancy. To avoid this type of situation, inheritance is used.
-
-Using inheritance, we have to write the functions only one time instead of three times as we have inherited the rest of the the classes from the base class
+- The "do-nothing" function is known as a pure virtual function. 
+- A pure virtual function is a function declared in the base class that has no definition relative to the base class.
 
 
 
-### Modes of Inheritance
-There are 3 modes of inheritance:
-
-- **Public Mode:** If we derive a subclass from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in the derived class.
-
-- **Protected Mode:** If we derive a subclass from a Protected base class. Then both public members and protected members of the base class will become protected in the derived class.
-
-- **Private Mode:** If we derive a subclass from a Private base class. Then both public members and protected members of the base class will become Private in the derived class.
-
-| Base Class Member Access Specifier | Public | Protected | Private |
-| ---------------------------------- | ------ | --------- | ------- |
-| Public | Public | Protected | Private |
-| Protected | Protected | Protected | Private |
-| Private | Not Accessible (Hidden) | Not Accessible (Hidden) | Not Accessible (Hidden) |
-
-### Types of Inheritance
-- Single Inheritance
-- Multilevel Inheritance
-- Multiple Inheritance
-- Hierarchical Inheritance
-- Hybrid Inheritance
-
-### Single Inheritance
-In single inheritance, a class is allowed to inherit from only one class. i.e. one subclass is inherited by one base class only.
-
-*Syntax*
-```c++:
-class subclass_name : access_mode base_class {
-    //body of subclass
-};
-
-OR 
-
-class A{
-    .......
-};
-
-class B: public A{
-    .......
-};
-```
-
-### Multiple Inheritance
-In multiple inhertitance a class can inherit from more than one class. i.e one subclass is inherited from more than one base class.
-
-*Syntax:*
-```java:
-class subclass_name : access_mode base_class1, access_mode base_class2, ....
-{
-  // body of subclass
-};
-
-OR
-
-class B{ 
-... .. ... 
-};
-
-class C{
-... .. ...
-};
-
-class A: public B, public C{
-... ... ...
-};
-```
-
-### Multilevel Inheritance
-In this type of inheritance, a derived class is created from another derived class.
-
-*Syntax:*
-```java:
-class C{ 
-... .. ... 
-};
-
-class B:public C{
-... .. ...
-};
-
-class A: public B{
-... ... ...
-};
-```
-
-### Hierarchical Inheritance
-In this type of inheritance, more than one subclass is inherited from a single base class. i.e. more than one derived class is created from a single base class.
-
-*Syntax:*
-```c++:
-class A  {  
-    // body of the class A.  
-}    
-class B : public A   {  
-    // body of class B.  
-}  
-class C : public A  {  
-    // body of class C.  
-}   
-class D : public A  {  
-    // body of class D.  
-}   
-```
-
-### Hybrid (Virtual) Inheritance
-Hybrid Inheritance is implemented by combining more than one type of inheritance. For example: Combining Hierarchical inheritance and Multiple Inheritance. 
-
-
-## Encapsulation
-Encapsulation is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
-
-A real life example of encapsulation, in a company there are different sections like the accounts section, finance section, sales section etc. The finance section handles all the financial transactions and keep records of all the data related to finance. 
-
-Similarly the sales section handles all the sales related activities and keep records of all the sales. Now there may arise a situation when for some reason an official from finance section needs all the data about sales in a particular month. In this case, he is not allowed to directly access the data of sales section. 
-
-He will first have to contact some other officer in the sales section and then request him to give the particular data. This is what encapsulation is. Here the data of sales section and the employees that can manipulate them are wrapped under a single name “sales section”. 
-
-We can not access any function from class directly. We need an object to access that function which is using the member the variable of that class.
-
-The function which we are making inside the class ,it must use the all member variable then only it is called encapsulation.
-
-If we  don’t  make function inside the class which is using the member  variable of the class then we don’t call it encapsulation.  
-
-Encapsulation also lead to data abstraction or hiding. As using encapsulation also hides the data.
-
-Role of Access Specifiers in Encapsulation:
-1. The data members should be labeled as private using the private access specifiers
-2. The member function which manipulates the data members should be labeled as public using the public access specifier
-
-Advantages:
-- It provides you the control over the data.
-- It is a way to achieve data hiding
-- The encapsulate class is easy to test. So, it is better for unit testing.
-
-### How Do We Achieve Encapsulation?
-The encapsulation can be achieved by the use of 3 keywords in java:
-
-- **private:** The variables or methods that have been declared as private will not be accessible outside the class in which they have been declared. But, an outer class cannot be made private.
-
-- **protected:** The variable or methods that have been declared as private will be accessible inside the class in which they have been defined and in the classes which extends this class. Also, an outer cannot be made protected.
-
-- **public:** The variable or methods that have been declared as public will be accessible anywhere. Also, a class can be made public.
-## Abstraction
-An abstraction is a way of hiding the implementation details and showing only the functionality to the users. In other words, it ignores the irrelevant details and shows only the required one.
-
-**NOTE:** We cannot create an instance of Abstract Class, It reduces the duplication of code.
-
-### Abstraction vs Encapsulation
-| Abstraction | Encapsulation |
-| ----------- | ------------- |
-| Abstraction is the process or method of gaining the information. | Encapsulation is the process or method to contain the information. |
-| In abstraction, problems are solved at the design or interface level. | in Encapsulation, problems are solved at the implementation level. |
-| Abstraction is the method of hiding the unwanted information. | Encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. |
-| We can implement abstraction using abstract class and interfaces. | Encapsulation can be implemented using by access modifier i.e. private, protected and public. |
-| The objects that help to perform abstraction are encapsulated. | The objects that result in encapsulation need not be abstracted. |
-| Abstraction provides access to specific part of data. | Encapsulation hides data and the user can not access same directly (data hiding. |
-| Abstraction focus is on “what” should be done. | Encapsulation focus is on “How” it should be done. |
-
-| Abstract Class | Interface |
-| -------------- | --------- |
-| Abstract class can have abstract and non-abstract methods. | Interface can have only abstract methods. |
-| Abstract class doesn't support multiple inheritance. | Interface supports multiple inheritance. |
-| Abstract class can provide the implementation of interface. | Interface can't provide the implementation of abstract class. |
-| The abstract keyword is used to declare abstract class. | The interface keyword is used to declare interface. |
-### How To Achieve Abstraction?
-- In C++
-    - Access Specifiers
-    - Header Files
-
-- In Java
-    - Interfaces
-    - Abstract Classes
-
-Connecting a method call to the method body is known as **binding**.
-There are two types of binding:
-- Dynamic Binding
-- Message Binding
-
-### Dynamic Binding
-When type of the object is determined at the runtime, it is known as dynamic binding.
-### Message Binding
-When type of the object is determined at the compiled time, it is known as dynamic binding.
 
 ## Object Oriented Design Interview Questions
 ### Design a HashMap
