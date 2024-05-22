@@ -486,3 +486,132 @@ In Java Memory leaks can be caused by a variety of factors, such as not closing 
 | HashSet is unordered. | TreeSet is based on natural ordering. |
 | HashSet allows null elements. | TreeSet does not allow null elements. |
 | HashSet is Implemented by the HashSet class. | TreeSet is Implemented by TreeSet class. |
+
+## Explain the concepts of Lambda Expressions
+Lambda expressions provide a concise way to represent anonymous functions. They are often used with functional interfaces and streams for functional programming style.
+
+## What are streams in Java?
+Streams are a sequence of elements that support various aggregate operations like filtering, mapping, and reducing. They provide a functional approach to processing data.
+
+## What is JDBC, and how does it work?
+JDBC is an API for connecting Java applications to databases. It works by loading a database driver, establishing a connection, sending SQL queries, processing results, and closing the connection.
+
+## Explain the steps to connect to a database using JDBC.
+1. Load the driver class.
+2. Establish a connection using DriverManager.getConnection().
+3. Create a statement object.
+4. Execute queries using executeQuery() (for SELECT) or executeUpdate() (for INSERT, UPDATE, DELETE).
+5. Process the result set (if applicable).
+6. Close the connection, statement, and result set.
+
+## What are the different types of JDBC drivers?
+- Type 1 (JDBC-ODBC bridge)
+- Type 2 (Native API partly Java)
+- Type 3 (Network Protocol) and
+- Type 4 (Pure Java).
+
+## Explain PreparedStatement and its advantages.
+PreparedStatement is a precompiled SQL statement, which is more efficient for repeated execution and helps prevent SQL injection attacks.
+
+## What is a ResultSet?
+A ResultSet is a table of data representing the result of a database query. It allows you to iterate over rows and retrieve values from columns.
+
+## What is the Spring Framework, and what are its benefits?
+- Spring is a comprehensive framework for developing enterprise Java applications. 
+- It simplifies development, promotes good practices, and provides features like dependency injection, AOP, transaction management, and web MVC.
+
+## Explain the core concepts of Spring: IoC (Inversion of Control) and DI (Dependency Injection).
+- IoC is a principle where the control of object creation and dependency management is transferred to the framework. 
+- DI is a technique to implement IoC, where dependencies are "injected" into objects.
+
+## What are Spring Beans, and how are they managed?
+- Spring Beans are the objects that form the backbone of your application. 
+- They are managed by the Spring IoC container, which handles their instantiation,configuration, and dependencies.
+
+## Explain Spring AOP (Aspect-Oriented Programming).
+Spring AOP allows you to modularize cross-cutting concerns (e.g., logging, security) by defining aspects that can be applied to various parts of the code.
+
+## What are Spring Boot and its advantages?
+Spring Boot simplifies Spring application setup and configuration with auto-configuration, embedded servers, and production-ready features.
+
+## What is Hibernate, and what are its benefits?
+- Hibernate is an ORM framework that simplifies database access by mapping Java objects to database tables. 
+- It provides features like automatic CRUD operations, caching, and transaction management.
+
+## Explain the concept of ORM (Object-Relational Mapping).
+ORM is a technique to bridge the gap between object-oriented programming and relational databases by mapping objects to database tables and vice versa.
+
+## What are Hibernate entities and how are they mapped to database tables?
+- Hibernate entities are POJOs (Plain Old Java Objects) representing database tables. 
+- They are mapped using annotations or XML configuration files.
+
+## Explain Hibernate caching and its types.
+- Hibernate caching stores copies of data in memory to improve performance. 
+- It has two main types: first-level cache (session-level) and second-level cache (shared).
+
+## Explain the SOLID principles of object-oriented design.
+- **S (Single Responsibility Principle)**: A class should do one thing and do it well.
+- **O (Open/Closed Principle)**: Open for extension, closed for modification. Add new features without changing existing code.
+- **L (Liskov Substitution Principle)**: Objects of a derived class should be interchangeable with objects of the base class.
+- **I (Interface Segregation Principle)**: Many client-specific interfaces are better than one general-purpose interface.
+- **D (Dependency Inversion Principle)**: Depend on abstractions, not concretions.
+
+## What is the difference between BeanFactory and ApplicationContext in Spring?
+- BeanFactory is the basic IoC container, providing basic dependency injection. 
+- ApplicationContext is a more advanced container, offering additional features like message source, event publication, and application-layer specific contexts (e.g., WebApplicationContext).
+
+## Explain the different scopes of Spring Beans.
+- **Singleton**: Single instance per Spring IoC container.
+- **Prototype**: New instance created each time it is requested.
+- **Request**: One instance per HTTP request.
+- **Session**: One instance per HTTP session.
+- **Global** session: One instance per global HTTP session 
+
+## What is Spring MVC?
+Spring MVC is a web framework built on the Servlet API, providing a Model-View-Controller architecture for developing web applications.
+
+## Explain the DispatcherServlet in Spring MVC.
+DispatcherServlet is the front controller in Spring MVC, handling all incoming requests and delegating them to appropriate controllers.
+
+## What are Spring annotations? Give some examples.
+Spring annotations are used to configure Spring beans and provide metadata to the Spring framework. Examples include @Component, @Autowired, @Controller, @Service, @Repository, @RequestMapping, etc.
+
+## What is the difference between SOAP and REST web services?
+SOAP (Simple Object Access Protocol) is a protocol for exchanging structured information in XML format. REST (Representational State Transfer) is an architectural style for designing networked applications that focuses on resources and uses HTTP methods (GET, POST, PUT, DELETE).
+
+## Explain the concept of Continuous Integration (CI) and Continuous Deployment (CD).
+- CI is the practice of merging code changes frequently into a shared repository and automatically building and testing the application. 
+- CD extends CI by automating the deployment of the application to production environments.
+
+## What are Docker and Kubernetes?
+- Docker is a platform for containerizing applications, making them portable and easy to deploy.
+- Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerized applications.
+
+## What is the difference between unit testing and integration testing?
+- Unit testing tests individual components or units of code in isolation. 
+- Integration testing tests the interaction between multiple components or modules.
+
+## Explain Spring Data JPA.
+Spring Data JPA is part of the larger Spring Data project that makes it easy to implement JPA-based repositories. It simplifies data access layer implementation by reducing boilerplate code and providing common repository interfaces.
+
+## Explain the difference between static and dynamic binding in Java.
+Static binding (early binding) happens at compile time, while dynamic binding (late binding) happens at runtime.
+
+## What is the difference between Stack and Heap memory in Java?
+Stack memory is used for storing local variables and method call frames, while heap memory stores objects and their instance variables.
+
+## Explain the concept of Classpath in Java.
+Classpath is an environment variable that tells the Java Virtual Machine (JVM) where to look for classes and libraries.
+
+## What is JIT (Just-in-Time) compilation?
+JIT compilation improves the performance of Java programs by compiling bytecode into native machine code at runtime.
+
+## Explain the concept of memory leaks in Java.
+Memory leaks occur when objects are no longer needed but are still referenced, preventing garbage collection and leading to excessive memory usage.
+
+## What are some best practices for writing clean and maintainable Java code?
+Following coding conventions, using meaningful variable and method names, writing clear comments, adhering to SOLID principles, and using appropriate design patterns.
+
+## What are some common mistakes to avoid in Java programming?
+Not closing resources, ignoring exceptions, not following coding conventions, and overcomplicating code.
+
